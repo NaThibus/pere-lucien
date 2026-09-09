@@ -263,7 +263,7 @@
 
         productCards.forEach(card => {
           if (filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.style.display = 'flex';
+            card.style.display = '';
           } else {
             card.style.display = 'none';
           }

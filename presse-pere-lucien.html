@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Revue de Presse & Médias — Le Père Lucien</title>
-  <meta name="description" content="Retrouvez tous les articles et reportages télévisés consacrés au Père Lucien : Le Journal De l'Économie, La Montagne, La Semaine de l'Allier, France 3.">
+  <title>Revue de Presse & Archives Journalistiques — Le Père Lucien</title>
+  <meta name="description" content="Retrouvez les articles et reportages consacrés au Père Lucien : Le Journal De l'Économie, La Montagne, La Semaine de l'Allier, France 3 Régions.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/png" href="assets/logo-perelucien.png">
   <script type="application/ld+json">
@@ -14,6 +14,14 @@
     "name": "Le Père Lucien",
     "url": "https://www.leperelucien.com",
     "logo": "https://www.leperelucien.com/assets/logo-perelucien.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ancienne bâtisse de lavandière",
+      "addressLocality": "Teillet-Argenty",
+      "postalCode": "03410",
+      "addressRegion": "Allier",
+      "addressCountry": "FR"
+    },
     "founder": {
       "@type": "Person",
       "name": "Cyril Lelégard",
@@ -22,240 +30,274 @@
   }
   </script>
 </head>
-<body class="theme-lucien">  <!-- Bandeau Supérieur & Switcher Rétro avec Mention Nouveauté -->
+<body class="theme-lucien">  <!-- Bandeau Supérieur Gazette & Switcher Rétro -->
   <aside class="announcement-bar">
     <div class="container announcement-inner">
       <div class="announcement-text">
-        <span>🌸</span>
-        <span><strong>Nouveauté :</strong> Savon du Barbier aux Fleurs de Jasmin de Grasse disponible • Livraison offerte dès 80€ ($88)</span>
+        <span style="font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--color-terracotta);letter-spacing:1px;">✦ CUVÉE LIMITÉE 2024</span>
+        <span>Le Savon du Barbier aux Fleurs de Jasmin de Grasse — Disponible au comptoir • Expédition mardi</span>
       </div>
       <div class="announcement-actions">
         <button class="currency-selector currency-toggle-btn" onclick="toggleCurrency()" aria-label="Changer de devise">€ EUR</button>
-        <a href="index.html" class="split-hub-link" title="Retourner au sélecteur d'accueil">
-          <span>⚖️</span>
-          <span>Accueil Double Face</span>
+        <a href="index.html" class="split-hub-link" title="Retourner à la Maison Lelégard">
+          <span>Maison Lelégard</span>
         </a>
         <a href="mere-martine.html" class="retro-switcher" title="Basculer vers l'univers féminin">
-          <span>Mère Martine (Salon 1968) 💇‍♀️</span>
+          <span>Mère Martine (Salon 1968) ↗</span>
         </a>
       </div>
     </div>
-  </aside>  <!-- En-tête Principal Épuré & Navigation Multi-Pages -->
+  </aside>  <!-- En-tête Éditorial & Navigation Artisanale -->
   <header class="main-header">
     <div class="container header-inner">
-      <a href="pere-lucien.html" class="logo-wrapper">
+      <a href="pere-lucien.html" class="logo-wrapper" title="Le Père Lucien — Savonnerie Artisanale">
         <img src="assets/logo-perelucien-clean.svg" alt="Logo Le Père Lucien" class="site-logo-svg">
       </a>
 
       <nav aria-label="Navigation principale">
         <ul class="nav-links">
-          <li><a href="pere-lucien.html" class="nav-link">Accueil</a></li>
-          <li><a href="boutique-pere-lucien.html" class="nav-link">Boutique en Ligne</a></li>
-          <li><a href="atelier-pere-lucien.html" class="nav-link">L'Atelier (Allier)</a></li>
-          <li><a href="presse-pere-lucien.html" class="nav-link" style="color:var(--gold-dark);font-weight:700;">Presse</a></li>
-          <li><a href="distributeurs-pere-lucien.html" class="nav-link">Revendeurs</a></li>
+          <li><a href="pere-lucien.html" class="nav-link">L'Atelier</a></li>
+          <li><a href="boutique-pere-lucien.html" class="nav-link">Le Registre (Boutique)</a></li>
+          <li><a href="atelier-pere-lucien.html" class="nav-link">Savoir-Faire &amp; 13 Prototypes</a></li>
+          <li><a href="presse-pere-lucien.html" class="nav-link" style="color:var(--color-ink);border-bottom:2px solid var(--color-moss);font-weight:700;">Revue de Presse</a></li>
+          <li><a href="distributeurs-pere-lucien.html" class="nav-link">Comptoirs &amp; Revendeurs</a></li>
         </ul>
       </nav>
 
       <div class="header-tools">
         <button class="tool-btn" aria-label="Recherche">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
         </button>
         <button class="tool-btn btn-cart-toggle" aria-label="Panier">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
           <span class="cart-badge" style="display:none;">0</span>
         </button>
       </div>
     </div>
   </header>
   <main>
-    <section class="press-coverage-section" style="padding: 60px 0 90px 0;">
+    <section style="padding: 40px 0 80px 0;">
       <div class="container">
         
-        <div class="section-header">
-          <span class="section-tag">Médias &amp; Parutions Nationales</span>
-          <h1 class="section-title">Revue de Presse</h1>
-          <div class="section-divider"></div>
-          <p class="section-desc">
-            Les parutions et reportages consacrés à la savonnerie artisanale de Teillet-Argenty (Allier) et à Cyril Lelégard.
+        <div class="gazette-cartouche">
+          <div class="gazette-coords">
+            <span>✦ REVUE DE PRESSE &amp; TÉMOIGNAGES</span>
+            <span>—</span>
+            <span>PARUTIONS RÉGIONALES &amp; NATIONALES</span>
+          </div>
+          <div class="gazette-edition">
+            ARCHIVES 2013–2024
+          </div>
+        </div>
+
+        <div style="margin-bottom: 35px;">
+          <h1 style="font-family:var(--font-display);font-size:clamp(32px, 4vw, 44px);color:var(--color-ink);margin-bottom:10px;">Revue de Presse &amp; Parutions</h1>
+          <p style="font-size:15px;color:var(--color-ink-muted);max-width:700px;line-height:1.7;">
+            Les reportages, chroniques spécialisées et enquêtes consacrés à la savonnerie de Teillet-Argenty et à la renaissance du rasage traditionnel en France.
           </p>
         </div>
 
-        <div class="press-grid">
+        <!-- Grille de Presse Éditoriale -->
+        <div style="display:grid;grid-template-columns:repeat(2, 1fr);gap:24px;">
           
-          <div class="press-card">
-            <div class="press-outlet">Le Journal De l'Économie (JDE)</div>
-            <h4 class="press-headline">« La success-story du savon artisanal d'Argenty parti à la conquête du monde »</h4>
-            <p class="press-quote">
-              « Comment un ingénieur chimiste auvergnat a conquis les barbiers de San Francisco, Londres et Tokyo grâce à un savon à raser 100% naturel. »
+          <article style="border:1px solid var(--color-border);background:var(--color-surface);padding:28px;">
+            <div style="font-family:var(--font-mono);font-size:10.5px;font-weight:700;color:var(--color-terracotta);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">
+              Le Journal De l'Économie (JDE)
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:22px;color:var(--color-ink);margin-bottom:12px;line-height:1.3;">
+              « La success-story du savon artisanal d'Argenty parti à la conquête du monde »
+            </h3>
+            <p style="font-size:14px;color:var(--color-ink-muted);line-height:1.7;margin-bottom:16px;">
+              « Comment un ingénieur chimiste auvergnat a su convaincre les barbiers les plus pointus de Londres, San Francisco et Tokyo grâce à une saponification au chaudron sans compromis pétrochimique. »
             </p>
-            <span class="press-link">Consulter l'article JDE ↗</span>
-          </div>
+            <div style="font-family:var(--font-mono);font-size:11px;color:var(--color-brass-dark);">
+              ✦ Parution nationale • Économie de terroir
+            </div>
+          </article>
 
-          <div class="press-card">
-            <div class="press-outlet">La Montagne</div>
-            <h4 class="press-headline">« Le "Petit Cuistot" du savon de barbier »</h4>
-            <p class="press-quote">
-              « Dans son atelier de Teillet-Argenty, Cyril Lelégard élabore ses cuvées avec la rigueur d'un chimiste et la poésie d'un artisan d'art. »
+          <article style="border:1px solid var(--color-border);background:var(--color-surface);padding:28px;">
+            <div style="font-family:var(--font-mono);font-size:10.5px;font-weight:700;color:var(--color-terracotta);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">
+              La Montagne
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:22px;color:var(--color-ink);margin-bottom:12px;line-height:1.3;">
+              « Le "Petit Cuistot" du savon de barbier au bord de l'eau »
+            </h3>
+            <p style="font-size:14px;color:var(--color-ink-muted);line-height:1.7;margin-bottom:16px;">
+              « Dans son atelier de Teillet-Argenty, Cyril Lelégard ajuste ses cuves avec la rigueur d'un chimiste et la patience d'un artisan d'art. Des copeaux à l'affinage, rien n'est laissé au hasard. »
             </p>
-            <span class="press-link">Lire la parution Montluçon ↗</span>
-          </div>
+            <div style="font-family:var(--font-mono);font-size:11px;color:var(--color-brass-dark);">
+              ✦ Édition Allier • Portrait d'artisan
+            </div>
+          </article>
 
-          <div class="press-card">
-            <div class="press-outlet">La Semaine de l'Allier</div>
-            <h4 class="press-headline">« Des Savons bien de chez nous »</h4>
-            <p class="press-quote">
-              « Le Père Lucien valorise le savoir-faire bourbonnais en alliant matières végétales brutes, circuits courts et authenticité. »
+          <article style="border:1px solid var(--color-border);background:var(--color-surface);padding:28px;">
+            <div style="font-family:var(--font-mono);font-size:10.5px;font-weight:700;color:var(--color-terracotta);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">
+              La Semaine de l'Allier
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:22px;color:var(--color-ink);margin-bottom:12px;line-height:1.3;">
+              « Des savons bien de chez nous qui font revivre les gestes nobles »
+            </h3>
+            <p style="font-size:14px;color:var(--color-ink-muted);line-height:1.7;margin-bottom:16px;">
+              « Le Père Lucien valorise le terroir bourbonnais en mariant huiles végétales de première pression, circuits d'approvisionnement courts et respect absolu de la peau. »
             </p>
-            <span class="press-link">Découvrir le portrait ↗</span>
-          </div>
+            <div style="font-family:var(--font-mono);font-size:11px;color:var(--color-brass-dark);">
+              ✦ Hebdomadaire régional • Rubrique Savoir-Faire
+            </div>
+          </article>
 
-          <div class="press-card">
-            <div class="press-outlet">France 3 Régions Auvergne</div>
-            <h4 class="press-headline">« Immersion dans la savonnerie artisanale de Teillet-Argenty »</h4>
-            <p class="press-quote">
-              « Reportage télévisé au bord de l'eau : Cyril Lelégard ouvre les portes de son laboratoire de saponification au chaudron. »
+          <article style="border:1px solid var(--color-border);background:var(--color-surface);padding:28px;">
+            <div style="font-family:var(--font-mono);font-size:10.5px;font-weight:700;color:var(--color-terracotta);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">
+              France 3 Régions Auvergne
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:22px;color:var(--color-ink);margin-bottom:12px;line-height:1.3;">
+              « Immersion dans la saponification au chaudron à Teillet-Argenty »
+            </h3>
+            <p style="font-size:14px;color:var(--color-ink-muted);line-height:1.7;margin-bottom:16px;">
+              « Reportage télévisé au bord de l'eau : Cyril Lelégard ouvre les portes de son laboratoire et détaille la réaction exothermique qui transforme les beurres végétaux en mousse de rasage. »
             </p>
-            <span class="press-link">Visionner l'extrait vidéo ↗</span>
-          </div>
+            <div style="font-family:var(--font-mono);font-size:11px;color:var(--color-brass-dark);">
+              ✦ Journal Télévisé 19/20 • Reportage d'Atelier
+            </div>
+          </article>
 
         </div>
 
-        <div style="margin-top:60px;background:var(--bg-color);border:1px solid var(--border-color);border-radius:4px;padding:30px;text-align:center;">
-          <h3 style="font-family:var(--font-serif);font-size:18px;color:var(--primary);margin-bottom:12px;">
-            Espace Presse &amp; Relations Médias
+        <div style="margin-top:50px;border:1px solid var(--color-border);background:var(--color-bg);padding:30px;text-align:center;">
+          <h3 style="font-family:var(--font-display);font-size:20px;color:var(--color-ink);margin-bottom:10px;">
+            Espace Presse &amp; Relations Journalistes
           </h3>
-          <p style="font-size:13.5px;color:var(--text-muted);max-width:600px;margin:0 auto 20px auto;">
-            Vous êtes journaliste ou créateur de contenu ? Téléchargez notre dossier de presse officiel ou contactez directement l'atelier à Teillet-Argenty.
+          <p style="font-size:13.5px;color:var(--color-ink-muted);max-width:600px;margin:0 auto 20px auto;line-height:1.6;">
+            Pour toute demande d'échantillons d'atelier, de visuels argentiques haute définition ou d'entretien avec Cyril et Gisèle Lelégard, contactez directement l'atelier.
           </p>
-          <button class="btn-secondary" style="font-size:11.5px;" onclick="alert('Dossier de Presse Le Père Lucien (PDF HD) : Contactez contact@leperelucien.com pour recevoir le kit média.');">
-            Demander le Dossier de Presse (Kit Média HD)
+          <button class="btn-secondary" style="font-size:11px;" onclick="alert('Contact Presse Atelier : contact@leperelucien.com — 03410 Teillet-Argenty.');">
+            Demander le Kit Média Atelier (HD)
           </button>
         </div>
 
       </div>
     </section>
   </main>
-  <!-- Bandeau de Réassurance E-commerce & SSL (Figure 5 du Cas M2067) -->
-  <section class="ecommerce-reassurance-bar">
+  <!-- Piliers de l'Atelier & Traçabilité (Figure 5 du Cas M2067) -->
+  <section class="ecommerce-reassurance-bar" style="background:var(--color-surface);border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);padding:32px 0;">
     <div class="container reassurance-grid">
       <div class="reassurance-card">
-        <div class="reassurance-icon">🔒</div>
+        <span style="font-family:var(--font-mono);font-size:18px;color:var(--color-moss);">01</span>
         <div>
-          <div class="reassurance-title">Chiffrement SSL HTTPS</div>
-          <div class="reassurance-subtitle">Transactions 100% sécurisées (CB, PayPal, Apple Pay)</div>
-        </div>
-      </div>
-      <div class="reassurance-card">
-        <div class="reassurance-icon">🇫🇷</div>
-        <div>
-          <div class="reassurance-title">Atelier Bourbonnais</div>
+          <div class="reassurance-title">Atelier de Lavandière</div>
           <div class="reassurance-subtitle">Fabriqué à Teillet-Argenty (Allier, Auvergne)</div>
         </div>
       </div>
       <div class="reassurance-card">
-        <div class="reassurance-icon">📦</div>
+        <span style="font-family:var(--font-mono);font-size:18px;color:var(--color-moss);">02</span>
         <div>
-          <div class="reassurance-title">Livraison Rapide 24/48h</div>
-          <div class="reassurance-subtitle">Frais de port offerts dès 80€ ($88) d'achats</div>
+          <div class="reassurance-title">Cure Lente de 30 Jours</div>
+          <div class="reassurance-subtitle">Affinage sur claies en sapin du Bourbonnais</div>
         </div>
       </div>
       <div class="reassurance-card">
-        <div class="reassurance-icon">♻️</div>
+        <span style="font-family:var(--font-mono);font-size:18px;color:var(--color-moss);">03</span>
         <div>
-          <div class="reassurance-title">Zéro Déchet Plastique</div>
-          <div class="reassurance-subtitle">Boîtes alu recyclables à l'infini &amp; recharges économiques</div>
+          <div class="reassurance-title">Expéditions du Mardi</div>
+          <div class="reassurance-subtitle">Colis préparés à la main par Cyril &amp; Gisèle</div>
+        </div>
+      </div>
+      <div class="reassurance-card">
+        <span style="font-family:var(--font-mono);font-size:18px;color:var(--color-moss);">04</span>
+        <div>
+          <div class="reassurance-title">Zéro Plastique Pétrochimique</div>
+          <div class="reassurance-subtitle">Boîtes aluminium recyclables &amp; formules 100% végétales</div>
         </div>
       </div>
     </div>
   </section>  <!-- Tiroir Panier Partagé avec Express Checkout -->
   <div class="cart-drawer-overlay"></div>
   <aside class="cart-drawer" aria-label="Panier d'achats">
-    <div class="cart-header">
-      <h3 class="cart-title">Votre Rituel d'Apothicaire</h3>
+    <div class="cart-header" style="border-bottom:1px solid var(--color-border);background:var(--color-surface);">
+      <h3 class="cart-title" style="font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--color-ink);">Votre Registre d'Apothicaire</h3>
       <button class="close-cart-btn" aria-label="Fermer le panier">&times;</button>
     </div>
-    <div class="cart-shipping-notice">
-      <div class="shipping-status-text">Calcul des frais de port en cours...</div>
-      <div class="shipping-bar-bg">
-        <div class="shipping-bar-fill" style="width: 0%;"></div>
+    <div class="cart-shipping-notice" style="background:var(--color-bg);border-bottom:1px solid var(--color-border);">
+      <div class="shipping-status-text" style="font-family:var(--font-mono);font-size:11px;color:var(--color-ink-muted);">Calcul des frais de port en cours...</div>
+      <div class="shipping-bar-bg" style="background:var(--color-border);">
+        <div class="shipping-bar-fill" style="width: 0%;background:var(--color-moss);"></div>
       </div>
     </div>
     <div class="cart-body">
       <!-- Items injectés par JS -->
     </div>
-    <div class="cart-footer">
+    <div class="cart-footer" style="background:var(--color-surface);border-top:1px solid var(--color-border);">
       <div class="cart-total-row">
-        <span>Sous-total</span>
-        <span class="cart-subtotal-val">0,00 €</span>
+        <span style="font-family:var(--font-sans);text-transform:uppercase;font-size:12px;letter-spacing:1px;font-weight:600;">Sous-total</span>
+        <span class="cart-subtotal-val" style="font-family:var(--font-display);font-size:20px;font-weight:600;">0,00 €</span>
       </div>
-      <button class="btn-checkout">Valider la Commande</button>
+      <button class="btn-checkout" style="background:var(--color-ink);color:var(--color-bg);border-radius:1px;font-family:var(--font-sans);letter-spacing:1.5px;">Valider la Commande</button>
       
       <div class="express-pay-box">
-        <button class="btn-apple-pay">
-          <span>Pay with</span>
-          <strong style="font-size:15px;">Pay</strong>
+        <button class="btn-apple-pay" style="border-radius:1px;">
+          <span>Règlement Sécurisé </span>
+          <strong style="font-size:14px;letter-spacing:1px;">Pay / CB</strong>
         </button>
       </div>
 
-      <div class="cart-eco-badges">
-        <span>🍃 Carbon-Neutral</span>
-        <span>♻️ Plastic-Free</span>
-        <span>🇫🇷 Made in France</span>
+      <div class="cart-eco-badges" style="font-family:var(--font-mono);font-size:10px;color:var(--color-ink-light);">
+        <span>✦ Expédition Directe Atelier</span>
+        <span>✦ Emballage Sans Plastique</span>
+        <span>✦ Teillet-Argenty (03)</span>
       </div>
     </div>
-  </aside>  <!-- Pied de Page & Arborescence Complète -->
-  <footer id="engagements" class="site-footer">
+  </aside>  <!-- Pied de Page & Registre Légal -->
+  <footer id="engagements" class="site-footer" style="background:#1B1917;color:#C9BFB0;border-top:1px solid #2B2623;padding:60px 0 30px 0;">
     <div class="container footer-grid">
       <div>
-        <h4 class="footer-col-title">Le Père Lucien</h4>
-        <p style="font-size:13px;line-height:1.7;margin-bottom:16px;">
-          Savonnerie artisanale fondée en juin 2013 par Cyril Lelégard.<br>
+        <h4 class="footer-col-title" style="font-family:var(--font-display);font-size:18px;color:#F9F6F0;letter-spacing:0.5px;">Le Père Lucien</h4>
+        <p style="font-size:13px;line-height:1.8;color:#9E948A;margin-bottom:16px;">
+          Savonnerie artisanale de tradition bourbonnaise.<br>
           Ancienne bâtisse de lavandière,<br>
-          03410 Teillet-Argenty, Allier, France.
+          03410 Teillet-Argenty, Allier, France.<br>
+          Coordonnées : 46° 15′ N, 2° 36′ E
         </p>
-        <p style="font-size:12px;color:var(--gold-light);">✦ Formulations 100% végétales &amp; Saponification au chaudron</p>
+        <p style="font-family:var(--font-mono);font-size:11px;color:var(--color-brass-light);">✦ Saponification au chaudron • 100% Végétal</p>
       </div>
 
       <div>
-        <h4 class="footer-col-title">Pages du Site</h4>
+        <h4 class="footer-col-title" style="font-family:var(--font-sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#F9F6F0;">Le Registre</h4>
         <ul class="footer-links">
-          <li><a href="pere-lucien.html">Accueil Le Père Lucien</a></li>
-          <li><a href="boutique-pere-lucien.html">Boutique en Ligne &amp; Soins</a></li>
-          <li><a href="boutique-pere-lucien.html#nouveaute">Nouveau Savon au Jasmin (2024)</a></li>
-          <li><a href="atelier-pere-lucien.html">L'Atelier &amp; 13 Prototypes</a></li>
-          <li><a href="presse-pere-lucien.html">Revue de Presse &amp; Médias</a></li>
-          <li><a href="distributeurs-pere-lucien.html">Points de Vente Mondiaux</a></li>
+          <li><a href="pere-lucien.html">L'Atelier &amp; Récit de Fondation</a></li>
+          <li><a href="boutique-pere-lucien.html">Catalogue &amp; Registre des Soins</a></li>
+          <li><a href="boutique-pere-lucien.html#nouveaute">Cuvée Limitée au Jasmin (2024)</a></li>
+          <li><a href="atelier-pere-lucien.html">Les 13 Prototypes &amp; Lucien Lelégard</a></li>
+          <li><a href="presse-pere-lucien.html">Revue de Presse &amp; Archives</a></li>
+          <li><a href="distributeurs-pere-lucien.html">Comptoirs &amp; Revendeurs Mondiaux</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="footer-col-title">Maison &amp; Facettes</h4>
+        <h4 class="footer-col-title" style="font-family:var(--font-sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#F9F6F0;">Maison Lelégard</h4>
         <ul class="footer-links">
           <li><a href="index.html">Sélecteur Double Face</a></li>
-          <li><a href="mere-martine.html">Mère Martine (Salon Féminin 1968)</a></li>
+          <li><a href="mere-martine.html">Mère Martine (Salon Botanique 1968)</a></li>
           <li><a href="atelier-pere-lucien.html#lucien">Hommage à Lucien Lelégard</a></li>
-          <li><a href="distributeurs-pere-lucien.html#partenaires">Forum rasagetraditionnel.com</a></li>
-          <li><a href="#">Conditions Générales de Vente</a></li>
+          <li><a href="distributeurs-pere-lucien.html#partenaires">Partenaire rasagetraditionnel.com</a></li>
+          <li><a href="#">Conditions de Vente d'Atelier</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="footer-col-title">Gazette de l'Atelier</h4>
-        <p style="font-size:12px;margin-bottom:12px;">Recevez en avant-première nos lancements de cuvées limitées et conseils de rasage.</p>
-        <form class="footer-newsletter" onsubmit="event.preventDefault(); alert('Merci de votre inscription à la gazette du Père Lucien !');">
-          <input type="email" placeholder="Votre adresse courriel..." required>
-          <button type="submit" class="btn-checkout" style="padding:10px;font-size:11px;">S'inscrire</button>
+        <h4 class="footer-col-title" style="font-family:var(--font-sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#F9F6F0;">Gazette de l'Atelier</h4>
+        <p style="font-size:12px;color:#9E948A;margin-bottom:14px;line-height:1.6;">Recevez le carnet de cure des nouveaux brassins et les dates de démoulage des cuvées limitées.</p>
+        <form class="footer-newsletter" onsubmit="event.preventDefault(); alert('Votre courriel est enregistré pour la prochaine parution de la gazette.');">
+          <input type="email" placeholder="Votre adresse courriel..." required style="background:#262220;border:1px solid #3E3733;color:#F9F6F0;border-radius:1px;font-family:var(--font-sans);font-size:12px;">
+          <button type="submit" class="btn-checkout" style="padding:10px 16px;font-size:11px;letter-spacing:1px;border-radius:1px;background:var(--color-brass);color:#1B1917;font-weight:700;">Recevoir</button>
         </form>
-        <div style="font-size:11px;color:var(--gold-light);margin-top:14px;">
-          🔒 Navigation sécurisée SSL HTTPS • Données protégées
+        <div style="font-family:var(--font-mono);font-size:10px;color:#787067;margin-top:14px;">
+          🔒 Transactions chiffrées SSL • Données protégées
         </div>
       </div>
     </div>
 
-    <div class="container footer-bottom">
-      <div>&copy; 2013-2024 Savonnerie Le Père Lucien — Cyril Lelégard. Tous droits réservés.</div>
-      <div>Teillet-Argenty (Allier) • Savonnerie Artisanale Française • Partenaire rasagetraditionnel.com</div>
+    <div class="container footer-bottom" style="border-top:1px solid #2B2623;padding-top:24px;margin-top:40px;color:#787067;font-family:var(--font-mono);font-size:11px;">
+      <div>&copy; 2013-2024 Savonnerie Le Père Lucien — Cyril Lelégard. Teillet-Argenty (Allier).</div>
+      <div>Micro-lot artisanal • Forum partenaire rasagetraditionnel.com</div>
     </div>
   </footer>  <script src="js/app.js"></script>
 </body>

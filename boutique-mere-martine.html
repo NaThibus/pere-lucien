@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boutique du Boudoir — Les 8 Confections Officielles | Mère Martine</title>
-  <meta name="description" content="Retrouvez l'intégralité des 8 confections botaniques de Mère Martine : coiffage au lin, shampoing sec à l'iris, pain de rasage et brosse en soies pures.">
+  <title>Registre des Huit Confections Botaniques — Mère Martine Paris</title>
+  <meta name="description" content="Catalogue officiel des 8 confections de soins capillaires sans eau et rasage féminin noble de Mère Martine. Sourcing lin bio normand, iris de Florence et laiton doré.">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/jpeg" href="assets/mere_martine_portrait.jpg">
+  <link rel="icon" type="image/png" href="assets/mere_martine_portrait.jpg">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -17,36 +17,35 @@
   }
   </script>
 </head>
-<body class="theme-martine">  <!-- Bandeau Supérieur & Switcher Rétro -->
-  <aside class="announcement-bar">
+<body class="theme-martine">  <!-- Bandeau Supérieur Boudoir Gazette & Switcher Rétro -->
+  <aside class="announcement-bar" style="background:var(--color-surface-martine);color:var(--color-ink);border-bottom:1px solid var(--color-border-martine);">
     <div class="container announcement-inner">
       <div class="announcement-text">
-        <span>🌸</span>
-        <span>Formules 100% Végétales &amp; Zéro Plastique • Livraison neutre en carbone offerte dès 80€ ($88)</span>
+        <span style="font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--color-plum);letter-spacing:1.5px;">✦ BOUDOIR BOTANIQUE 1968</span>
+        <span>Coiffage Végétal sans Aérosol • Mucilage de Lin Bio Normand • Expéditions soignées</span>
       </div>
       <div class="announcement-actions">
-        <button class="currency-selector currency-toggle-btn" onclick="toggleCurrency()" aria-label="Changer de devise">€ EUR</button>
-        <a href="index.html" class="split-hub-link" title="Retourner au sélecteur d'accueil">
-          <span>⚖️</span>
-          <span>Accueil Double Face</span>
+        <button class="currency-selector currency-toggle-btn" onclick="toggleCurrency()" aria-label="Changer de devise" style="border-color:var(--color-border-martine);color:var(--color-ink);">€ EUR</button>
+        <a href="index.html" class="split-hub-link" title="Retourner à la Maison Lelégard" style="color:var(--color-ink-muted);">
+          <span>Maison Lelégard</span>
         </a>
-        <a href="pere-lucien.html" class="retro-switcher" title="Basculer vers l'univers masculin">
-          <span>Le Père Lucien (Slow Shave 1950) 🪒</span>
+        <a href="pere-lucien.html" class="retro-switcher" title="Basculer vers l'univers masculin" style="border-color:var(--color-border-martine);color:var(--color-ink);">
+          <span>Le Père Lucien (Barbier 1950) 🪒</span>
         </a>
       </div>
     </div>
-  </aside>  <!-- En-tête Principal Boudoir & Navigation Multi-Pages -->
-  <header class="main-header">
+  </aside>  <!-- En-tête Principal Boudoir Éditorial -->
+  <header class="main-header" style="background:var(--color-bg-martine);border-bottom:1px solid var(--color-border-martine);">
     <div class="container header-inner">
-      <a href="mere-martine.html" class="logo-wrapper">
+      <a href="mere-martine.html" class="logo-wrapper" title="Mère Martine — Boudoir Botanique">
         <img src="assets/logo-meremartine.svg" alt="Logo Mère Martine" class="site-logo-svg">
       </a>
 
       <nav aria-label="Navigation principale">
         <ul class="nav-links">
-          <li><a href="mere-martine.html" class="nav-link">Accueil</a></li>
-          <li><a href="boutique-mere-martine.html" class="nav-link" style="color:var(--accent);font-weight:700;">Les 8 Confections</a></li>
-          <li><a href="rituel-mere-martine.html" class="nav-link">✦ Le Rituel du Soir</a></li>
+          <li><a href="mere-martine.html" class="nav-link">Le Boudoir</a></li>
+          <li><a href="boutique-mere-martine.html" class="nav-link" style="color:var(--color-plum);border-bottom:2px solid var(--color-plum);font-weight:700;">Le Registre (8 Confections)</a></li>
+          <li><a href="rituel-mere-martine.html" class="nav-link">Le Rituel des 100 Coups</a></li>
           <li><a href="salon-mere-martine.html" class="nav-link">Le Salon 1968</a></li>
           <li><a href="herbier-mere-martine.html" class="nav-link">L'Herbier Botanique</a></li>
         </ul>
@@ -54,300 +53,301 @@
 
       <div class="header-tools">
         <button class="tool-btn" aria-label="Recherche">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
         </button>
         <button class="tool-btn btn-cart-toggle" aria-label="Panier">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
-          <span class="cart-badge" style="display:none;">0</span>
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="cart-badge" style="display:none;background:var(--color-plum);">0</span>
         </button>
       </div>
     </div>
   </header>
   <main>
-    <section class="catalog-section" style="padding: 50px 0 80px 0;">
+    <section style="padding: 40px 0 80px 0;">
       <div class="container">
         
-        <div class="section-header" style="margin-bottom: 35px;">
-          <span class="section-tag" style="color:var(--accent);">Catalogue Officiel • Boudoir Parisien 1968</span>
-          <h1 class="section-title">Les Huit Confections du Boudoir</h1>
-          <div class="section-divider" style="background:var(--accent);"></div>
-          <p class="section-desc">
-            Des formulations waterless pures sans silicone, conservateur synthétique ni plastique à usage unique. Conçues pour durer et nourrir le cheveu en profondeur.
+        <div class="gazette-cartouche" style="border-color:var(--color-border-martine);">
+          <div class="gazette-coords">
+            <span>✦ REGISTRE DES CONFECTIONS OFFICIELLES</span>
+            <span>—</span>
+            <span>PARIS 1968 / ALLIER</span>
+          </div>
+          <div class="gazette-edition" style="color:var(--color-plum);">
+            FORMULES WATERLESS &amp; ARTISANAT
+          </div>
+        </div>
+
+        <div style="margin-bottom: 30px;">
+          <h1 style="font-family:var(--font-display);font-size:clamp(32px, 4vw, 44px);color:var(--color-ink);margin-bottom:10px;">Les Huit Confections du Boudoir</h1>
+          <p style="font-size:15px;color:var(--color-ink-muted);max-width:700px;line-height:1.7;">
+            Des formulations pures sans silicone, conservateur de synthèse ni plastique à usage unique. Conçues pour nourrir la chevelure en profondeur et honorer la peau.
           </p>
         </div>
 
         <!-- Filtres par catégorie -->
-        <div class="filter-bar">
+        <div class="filter-bar" style="border-bottom:1px solid var(--color-border-martine);padding-bottom:14px;margin-bottom:20px;">
           <button class="filter-btn active" data-filter="all">Toutes les Confections (8)</button>
-          <button class="filter-btn" data-filter="coiffage">Coiffage &amp; Poudres</button>
-          <button class="filter-btn" data-filter="rasage">Rasage Doux &amp; Corps</button>
-          <button class="filter-btn" data-filter="accessoire">Brosserie &amp; Laiton Doré</button>
+          <button class="filter-btn" data-filter="coiffage">Coiffage Végétal &amp; Poudres</button>
+          <button class="filter-btn" data-filter="rasage">Rasage Féminin &amp; Corps</button>
+          <button class="filter-btn" data-filter="accessoire">Brosserie Noble &amp; Laiton</button>
         </div>
 
-        <!-- Grille des 8 confections de Stitch -->
-        <div class="products-grid">
+        <!-- LE GRAND REGISTRE D'APOTHICAIRE BOUDOIR (8 Confections Réelles) -->
+        <div class="apothecary-ledger" style="border-color:var(--color-border-martine);">
           
-          <!-- Produit 1 : Pommade Coiffante à l'Ancienne -->
-          <article class="product-card" data-category="coiffage" data-price-eur="26.00">
-            <div class="product-thumb-wrap">
-              <span class="product-badge-origin" style="background:var(--accent);color:#2b111a;">Brillance &amp; Texture</span>
-              <img src="assets/mm_pommade_apothicaire.jpg" alt="Pommade Coiffante à l'Ancienne" class="product-thumb">
+          <!-- Produit 1 : Pommade Coiffante -->
+          <article class="apothecary-row product-card" data-category="coiffage" data-price-eur="26.00">
+            <div class="apothecary-col-ref">
+              <span class="apothecary-code" style="color:var(--color-plum);">CONF. N° 01</span>
+              <span class="apothecary-curation">Cire Locale</span>
             </div>
-            <div class="product-info">
-              <div class="batch-number">POT VERRE AMBRÉ 60ML • CIRE LOCALE</div>
-              <span class="product-category">Coiffage Végétal</span>
-              <h3 class="product-name">Pommade Coiffante à l'Ancienne</h3>
-              <p class="product-excerpt">
-                Dompte les mèches rebelles, lisse les frisottis et offre une brillance soyeuse sans aucun effet cartonné ni résidu blanc.
+            <div class="apothecary-col-thumb" style="border-color:var(--color-border-martine);background:var(--color-surface-martine);">
+              <img src="assets/mm_pommade_apothicaire.jpg" alt="Pommade Coiffante à l'Ancienne" class="apothecary-thumb-img">
+            </div>
+            <div class="apothecary-col-desc">
+              <span class="apothecary-category" style="color:var(--color-plum);">Coiffage Végétal &amp; Brillance</span>
+              <h3 class="apothecary-title">Pommade Coiffante à l'Ancienne 60ml</h3>
+              <p class="apothecary-formula">
+                Dompte les mèches rebelles, lisse les frisottis et offre une brillance soyeuse sans aucun effet cartonné ni résidu blanc. Formule fondante au toucher sec.
               </p>
-              <div class="botanical-notes">
-                <div class="botanical-title">✦ Composition Vivante</div>
-                <div class="botanical-text">
-                  Beurre de karité brut, cire d'abeille bourbonnaise &amp; huile de ricin première pression.
-                </div>
+              <div class="apothecary-botanicals">
+                <strong>Botanique :</strong> Butyrospermum parkii butter • Cera alba (cire d'abeille bourbonnaise) • Ricinus communis seed oil.
               </div>
-              <div class="clean-labels">
-                <span class="clean-pill">Zéro Silicone</span>
-                <span class="clean-pill">Rinçage Facile</span>
+              <div class="apothecary-specs">
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Pot verre ambré 60ml</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Zéro silicone</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Rinçage facile</span>
               </div>
-              <div class="product-footer">
-                <span class="product-price">26,00 €</span>
-                <button class="btn-add-cart" onclick="addToCart({id: 'mm-pommade', name: 'Pommade Coiffante à l\'Ancienne 60ml', brand: 'Mère Martine', price: 26.00, image: 'assets/mm_pommade_apothicaire.jpg'})">
-                  <span>Ajouter</span>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-                </button>
-              </div>
+            </div>
+            <div class="apothecary-col-buy">
+              <span class="product-price apothecary-price">26,00 €</span>
+              <button class="btn-apothecary-add" style="border-color:var(--color-plum);color:var(--color-plum);" onclick="addToCart({id: 'mm-pommade', name: 'Pommade Coiffante à l\'Ancienne 60ml', brand: 'Mère Martine', price: 26.00, image: 'assets/mm_pommade_apothicaire.jpg'})">
+                Commander
+              </button>
             </div>
           </article>
 
           <!-- Produit 2 : Brume de Mise en Plis au Lin -->
-          <article class="product-card" data-category="coiffage" data-price-eur="22.00">
-            <div class="product-thumb-wrap">
-              <span class="product-badge-origin" style="background:var(--accent);color:#2b111a;">Maintien Souple</span>
-              <img src="assets/mm_brume_lin.jpg" alt="Brume de Mise en Plis au Lin" class="product-thumb">
+          <article class="apothecary-row product-card" data-category="coiffage" data-price-eur="22.00">
+            <div class="apothecary-col-ref">
+              <span class="apothecary-code" style="color:var(--color-plum);">CONF. N° 02</span>
+              <span class="apothecary-curation">Lin Bio Normand</span>
             </div>
-            <div class="product-info">
-              <div class="batch-number">FLACON VERRE AMBRÉ 150ML • LIN BIO</div>
-              <span class="product-category">Coiffage Végétal</span>
-              <h3 class="product-name">Brume de Mise en Plis au Lin Bio</h3>
-              <p class="product-excerpt">
-                Alternative végétale aux laques chimiques. Le mucilage de lin sculpte les ondulations et protège la fibre contre l'humidité.
+            <div class="apothecary-col-thumb" style="border-color:var(--color-border-martine);background:var(--color-surface-martine);">
+              <img src="assets/mm_brume_lin.jpg" alt="Brume de Mise en Plis au Lin" class="apothecary-thumb-img">
+            </div>
+            <div class="apothecary-col-desc">
+              <span class="apothecary-category" style="color:var(--color-plum);">Maintien Souple Végétal</span>
+              <h3 class="apothecary-title">Brume de Mise en Plis au Lin Bio 150ml</h3>
+              <p class="apothecary-formula">
+                Alternative végétale aux laques chimiques. Le mucilage de graines de lin sculpte les ondulations et forme un bouclier soyeux contre l'humidité.
               </p>
-              <div class="botanical-notes">
-                <div class="botanical-title">✦ Profil Botanique</div>
-                <div class="botanical-text">
-                  Mucilage de lin brun normand, hydrolat de lavande fine &amp; fleur d'oranger.
-                </div>
+              <div class="apothecary-botanicals">
+                <strong>Botanique :</strong> Linum usitatissimum • Lavandula angustifolia • Citrus aurantium amara.
               </div>
-              <div class="clean-labels">
-                <span class="clean-pill">Lin Français</span>
-                <span class="clean-pill">Zéro Alcool</span>
+              <div class="apothecary-specs">
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Flacon verre ambré 150ml</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Lin français</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Sans aérosol</span>
               </div>
-              <div class="product-footer">
-                <span class="product-price">22,00 €</span>
-                <button class="btn-add-cart" onclick="addToCart({id: 'mm-brume-lin', name: 'Brume de Mise en Plis au Lin Bio 150ml', brand: 'Mère Martine', price: 22.00, image: 'assets/mm_brume_lin.jpg'})">
-                  <span>Ajouter</span>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-                </button>
-              </div>
+            </div>
+            <div class="apothecary-col-buy">
+              <span class="product-price apothecary-price">22,00 €</span>
+              <button class="btn-apothecary-add" style="border-color:var(--color-plum);color:var(--color-plum);" onclick="addToCart({id: 'mm-brume-lin', name: 'Brume de Mise en Plis au Lin Bio 150ml', brand: 'Mère Martine', price: 22.00, image: 'assets/mm_brume_lin.jpg'})">
+                Commander
+              </button>
             </div>
           </article>
 
           <!-- Produit 3 : Shampoing Sec & Saupoudreuse Laiton -->
-          <article class="product-card" data-category="coiffage" data-price-eur="34.00">
-            <div class="product-thumb-wrap">
-              <span class="product-badge-origin" style="background:var(--accent);color:#2b111a;">Pièce Maîtresse</span>
-              <img src="assets/mm_shampoing_sec.jpg" alt="Shampoing Sec & Saupoudreuse" class="product-thumb">
+          <article class="apothecary-row product-card" data-category="coiffage" data-price-eur="34.00">
+            <div class="apothecary-col-ref">
+              <span class="apothecary-code" style="color:var(--color-plum);">CONF. N° 03</span>
+              <span class="apothecary-curation">Pièce Maîtresse</span>
             </div>
-            <div class="product-info">
-              <div class="batch-number">SAUPOUDREUSE LAITON BROSSÉ • 80G</div>
-              <span class="product-category">Poudre d'Apothicaire</span>
-              <h3 class="product-name">Shampoing Sec &amp; Saupoudreuse en Laiton</h3>
-              <p class="product-excerpt">
-                Absorbe le sébum et redonne du volume à la racine sans ternir la chevelure. Flacon rechargeable à l'infini.
+            <div class="apothecary-col-thumb" style="border-color:var(--color-border-martine);background:var(--color-surface-martine);">
+              <img src="assets/mm_shampoing_sec.jpg" alt="Shampoing Sec & Saupoudreuse" class="apothecary-thumb-img">
+            </div>
+            <div class="apothecary-col-desc">
+              <span class="apothecary-category" style="color:var(--color-plum);">Poudre d'Apothicaire</span>
+              <h3 class="apothecary-title">Shampoing Sec &amp; Saupoudreuse en Laiton 80g</h3>
+              <p class="apothecary-formula">
+                Absorbe le sébum et redonne du volume à la racine sans ternir la chevelure. Flacon rechargeable en verre épais et tête en laiton doré brossé.
               </p>
-              <div class="botanical-notes">
-                <div class="botanical-title">✦ Poudres Nobles</div>
-                <div class="botanical-text">
-                  Racine d'iris de Florence, fécule d'arrow-root bio &amp; argile kaolin purifiante.
-                </div>
+              <div class="apothecary-botanicals">
+                <strong>Botanique :</strong> Iris florentina root • Maranta arundinacea • Argile kaolin purifiante.
               </div>
-              <div class="clean-labels">
-                <span class="clean-pill">Iris de Florence</span>
-                <span class="clean-pill">Sans Gaz</span>
+              <div class="apothecary-specs">
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Saupoudreuse rechargeable</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Iris de Florence</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Sans gaz polluant</span>
               </div>
-              <div class="product-footer">
-                <span class="product-price">34,00 €</span>
-                <button class="btn-add-cart" onclick="addToCart({id: 'mm-saupoudreuse', name: 'Shampoing Sec & Saupoudreuse Laiton', brand: 'Mère Martine', price: 34.00, image: 'assets/mm_shampoing_sec.jpg'})">
-                  <span>Ajouter</span>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-                </button>
-              </div>
+            </div>
+            <div class="apothecary-col-buy">
+              <span class="product-price apothecary-price">34,00 €</span>
+              <button class="btn-apothecary-add" style="border-color:var(--color-plum);color:var(--color-plum);" onclick="addToCart({id: 'mm-saupoudreuse', name: 'Shampoing Sec & Saupoudreuse Laiton', brand: 'Mère Martine', price: 34.00, image: 'assets/mm_shampoing_sec.jpg'})">
+                Commander
+              </button>
             </div>
           </article>
 
           <!-- Produit 4 : Pain de Rasage Ultra-Moussant -->
-          <article class="product-card" data-category="rasage" data-price-eur="19.50">
-            <div class="product-thumb-wrap">
-              <span class="product-badge-origin" style="background:var(--accent);color:#2b111a;">Corps &amp; Jambes</span>
-              <img src="assets/mm_pain_rasage.jpg" alt="Pain de Rasage Ultra-Moussant" class="product-thumb">
+          <article class="apothecary-row product-card" data-category="rasage" data-price-eur="19.50">
+            <div class="apothecary-col-ref">
+              <span class="apothecary-code" style="color:var(--color-plum);">CONF. N° 04</span>
+              <span class="apothecary-curation">Saponification Chaudron</span>
             </div>
-            <div class="product-info">
-              <div class="batch-number">SAPONIFICATION CHAUDRON • PAIN 120G</div>
-              <span class="product-category">Rasage Féminin Noble</span>
-              <h3 class="product-name">Pain de Rasage Ultra-Moussant Karité &amp; Avoine</h3>
-              <p class="product-excerpt">
-                Mousse généreuse qui enrobe le poil et protège la barrière cutanée. Zéro coupure ni sensation de tiraillement.
+            <div class="apothecary-col-thumb" style="border-color:var(--color-border-martine);background:var(--color-surface-martine);">
+              <img src="assets/mm_pain_rasage.jpg" alt="Pain de Rasage Ultra-Moussant" class="apothecary-thumb-img">
+            </div>
+            <div class="apothecary-col-desc">
+              <span class="apothecary-category" style="color:var(--color-plum);">Rasage Féminin Doux</span>
+              <h3 class="apothecary-title">Pain de Rasage Ultra-Moussant Karité &amp; Avoine 120g</h3>
+              <p class="apothecary-formula">
+                Mousse riche qui enrobe le poil et protège la barrière cutanée des jambes et aisselles. Zéro coupure ni sensation de tiraillement.
               </p>
-              <div class="botanical-notes">
-                <div class="botanical-title">✦ Base Protectrice</div>
-                <div class="botanical-text">
-                  Beurre de karité brut, lait d'avoine colloïdal &amp; huile d'amande douce.
-                </div>
+              <div class="apothecary-botanicals">
+                <strong>Botanique :</strong> Butyrospermum parkii • Avena sativa kernel milk • Prunus amygdalus dulcis oil.
               </div>
-              <div class="clean-labels">
-                <span class="clean-pill">Sans Parfum Irritant</span>
-                <span class="clean-pill">Zéro Plastique</span>
+              <div class="apothecary-specs">
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Pain solide 120g</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Sans parfum irritant</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Zéro plastique</span>
               </div>
-              <div class="product-footer">
-                <span class="product-price">19,50 €</span>
-                <button class="btn-add-cart" onclick="addToCart({id: 'mm-pain-rasage', name: 'Pain de Rasage Ultra-Moussant Karité & Avoine', brand: 'Mère Martine', price: 19.50, image: 'assets/mm_pain_rasage.jpg'})">
-                  <span>Ajouter</span>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-                </button>
-              </div>
+            </div>
+            <div class="apothecary-col-buy">
+              <span class="product-price apothecary-price">19,50 €</span>
+              <button class="btn-apothecary-add" style="border-color:var(--color-plum);color:var(--color-plum);" onclick="addToCart({id: 'mm-pain-rasage', name: 'Pain de Rasage Ultra-Moussant Karité & Avoine', brand: 'Mère Martine', price: 19.50, image: 'assets/mm_pain_rasage.jpg'})">
+                Commander
+              </button>
             </div>
           </article>
 
           <!-- Produit 5 : Huile Pré & Post-Rasage Satinée -->
-          <article class="product-card" data-category="rasage" data-price-eur="28.00">
-            <div class="product-thumb-wrap">
-              <span class="product-badge-origin" style="background:var(--accent);color:#2b111a;">Finition Soyeuse</span>
-              <img src="assets/mm_huile_rasage.jpg" alt="Huile Satinée Pré & Post-Rasage" class="product-thumb">
+          <article class="apothecary-row product-card" data-category="rasage" data-price-eur="28.00">
+            <div class="apothecary-col-ref">
+              <span class="apothecary-code" style="color:var(--color-plum);">CONF. N° 05</span>
+              <span class="apothecary-curation">Élixir Satiné</span>
             </div>
-            <div class="product-info">
-              <div class="batch-number">FLACON GOUTTE-À-GOUTTE 100ML</div>
-              <span class="product-category">Élixir Satiné</span>
-              <h3 class="product-name">Huile Pré &amp; Post-Rasage Satinée</h3>
-              <p class="product-excerpt">
-                Prépare l'épiderme avant la lame et apporte un éclat soyeux non gras après le rituel. Apaise instantanément rougeurs et picotements.
+            <div class="apothecary-col-thumb" style="border-color:var(--color-border-martine);background:var(--color-surface-martine);">
+              <img src="assets/mm_huile_rasage.jpg" alt="Huile Satinée Pré & Post-Rasage" class="apothecary-thumb-img">
+            </div>
+            <div class="apothecary-col-desc">
+              <span class="apothecary-category" style="color:var(--color-plum);">Soin Satiné Corps</span>
+              <h3 class="apothecary-title">Huile Pré &amp; Post-Rasage Satinée 100ml</h3>
+              <p class="apothecary-formula">
+                Prépare l'épiderme avant la lame et apporte un éclat soyeux non gras après le rituel. Apaise instantanément les rougeurs et picotements.
               </p>
-              <div class="botanical-notes">
-                <div class="botanical-title">✦ Synergie Botanique</div>
-                <div class="botanical-text">
-                  Jojoba doré première pression, pépins de raisin &amp; extrait de fleurs de calendula.
-                </div>
+              <div class="apothecary-botanicals">
+                <strong>Botanique :</strong> Simmondsia chinensis (jojoba doré) • Vitis vinifera seed oil • Calendula officinalis.
               </div>
-              <div class="clean-labels">
-                <span class="clean-pill">Non Comédogène</span>
-                <span class="clean-pill">Toucher Sec</span>
+              <div class="apothecary-specs">
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Flacon pipette 100ml</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Toucher sec soyeux</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Non comédogène</span>
               </div>
-              <div class="product-footer">
-                <span class="product-price">28,00 €</span>
-                <button class="btn-add-cart" onclick="addToCart({id: 'mm-huile-rasage', name: 'Huile Pré & Post-Rasage Satinée 100ml', brand: 'Mère Martine', price: 28.00, image: 'assets/mm_huile_rasage.jpg'})">
-                  <span>Ajouter</span>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-                </button>
-              </div>
+            </div>
+            <div class="apothecary-col-buy">
+              <span class="product-price apothecary-price">28,00 €</span>
+              <button class="btn-apothecary-add" style="border-color:var(--color-plum);color:var(--color-plum);" onclick="addToCart({id: 'mm-huile-rasage', name: 'Huile Pré & Post-Rasage Satinée 100ml', brand: 'Mère Martine', price: 28.00, image: 'assets/mm_huile_rasage.jpg'})">
+                Commander
+              </button>
             </div>
           </article>
 
           <!-- Produit 6 : Baume Solide Anti-Irritations -->
-          <article class="product-card" data-category="rasage" data-price-eur="21.00">
-            <div class="product-thumb-wrap">
-              <span class="product-badge-origin" style="background:var(--accent);color:#2b111a;">Soin Réparateur</span>
-              <img src="assets/mm_baume_fondant.jpg" alt="Baume Solide Anti-Irritations" class="product-thumb">
+          <article class="apothecary-row product-card" data-category="rasage" data-price-eur="21.00">
+            <div class="apothecary-col-ref">
+              <span class="apothecary-code" style="color:var(--color-plum);">CONF. N° 06</span>
+              <span class="apothecary-curation">Galet Fondant</span>
             </div>
-            <div class="product-info">
-              <div class="batch-number">GALET SOLIDE 80G • ÉCRIN MÉTAL</div>
-              <span class="product-category">Baume Fondant</span>
-              <h3 class="product-name">Baume Solide Anti-Irritations au Cacao</h3>
-              <p class="product-excerpt">
+            <div class="apothecary-col-thumb" style="border-color:var(--color-border-martine);background:var(--color-surface-martine);">
+              <img src="assets/mm_baume_fondant.jpg" alt="Baume Solide Anti-Irritations" class="apothecary-thumb-img">
+            </div>
+            <div class="apothecary-col-desc">
+              <span class="apothecary-category" style="color:var(--color-plum);">Baume Réparateur Waterless</span>
+              <h3 class="apothecary-title">Baume Solide Anti-Irritations au Cacao 80g</h3>
+              <p class="apothecary-formula">
                 Fond délicatement au contact de la chaleur de la peau. Répare les zones échauffées et prévient l'apparition des poils incarnés.
               </p>
-              <div class="botanical-notes">
-                <div class="botanical-title">✦ Beurres Purs</div>
-                <div class="botanical-text">
-                  Beurre de cacao cru non raffiné, cire d'abeille &amp; camomille romaine.
-                </div>
+              <div class="apothecary-botanicals">
+                <strong>Botanique :</strong> Theobroma cacao seed butter • Cera alba • Anthemis nobilis (camomille romaine).
               </div>
-              <div class="clean-labels">
-                <span class="clean-pill">Waterless</span>
-                <span class="clean-pill">Apaisant Immédiat</span>
+              <div class="apothecary-specs">
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Écrin aluminium réutilisable</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Formule sans eau</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Apaisement cutané</span>
               </div>
-              <div class="product-footer">
-                <span class="product-price">21,00 €</span>
-                <button class="btn-add-cart" onclick="addToCart({id: 'mm-baume-solide', name: 'Baume Solide Anti-Irritations au Cacao 80g', brand: 'Mère Martine', price: 21.00, image: 'assets/mm_baume_fondant.jpg'})">
-                  <span>Ajouter</span>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-                </button>
-              </div>
+            </div>
+            <div class="apothecary-col-buy">
+              <span class="product-price apothecary-price">21,00 €</span>
+              <button class="btn-apothecary-add" style="border-color:var(--color-plum);color:var(--color-plum);" onclick="addToCart({id: 'mm-baume-solide', name: 'Baume Solide Anti-Irritations au Cacao 80g', brand: 'Mère Martine', price: 21.00, image: 'assets/mm_baume_fondant.jpg'})">
+                Commander
+              </button>
             </div>
           </article>
 
-          <!-- Produit 7 : Brosse Ovale en Soies de Sanglier & Hêtre -->
-          <article class="product-card" data-category="accessoire" data-price-eur="46.00">
-            <div class="product-thumb-wrap">
-              <span class="product-badge-origin" style="background:var(--accent);color:#2b111a;">Brosserie Noble</span>
-              <img src="assets/mm_product_brosse.jpg" alt="Brosse en Soies de Sanglier" class="product-thumb">
+          <!-- Produit 7 : Brosse Ovale Sanglier -->
+          <article class="apothecary-row product-card" data-category="accessoire" data-price-eur="46.00">
+            <div class="apothecary-col-ref">
+              <span class="apothecary-code" style="color:var(--color-plum);">CONF. N° 07</span>
+              <span class="apothecary-curation">Brosserie Noble</span>
             </div>
-            <div class="product-info">
-              <div class="batch-number">MANCHE HÊTRE MASSIF • SOIES NATURELLES</div>
-              <span class="product-category">Accessoires de Boudoir</span>
-              <h3 class="product-name">Brosse Ovale en Soies de Sanglier &amp; Hêtre</h3>
-              <p class="product-excerpt">
-                L'outil essentiel du rituel des 100 coups de brosse. Répartit le sébum de la racine jusqu'aux pointes et lisse la cuticule pour une brillance miroir.
+            <div class="apothecary-col-thumb" style="border-color:var(--color-border-martine);background:var(--color-surface-martine);">
+              <img src="assets/mm_product_brosse.jpg" alt="Brosse en Soies de Sanglier" class="apothecary-thumb-img">
+            </div>
+            <div class="apothecary-col-desc">
+              <span class="apothecary-category" style="color:var(--color-plum);">Accessoire de Boudoir</span>
+              <h3 class="apothecary-title">Brosse Ovale en Soies de Sanglier &amp; Hêtre</h3>
+              <p class="apothecary-formula">
+                L'outil essentiel du rituel des cent coups de brosse. Répartit le sébum de la racine jusqu'aux pointes et lisse la cuticule pour une brillance soyeuse.
               </p>
-              <div class="botanical-notes">
-                <div class="botanical-title">✦ Façonnage Français</div>
-                <div class="botanical-text">
-                  Hêtre français issu de forêts durables, soies naturelles sans nylon synthétique.
-                </div>
+              <div class="apothecary-botanicals">
+                <strong>Matières :</strong> Hêtre massif issu de forêts gérées durablement • Soies naturelles pures sans nylon.
               </div>
-              <div class="clean-labels">
-                <span class="clean-pill">Fait Main</span>
-                <span class="clean-pill">Garanti 30 Ans</span>
+              <div class="apothecary-specs">
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Façonnage français</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Garanti 30 ans</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Sans électricité statique</span>
               </div>
-              <div class="product-footer">
-                <span class="product-price">46,00 €</span>
-                <button class="btn-add-cart" onclick="addToCart({id: 'mm-brosse-sanglier', name: 'Brosse Ovale en Soies de Sanglier & Hêtre', brand: 'Mère Martine', price: 46.00, image: 'assets/mm_product_brosse.jpg'})">
-                  <span>Ajouter</span>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-                </button>
-              </div>
+            </div>
+            <div class="apothecary-col-buy">
+              <span class="product-price apothecary-price">46,00 €</span>
+              <button class="btn-apothecary-add" style="border-color:var(--color-plum);color:var(--color-plum);" onclick="addToCart({id: 'mm-brosse-sanglier', name: 'Brosse Ovale en Soies de Sanglier & Hêtre', brand: 'Mère Martine', price: 46.00, image: 'assets/mm_product_brosse.jpg'})">
+                Commander
+              </button>
             </div>
           </article>
 
-          <!-- Produit 8 : Rasoir de Sécurité Féminin en Laiton Doré -->
-          <article class="product-card" data-category="accessoire" data-price-eur="38.00">
-            <div class="product-thumb-wrap">
-              <span class="product-badge-origin" style="background:var(--accent);color:#2b111a;">Zéro Plastique</span>
-              <img src="assets/mm_rasoir_laiton.jpg" alt="Rasoir Féminin Laiton Doré" class="product-thumb">
+          <!-- Produit 8 : Rasoir de Sécurité Laiton Doré -->
+          <article class="apothecary-row product-card" data-category="accessoire" data-price-eur="38.00">
+            <div class="apothecary-col-ref">
+              <span class="apothecary-code" style="color:var(--color-plum);">CONF. N° 08</span>
+              <span class="apothecary-curation">Zéro Plastique</span>
             </div>
-            <div class="product-info">
-              <div class="batch-number">FINITION OR PÂLE • PEIGNE FERMÉ SÉCURISÉ</div>
-              <span class="product-category">Matériel Noble</span>
-              <h3 class="product-name">Rasoir de Sécurité Féminin en Laiton Doré</h3>
-              <p class="product-excerpt">
+            <div class="apothecary-col-thumb" style="border-color:var(--color-border-martine);background:var(--color-surface-martine);">
+              <img src="assets/mm_rasoir_laiton.jpg" alt="Rasoir Féminin Laiton Doré" class="apothecary-thumb-img">
+            </div>
+            <div class="apothecary-col-desc">
+              <span class="apothecary-category" style="color:var(--color-plum);">Matériel de Précision</span>
+              <h3 class="apothecary-title">Rasoir de Sécurité Féminin en Laiton Doré</h3>
+              <p class="apothecary-formula">
                 Manche long cannelé antidérapant conçu pour une prise en main fluide sous la douche. Économique et écologique, compatible avec toutes les lames standard.
               </p>
-              <div class="botanical-notes">
-                <div class="botanical-title">✦ Spécificités</div>
-                <div class="botanical-text">
-                  Laiton chromé or pâle, tête peigne fermé anti-coupure et répartition de poids optimale.
-                </div>
+              <div class="apothecary-botanicals">
+                <strong>Mécanique :</strong> Laiton massif finition or brossé • Peigne fermé anti-coupure • Équilibrage parfait.
               </div>
-              <div class="clean-labels">
-                <span class="clean-pill">Sans Cartouche</span>
-                <span class="clean-pill">Anti-Boutons</span>
+              <div class="apothecary-specs">
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Sans cartouche plastique</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Anti-boutons</span>
+                <span class="apothecary-spec-item" style="border-color:var(--color-border-martine);">Durable à vie</span>
               </div>
-              <div class="product-footer">
-                <span class="product-price">38,00 €</span>
-                <button class="btn-add-cart" onclick="addToCart({id: 'mm-rasoir-laiton', name: 'Rasoir de Sécurité Féminin en Laiton Doré', brand: 'Mère Martine', price: 38.00, image: 'assets/mm_rasoir_laiton.jpg'})">
-                  <span>Ajouter</span>
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-                </button>
-              </div>
+            </div>
+            <div class="apothecary-col-buy">
+              <span class="product-price apothecary-price">38,00 €</span>
+              <button class="btn-apothecary-add" style="border-color:var(--color-plum);color:var(--color-plum);" onclick="addToCart({id: 'mm-rasoir-laiton', name: 'Rasoir de Sécurité Féminin en Laiton Doré', brand: 'Mère Martine', price: 38.00, image: 'assets/mm_rasoir_laiton.jpg'})">
+                Commander
+              </button>
             </div>
           </article>
 
@@ -356,124 +356,125 @@
       </div>
     </section>
   </main>
-  <!-- Piliers Clean Beauty & Reassurance -->
-  <section class="values-strip" style="border-top:1px solid var(--border-color);border-bottom:1px solid var(--border-color);">
-    <div class="container values-grid">
-      <div class="value-item">
-        <div class="value-icon">🌾</div>
+  <!-- Piliers Clean Beauty & Traçabilité Mère Martine -->
+  <section class="ecommerce-reassurance-bar" style="background:var(--color-surface-martine);border-top:1px solid var(--color-border-martine);border-bottom:1px solid var(--color-border-martine);padding:32px 0;">
+    <div class="container reassurance-grid">
+      <div class="reassurance-card">
+        <span style="font-family:var(--font-mono);font-size:18px;color:var(--color-plum);">01</span>
         <div>
-          <div class="value-title">Mucilage de Lin Bio</div>
-          <div class="value-desc">Graines françaises de première pression, zéro silicone occlusif.</div>
+          <div class="reassurance-title" style="color:var(--color-plum);">Mucilage de Lin Bio</div>
+          <div class="reassurance-subtitle">Graines françaises de première pression, zéro silicone occlusif.</div>
         </div>
       </div>
-      <div class="value-item">
-        <div class="value-icon">🌸</div>
+      <div class="reassurance-card">
+        <span style="font-family:var(--font-mono);font-size:18px;color:var(--color-plum);">02</span>
         <div>
-          <div class="value-title">Iris &amp; Poudres Nobles</div>
-          <div class="value-desc">Shampoings secs d'apothicaire sans gaz propulseur polluant.</div>
+          <div class="reassurance-title" style="color:var(--color-plum);">Racine d'Iris &amp; Poudres</div>
+          <div class="reassurance-subtitle">Shampoings secs d'apothicaire sans gaz propulseur ni solvant.</div>
         </div>
       </div>
-      <div class="value-item">
-        <div class="value-icon">♻️</div>
+      <div class="reassurance-card">
+        <span style="font-family:var(--font-mono);font-size:18px;color:var(--color-plum);">03</span>
         <div>
-          <div class="value-title">Laiton &amp; Verre Ambré</div>
-          <div class="value-desc">Objets rechargeables conçus pour traverser les décennies.</div>
+          <div class="reassurance-title" style="color:var(--color-plum);">Laiton &amp; Verre Ambré</div>
+          <div class="reassurance-subtitle">Objets de coiffage rechargeables à vie, zéro plastique jetable.</div>
         </div>
       </div>
-      <div class="value-item">
-        <div class="value-icon">📦</div>
+      <div class="reassurance-card">
+        <span style="font-family:var(--font-mono);font-size:18px;color:var(--color-plum);">04</span>
         <div>
-          <div class="value-title">Expédition Décarbonée</div>
-          <div class="value-desc">Livraison neutre en carbone offerte dès 80€ ($88) d'achats.</div>
+          <div class="reassurance-title" style="color:var(--color-plum);">Maison Sœur d'Atelier</div>
+          <div class="reassurance-subtitle">Formulations conjointes avec la Savonnerie de Teillet-Argenty.</div>
         </div>
       </div>
     </div>
   </section>  <!-- Tiroir Panier Partagé avec Express Checkout -->
   <div class="cart-drawer-overlay"></div>
   <aside class="cart-drawer" aria-label="Panier d'achats">
-    <div class="cart-header">
-      <h3 class="cart-title">Votre Rituel Botanique</h3>
+    <div class="cart-header" style="border-bottom:1px solid var(--color-border-martine);background:var(--color-surface-martine);">
+      <h3 class="cart-title" style="font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--color-plum);">Votre Rituel Botanique</h3>
       <button class="close-cart-btn" aria-label="Fermer le panier">&times;</button>
     </div>
-    <div class="cart-shipping-notice">
-      <div class="shipping-status-text">Calcul des frais de port en cours...</div>
-      <div class="shipping-bar-bg">
-        <div class="shipping-bar-fill" style="width: 0%;"></div>
+    <div class="cart-shipping-notice" style="background:var(--color-bg-martine);border-bottom:1px solid var(--color-border-martine);">
+      <div class="shipping-status-text" style="font-family:var(--font-mono);font-size:11px;color:var(--color-ink-muted);">Calcul des frais de port en cours...</div>
+      <div class="shipping-bar-bg" style="background:var(--color-border-martine);">
+        <div class="shipping-bar-fill" style="width: 0%;background:var(--color-plum);"></div>
       </div>
     </div>
     <div class="cart-body">
       <!-- Items injectés par JS -->
     </div>
-    <div class="cart-footer">
+    <div class="cart-footer" style="background:var(--color-surface-martine);border-top:1px solid var(--color-border-martine);">
       <div class="cart-total-row">
-        <span>Sous-total</span>
-        <span class="cart-subtotal-val">0,00 €</span>
+        <span style="font-family:var(--font-sans);text-transform:uppercase;font-size:12px;letter-spacing:1px;font-weight:600;">Sous-total</span>
+        <span class="cart-subtotal-val" style="font-family:var(--font-display);font-size:20px;font-weight:600;">0,00 €</span>
       </div>
-      <button class="btn-checkout">Valider la Commande</button>
+      <button class="btn-checkout" style="background:var(--color-plum);color:var(--color-bg-martine);border-radius:1px;font-family:var(--font-sans);letter-spacing:1.5px;">Valider le Panier</button>
       
       <div class="express-pay-box">
-        <button class="btn-apple-pay">
-          <span>Pay with</span>
-          <strong style="font-size:15px;">Pay</strong>
+        <button class="btn-apple-pay" style="border-radius:1px;">
+          <span>Règlement Sécurisé </span>
+          <strong style="font-size:14px;letter-spacing:1px;">Pay / CB</strong>
         </button>
       </div>
 
-      <div class="cart-eco-badges">
-        <span>🍃 Carbon-Neutral</span>
-        <span>♻️ Plastic-Free</span>
-        <span>🇫🇷 Made in France</span>
+      <div class="cart-eco-badges" style="font-family:var(--font-mono);font-size:10px;color:var(--color-ink-light);">
+        <span>✦ Sans Aérosol Pressurisé</span>
+        <span>✦ Flacons Rechargeables</span>
+        <span>✦ Formules Waterless</span>
       </div>
     </div>
-  </aside>  <!-- Pied de Page & Arborescence Complète -->
-  <footer id="engagements" class="site-footer">
+  </aside>  <!-- Pied de Page Boudoir & Registre -->
+  <footer id="engagements" class="site-footer" style="background:#24141A;color:#D8CAD0;border-top:1px solid #381F28;padding:60px 0 30px 0;">
     <div class="container footer-grid">
       <div>
-        <h4 class="footer-col-title">Mère Martine Paris</h4>
-        <p style="font-size:13px;line-height:1.7;margin-bottom:16px;">
+        <h4 class="footer-col-title" style="font-family:var(--font-display);font-size:18px;color:#F8F3F1;letter-spacing:0.5px;">Mère Martine Paris</h4>
+        <p style="font-size:13px;line-height:1.8;color:#B3A2A9;margin-bottom:16px;">
           Salon de coiffure botanique &amp; boudoir féminin d'inspiration 1968.<br>
-          Maison sœur de la Savonnerie Le Père Lucien (Maison Lelégard).
+          Saint-Germain-des-Prés &amp; Marais, Paris.<br>
+          Manufacture sœur de la Savonnerie Le Père Lucien (Maison Lelégard).
         </p>
-        <p style="font-size:12px;color:var(--accent);">✦ Soins sans aérosol • Poudres &amp; Galets 100% Végétaux</p>
+        <p style="font-family:var(--font-mono);font-size:11px;color:var(--color-rose-ash);">✦ Soins sans aérosol • Poudres &amp; Galets 100% Végétaux</p>
       </div>
 
       <div>
-        <h4 class="footer-col-title">Le Boudoir</h4>
+        <h4 class="footer-col-title" style="font-family:var(--font-sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#F8F3F1;">Le Boudoir</h4>
         <ul class="footer-links">
-          <li><a href="mere-martine.html">Accueil Boudoir</a></li>
-          <li><a href="boutique-mere-martine.html">Les 8 Confections</a></li>
+          <li><a href="mere-martine.html">Accueil &amp; Manifeste 1968</a></li>
+          <li><a href="boutique-mere-martine.html">Les Huit Confections Botaniques</a></li>
           <li><a href="rituel-mere-martine.html">Le Rituel des 100 Coups de Brosse</a></li>
-          <li><a href="salon-mere-martine.html">Le Salon &amp; Boudoir 1968</a></li>
+          <li><a href="salon-mere-martine.html">Le Salon &amp; Martine Lelégard</a></li>
           <li><a href="herbier-mere-martine.html">L'Herbier &amp; Clean Sourcing</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="footer-col-title">Les Deux Facettes</h4>
+        <h4 class="footer-col-title" style="font-family:var(--font-sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#F8F3F1;">Maison Lelégard</h4>
         <ul class="footer-links">
           <li><a href="index.html">Sélecteur Double Face</a></li>
-          <li><a href="pere-lucien.html">Le Père Lucien (Barbier Slow Shave 1950)</a></li>
-          <li><a href="boutique-pere-lucien.html#nouveaute">Boutique Le Père Lucien (Nouveauté Jasmin)</a></li>
-          <li><a href="#">Charte Ingrédients &amp; Éthique</a></li>
-          <li><a href="#">Livraison &amp; Retours</a></li>
+          <li><a href="pere-lucien.html">Le Père Lucien (Slow Shave 1950)</a></li>
+          <li><a href="atelier-pere-lucien.html">L'Atelier de Teillet-Argenty (Allier)</a></li>
+          <li><a href="#">Charte Ingrédients 0% Silicone</a></li>
+          <li><a href="#">Mentions Légales &amp; Confidentialité</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="footer-col-title">Gazette du Boudoir</h4>
-        <p style="font-size:12px;margin-bottom:12px;">Recevez nos conseils de coiffage végétal et sorties de micro-lots.</p>
-        <form class="footer-newsletter" onsubmit="event.preventDefault(); alert('Merci de votre inscription à la gazette de Mère Martine !');">
-          <input type="email" placeholder="Votre adresse courriel..." required>
-          <button type="submit" class="btn-checkout" style="padding:10px;font-size:11px;">S'inscrire</button>
+        <h4 class="footer-col-title" style="font-family:var(--font-sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#F8F3F1;">Carnet du Boudoir</h4>
+        <p style="font-size:12px;color:#B3A2A9;margin-bottom:14px;line-height:1.6;">Recevez les conseils de brossage du soir et les lancements de confections en édition limitée.</p>
+        <form class="footer-newsletter" onsubmit="event.preventDefault(); alert('Votre courriel a bien été inscrit au carnet de Mère Martine.');">
+          <input type="email" placeholder="Votre adresse courriel..." required style="background:#331D25;border:1px solid #4D2D38;color:#F8F3F1;border-radius:1px;font-family:var(--font-sans);font-size:12px;">
+          <button type="submit" class="btn-checkout" style="padding:10px 16px;font-size:11px;letter-spacing:1px;border-radius:1px;background:var(--color-rose-ash);color:#24141A;font-weight:700;">Recevoir</button>
         </form>
-        <div style="font-size:11px;color:var(--accent);margin-top:14px;">
-          🔒 Paiements 100% sécurisés SSL HTTPS
+        <div style="font-family:var(--font-mono);font-size:10px;color:#8C757E;margin-top:14px;">
+          🔒 Transactions sécurisées • Zéro spam
         </div>
       </div>
     </div>
 
-    <div class="container footer-bottom">
-      <div>&copy; 1968-2024 Mère Martine — Maison Lelégard. Tous droits réservés.</div>
-      <div>Botanical Hair Alchemy &amp; Waterless Grooming • Marais / Saint-Germain-des-Prés</div>
+    <div class="container footer-bottom" style="border-top:1px solid #381F28;padding-top:24px;margin-top:40px;color:#8C757E;font-family:var(--font-mono);font-size:11px;">
+      <div>&copy; 1968-2024 Mère Martine Paris — Maison Lelégard. Tous droits réservés.</div>
+      <div>Coiffage végétal pur sans aérosol • Sourcing lin bio français</div>
     </div>
   </footer>  <script src="js/app.js"></script>
 </body>
