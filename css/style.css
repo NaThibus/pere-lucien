@@ -3,88 +3,56 @@
    Styles unifiés - Artisanat Français 1950 - 1968
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Great+Vibes&family=Plus+Jakarta+Sans:ital,wght@0,300..700;1,400..600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Raleway:wght@400;500;600;700&display=swap');
 
 :root {
   --font-script: 'Great Vibes', cursive;
-  --font-serif: 'Fraunces', Georgia, serif;
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'Space Mono', monospace;
+  --font-serif: 'Lora', serif;
+  --font-display: 'Playfair Display', serif;
+  --font-sans: 'Raleway', sans-serif;
 
-  /* Palette Organique & Artisanale (Zéro blanc pur #FFFFFF / Zéro noir pur #000000) */
-  --color-bg: #F9F6F0;           /* Lin chiffon non blanchi */
-  --color-surface: #F2EDE4;      /* Papier bis chaud */
-  --color-surface-hover: #EBE4D8;
-  --color-surface-subtle: #FAF7F2;
-  --color-border: #E2D9CD;       /* Filet 1px craie patinée */
-  --color-border-dark: #C9BFB0;
+  --gold: #c5a059;
+  --gold-light: #e8cf96;
+  --gold-dark: #8c6d3b;
 
-  /* Encres chaudes de presse */
-  --color-ink: #1B1917;          /* Noir encre chaude */
-  --color-ink-muted: #544E47;    /* Bistre profond */
-  --color-ink-light: #7E766D;    /* Sépia estompé */
-
-  /* Teintes nobles de terroir */
-  --color-moss: #28382C;         /* Vert mousse Bourbonnais */
-  --color-moss-light: #3F5243;
-  --color-terracotta: #9A533E;   /* Terracotta / Chaudron */
-  --color-brass: #B89052;        /* Laiton ancien */
-  --color-brass-light: #DFCA9B;
-  --color-brass-dark: #8C6D3B;
-
-  /* Mère Martine (Boudoir Poudré 1968) */
-  --color-plum: #391D26;         /* Prune poudré d'époque */
-  --color-plum-light: #522736;
-  --color-rose-ash: #C28C9B;     /* Rose poudré fané */
-  --color-bg-martine: #F8F3F1;   /* Lin rosé très pâle */
-  --color-surface-martine: #F2E9E8;
-  --color-border-martine: #E6D8D7;
-
-  /* Alias de compatibilité */
-  --gold: var(--color-brass);
-  --gold-light: var(--color-brass-light);
-  --gold-dark: var(--color-brass-dark);
-  --white: #F9F6F0;              /* Redéfini en lin chiffon pour éliminer tout blanc pur */
-  --cream: #F2EDE4;
-  --dark: var(--color-ink);
-
-  --shadow-sm: none;
-  --shadow-md: none;
-  --shadow-lg: none;
-  --transition: all 0.2s ease-out;
+  --white: #ffffff;
+  --cream: #fcfbf8;
+  --dark: #1f1b19;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,0.18);
+  --transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Thème Le Père Lucien (Barbier de Terroir & Chaudron 1950) */
+/* Thème Le Père Lucien (Barbier 50s) */
 body.theme-lucien {
-  --primary: #28382C;
-  --primary-light: #3F5243;
-  --accent: #B89052;
-  --accent-rgb: 184, 144, 82;
-  --bg-color: #F9F6F0;
-  --card-bg: #F2EDE4;
-  --text-main: #1B1917;
-  --text-muted: #544E47;
-  --border-color: #E2D9CD;
-  --badge-bg: #EBE4D8;
-  --header-nav-bg: #F2EDE4;
+  --primary: #391916;
+  --primary-light: #522722;
+  --accent: #c5a059;
+  --accent-rgb: 197, 160, 89;
+  --bg-color: #f8f5f0;
+  --card-bg: #ffffff;
+  --text-main: #2b2523;
+  --text-muted: #6b615d;
+  --border-color: #e5ddd4;
+  --badge-bg: #f2ede5;
+  --header-nav-bg: #f5f1eb;
 }
 
-/* Thème Mère Martine (Salon Féminin & Boudoir Botanique 1968) */
+/* Thème Mère Martine (Salon Féminin 60s) */
 body.theme-martine {
-  --primary: #391D26;
-  --primary-light: #522736;
-  --accent: #C28C9B;
-  --accent-gold: #B89052;
-  --accent-rgb: 194, 140, 155;
-  --bg-color: #F8F3F1;
-  --card-bg: #F2E9E8;
-  --text-main: #241A1D;
-  --text-muted: #5C4F53;
-  --border-color: #E6D8D7;
-  --badge-bg: #EAE0DF;
-  --header-nav-bg: #F2E9E8;
+  --primary: #4a1f2c;
+  --primary-light: #642d3d;
+  --accent: #d88ea2;
+  --accent-gold: #c5a059;
+  --accent-rgb: 216, 142, 162;
+  --bg-color: #faf6f5;
+  --card-bg: #ffffff;
+  --text-main: #2b2326;
+  --text-muted: #695d62;
+  --border-color: #eedee2;
+  --badge-bg: #f7ebef;
+  --header-nav-bg: #f6eeef;
 }
 
 /* ----------------- RESET & BASE ----------------- */
@@ -99,19 +67,11 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
-  color: var(--text-main);
-  background-color: var(--bg-color);
-  line-height: 1.65;
+  font-family: var(--font-serif);
+  color: var(--text-main, #222);
+  background-color: var(--bg-color, #f9f9f9);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  color: var(--primary);
-  font-weight: 500;
-  line-height: 1.22;
-  letter-spacing: -0.01em;
 }
 
 a {
@@ -270,14 +230,14 @@ button {
 }
 
 .split-brand-title {
-  font-family: var(--font-display);
-  font-size: clamp(38px, 4.5vw, 56px);
-  line-height: 1.15;
+  font-family: var(--font-script);
+  font-size: 78px;
+  line-height: 1.05;
   color: #faf4ed;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 8px;
-  letter-spacing: -0.01em;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.5px;
 }
 
 .split-brand-subtitle {
@@ -391,13 +351,13 @@ button {
    SITE UNIVERSAL HEADER & ANNOUNCEMENT BAR
    ========================================================================== */
 .announcement-bar {
-  background: var(--color-surface);
-  color: var(--color-ink);
+  background: var(--primary);
+  color: #fff;
   padding: 8px 0;
   font-family: var(--font-sans);
-  font-size: 11.5px;
-  letter-spacing: 0.3px;
-  border-bottom: 1px solid var(--border-color);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .announcement-inner {
@@ -423,51 +383,46 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: transparent;
-  border: 1px solid var(--color-border-dark);
-  padding: 4px 12px;
-  border-radius: 1px;
-  color: var(--color-ink);
-  font-family: var(--font-sans);
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 4px 14px;
+  border-radius: 2px;
+  color: #fff;
   font-weight: 600;
-  font-size: 10.5px;
+  font-size: 11.5px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .retro-switcher:hover {
-  background: var(--color-ink);
-  color: var(--color-bg);
-  border-color: var(--color-ink);
-  box-shadow: none;
+  background: #fff;
+  color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .split-hub-link {
-  color: var(--color-ink-muted);
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.85);
+  font-size: 11.5px;
   display: flex;
   align-items: center;
-  gap: 6px;
-  text-transform: uppercase;
+  gap: 4px;
 }
 
 .split-hub-link:hover {
-  color: var(--color-ink);
+  color: #fff;
   text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 /* Main Header */
 .main-header {
-  background: var(--bg-color);
+  background: var(--white);
   border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: var(--shadow-sm);
 }
 
 .header-inner {
@@ -803,17 +758,17 @@ button {
 .product-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 1px;
+  border-radius: 2px;
   overflow: hidden;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition: var(--transition);
   display: flex;
   flex-direction: column;
 }
 
 .product-card:hover {
-  transform: none;
-  box-shadow: none;
-  border-color: var(--color-ink);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  border-color: var(--gold);
 }
 
 .product-thumb-wrap {
@@ -838,16 +793,16 @@ button {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: rgba(255,255,255,0.95);
+  border: 1px solid var(--border-color);
   padding: 3px 8px;
-  border-radius: 1px;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--color-ink);
+  color: var(--primary);
 }
 
 .product-info {
@@ -1024,7 +979,7 @@ button {
   width: 420px;
   max-width: 90vw;
   height: 100%;
-  background: var(--color-surface);
+  background: #fff;
   z-index: 1001;
   transform: translateX(100%);
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -1624,7 +1579,7 @@ button {
   height: 440px;
   border-radius: 140px 140px 4px 4px;
   overflow: hidden;
-  box-shadow: none;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
   border: 4px solid #fff;
   background: #f1ede8;
 }
@@ -1645,14 +1600,14 @@ button {
   position: absolute;
   bottom: -15px;
   left: -25px;
-  background: var(--color-surface);
+  background: #fff;
   border: 1px solid var(--border-color);
   border-radius: 3px;
   padding: 12px 16px;
   display: flex;
   align-items: center;
   gap: 14px;
-  box-shadow: none;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.14);
   max-width: 290px;
   z-index: 20;
 }
@@ -1875,7 +1830,7 @@ button {
   margin: 0 auto;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: none;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
   border: 1px solid rgba(197, 160, 89, 0.4);
   position: relative;
 }
@@ -1927,7 +1882,7 @@ button {
 }
 
 .teillet-photo-card {
-  background: var(--color-surface);
+  background: #fff;
   border: 1px solid var(--border-color);
   padding: 12px;
   box-shadow: var(--shadow-sm);
@@ -2011,7 +1966,7 @@ button {
 /* Section Revue de Presse & Liens Sortants (Fig 3) */
 .press-coverage-section {
   padding: 80px 0;
-  background: var(--color-surface);
+  background: #fff;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -2094,7 +2049,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background: var(--color-surface);
+  background: #fff;
   border: 1px solid var(--border-color);
   max-width: 500px;
   margin: 0 auto 40px auto;
@@ -2128,7 +2083,7 @@ button {
 }
 
 .review-card {
-  background: var(--color-surface);
+  background: #fff;
   border: 1px solid var(--border-color);
   border-radius: 3px;
   padding: 24px;
@@ -2175,7 +2130,7 @@ button {
 /* Réseau de Distributeurs & Export Mondial */
 .distributors-section {
   padding: 70px 0;
-  background: var(--color-surface);
+  background: #fff;
   border-bottom: 1px solid var(--border-color);
   text-align: center;
 }
@@ -2221,7 +2176,7 @@ button {
 
 .distributor-pill:hover {
   border-color: var(--gold);
-  background: var(--color-surface);
+  background: #fff;
 }
 
 /* Pont Vers le Marché Féminin : Mère Martine (Partie 1 Q2) */
@@ -2374,307 +2329,3 @@ button {
   }
 }
 
-
-/* ==========================================================================
-   DIRECTION ARTISTIQUE SUR-MESURE : REGISTRE D'APOTHICAIRE & ÉDITORIAL
-   Fini le vibecode IA : cartouches d'imprimerie, registres et filets 1px
-   ========================================================================== */
-
-/* Cartouche de Gazette Typographique */
-.gazette-cartouche {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  color: var(--color-ink-light);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.gazette-coords {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.gazette-edition {
-  color: var(--color-brass-dark);
-  font-weight: 700;
-}
-
-/* Héro Éditorial Asymétrique Décentré */
-.editorial-hero-layout {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 60px;
-  align-items: center;
-  padding: 40px 0 60px 0;
-}
-
-.hero-manifesto-lead {
-  font-family: var(--font-display);
-  font-size: clamp(34px, 4.2vw, 54px);
-  font-weight: 500;
-  line-height: 1.15;
-  color: var(--color-ink);
-  letter-spacing: -0.02em;
-  margin-bottom: 22px;
-}
-
-.hero-manifesto-lead em {
-  font-style: italic;
-  font-weight: 400;
-  color: var(--color-moss);
-}
-
-.hero-narrative-text {
-  font-size: 15.5px;
-  line-height: 1.8;
-  color: var(--color-ink-muted);
-  margin-bottom: 28px;
-  max-width: 580px;
-}
-
-.hero-craft-notes {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  border-top: 1px solid var(--border-color);
-  padding-top: 20px;
-  margin-bottom: 28px;
-}
-
-.craft-note-item {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--color-ink-light);
-  line-height: 1.5;
-}
-
-.craft-note-item strong {
-  display: block;
-  color: var(--color-ink);
-  font-size: 11.5px;
-  margin-bottom: 2px;
-}
-
-/* Cadre Photographique d'Atelier (Zéro carte flottante / Zéro arche IA) */
-.hero-artisan-still {
-  border: 1px solid var(--border-color);
-  background: var(--color-surface);
-  padding: 12px;
-}
-
-.artisan-still-img {
-  width: 100%;
-  height: 460px;
-  object-fit: cover;
-  display: block;
-  filter: contrast(1.02);
-}
-
-.artisan-caption-margin {
-  margin-top: 10px;
-  padding-top: 8px;
-  border-top: 1px solid var(--border-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--color-ink-light);
-  line-height: 1.5;
-  gap: 16px;
-}
-
-.artisan-fig-number {
-  font-weight: 700;
-  color: var(--color-brass-dark);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  white-space: nowrap;
-}
-
-/* Registre d'Apothicaire (Artisan Ledger Layout) */
-.apothecary-ledger {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--border-color);
-  margin-top: 28px;
-}
-
-.apothecary-row {
-  display: grid;
-  grid-template-columns: 140px 100px 1fr 170px;
-  gap: 28px;
-  align-items: center;
-  padding: 24px 12px;
-  border-bottom: 1px solid var(--border-color);
-  transition: background 0.15s ease;
-  background: transparent;
-}
-
-.apothecary-row:hover {
-  background: rgba(242, 237, 228, 0.45);
-}
-
-.apothecary-col-ref {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.apothecary-code {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--color-brass-dark);
-}
-
-.apothecary-curation {
-  font-family: var(--font-mono);
-  font-size: 9.5px;
-  color: var(--color-ink-light);
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-.apothecary-col-thumb {
-  width: 96px;
-  height: 96px;
-  border: 1px solid var(--border-color);
-  background: var(--color-surface);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.apothecary-thumb-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.apothecary-col-desc {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.apothecary-category {
-  font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: var(--color-terracotta);
-}
-
-.apothecary-title {
-  font-family: var(--font-display);
-  font-size: 21px;
-  font-weight: 500;
-  color: var(--color-ink);
-  line-height: 1.3;
-}
-
-.apothecary-formula {
-  font-size: 13.5px;
-  color: var(--color-ink-muted);
-  line-height: 1.6;
-  max-width: 680px;
-}
-
-.apothecary-botanicals {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--color-ink-light);
-  line-height: 1.4;
-}
-
-.apothecary-specs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--color-ink-muted);
-  margin-top: 4px;
-}
-
-.apothecary-spec-item {
-  border-right: 1px solid var(--border-color);
-  padding-right: 12px;
-}
-.apothecary-spec-item:last-child {
-  border-right: none;
-}
-
-.apothecary-col-buy {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-}
-
-.apothecary-price {
-  font-family: var(--font-display);
-  font-size: 21px;
-  font-weight: 600;
-  color: var(--color-ink);
-}
-
-.btn-apothecary-add {
-  background: transparent;
-  color: var(--color-ink);
-  border: 1px solid var(--color-ink);
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 9px 18px;
-  border-radius: 1px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.btn-apothecary-add:hover {
-  background: var(--color-ink);
-  color: var(--color-bg);
-}
-
-@media (max-width: 900px) {
-  .editorial-hero-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .apothecary-row {
-    grid-template-columns: 80px 1fr;
-    gap: 16px;
-  }
-  .apothecary-col-ref {
-    grid-column: 1 / -1;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .apothecary-col-buy {
-    grid-column: 1 / -1;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px dashed var(--border-color);
-    padding-top: 12px;
-  }
-}
