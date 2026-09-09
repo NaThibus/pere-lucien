@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique en Ligne — Savons de Rasage & Soins du Barbier | Le Père Lucien</title>
+  <meta name="description" content="Retrouvez l'intégralité des savons à raser, lotions après-rasage, shampoings solides pour barbe et accessoires nobles du Père Lucien.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="assets/logo-perelucien.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Le Père Lucien",
+    "url": "https://www.leperelucien.com",
+    "logo": "https://www.leperelucien.com/assets/logo-perelucien.png",
+    "founder": {
+      "@type": "Person",
+      "name": "Cyril Lelégard",
+      "jobTitle": "Ingénieur chimiste & Maître savonnier"
+    }
+  }
+  </script>
+</head>
+<body class="theme-lucien">  <!-- Bandeau Supérieur & Switcher Rétro avec Mention Nouveauté -->
+  <aside class="announcement-bar">
+    <div class="container announcement-inner">
+      <div class="announcement-text">
+        <span>🌸</span>
+        <span><strong>Nouveauté :</strong> Savon du Barbier aux Fleurs de Jasmin de Grasse disponible • Livraison offerte dès 80€ ($88)</span>
+      </div>
+      <div class="announcement-actions">
+        <button class="currency-selector currency-toggle-btn" onclick="toggleCurrency()" aria-label="Changer de devise">€ EUR</button>
+        <a href="index.html" class="split-hub-link" title="Retourner au sélecteur d'accueil">
+          <span>⚖️</span>
+          <span>Accueil Double Face</span>
+        </a>
+        <a href="mere-martine.html" class="retro-switcher" title="Basculer vers l'univers féminin">
+          <span>Mère Martine (Salon 1968) 💇‍♀️</span>
+        </a>
+      </div>
+    </div>
+  </aside>  <!-- En-tête Principal Épuré & Navigation Multi-Pages -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="pere-lucien.html" class="logo-wrapper">
+        <img src="assets/logo-perelucien-clean.svg" alt="Logo Le Père Lucien" class="site-logo-svg">
+      </a>
+
+      <nav aria-label="Navigation principale">
+        <ul class="nav-links">
+          <li><a href="pere-lucien.html" class="nav-link">Accueil</a></li>
+          <li><a href="boutique-pere-lucien.html" class="nav-link" style="color:var(--gold-dark);font-weight:700;">Boutique en Ligne</a></li>
+          <li><a href="atelier-pere-lucien.html" class="nav-link">L'Atelier (Allier)</a></li>
+          <li><a href="presse-pere-lucien.html" class="nav-link">Presse</a></li>
+          <li><a href="distributeurs-pere-lucien.html" class="nav-link">Revendeurs</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <button class="tool-btn" aria-label="Recherche">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        </button>
+        <button class="tool-btn btn-cart-toggle" aria-label="Panier">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="cart-badge" style="display:none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="catalog-section" style="padding: 50px 0 80px 0;">
+      <div class="container">
+        
+        <!-- En-tête de page boutique -->
+        <div class="section-header" style="margin-bottom: 25px;">
+          <span class="section-tag">Catalogue Officiel • Saponification au Chaudron</span>
+          <h1 class="section-title">La Boutique du Père Lucien</h1>
+          <div class="section-divider"></div>
+          <p class="section-desc">
+            Toutes nos créations sont fabriquées artisanalement à Teillet-Argenty dans l'Allier. Des formules 100% végétales sans dérivé pétrochimique ni conservateur agressif.
+          </p>
+        </div>
+
+        <!-- Encart Nouveauté Mis en Tête de Boutique -->
+        <div style="background:linear-gradient(135deg, #231411 0%, #3a1d17 100%);color:#fff;border:1px solid rgba(197,160,89,0.35);border-radius:4px;padding:24px 30px;margin-bottom:35px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;" id="nouveaute">
+          <div style="max-width:680px;">
+            <span style="font-family:var(--font-sans);font-size:10.5px;font-weight:700;color:var(--gold-light);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:6px;">
+              🌸 NOUVEAUTÉ DU MOIS • ÉDITION LIMITÉE 2024
+            </span>
+            <h3 style="font-family:var(--font-serif);font-size:20px;color:#fff;margin-bottom:6px;">
+              Savon du Barbier aux Fleurs de Jasmin de Grasse (150g)
+            </h3>
+            <p style="font-size:13.5px;color:#d8c9c3;line-height:1.6;">
+              Composé par notre nez Gisèle Lelégard avec un absolu précieux de jasmin grandiflorum et du beurre de karité protecteur.
+            </p>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;">
+            <span style="font-size:22px;font-weight:700;color:var(--gold-light);" data-price-eur="29.00">29,00 €</span>
+            <button class="btn-primary" style="background:var(--gold);color:#1a0f0d;white-space:nowrap;" onclick="addToCart({id: 'pl-savon-jasmin', name: 'Savon du Barbier aux Fleurs de Jasmin 150g', brand: 'Le Père Lucien', price: 29.00, image: 'assets/pl_product_savon.jpg'})">
+              <span>Ajouter au Panier</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filtres par catégorie -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">Tous les Soins (8)</button>
+          <button class="filter-btn" data-filter="rasage">Savons à Raser</button>
+          <button class="filter-btn" data-filter="barbe">Barbe &amp; Shampoings</button>
+          <button class="filter-btn" data-filter="apres-rasage">Après-Rasage &amp; Bay Rum</button>
+          <button class="filter-btn" data-filter="accessoire">Blaireaux &amp; Rasoirs</button>
+        </div>
+
+        <!-- Grille complète des 8 références réelles -->
+        <div class="products-grid">
+          
+          <!-- Produit 1 : Jasmin (Nouveauté) -->
+          <article class="product-card" data-category="rasage" data-price-eur="29.00" id="jasmin">
+            <div class="product-thumb-wrap">
+              <span class="product-badge-origin" style="background:var(--gold);color:#1a0f0d;">Nouveauté 2024</span>
+              <img src="assets/pl_product_savon.jpg" alt="Savon aux Fleurs de Jasmin" class="product-thumb">
+            </div>
+            <div class="product-info">
+              <div class="batch-number">ÉDITION LIMITÉE • POT MÉTAL 150G</div>
+              <span class="product-category">Savon à Raser</span>
+              <h3 class="product-name">Savon du Barbier aux Fleurs de Jasmin</h3>
+              <p class="product-excerpt">
+                Le nouveau fleuron de notre savonnerie. Une fragrance florale raffinée créée avec notre nez Gisèle Lelégard sur une base enrichie en beurre de karité.
+              </p>
+              <div class="botanical-notes">
+                <div class="botanical-title">✦ Pyramide Olfactive</div>
+                <div class="botanical-text">
+                  <strong>Tête :</strong> Jasmin grandiflorum de Grasse<br>
+                  <strong>Cœur :</strong> Fleur d'oranger &amp; Néroli doux<br>
+                  <strong>Fond :</strong> Ambre blanc &amp; Musc végétal
+                </div>
+              </div>
+              <div class="clean-labels">
+                <span class="clean-pill">Jasmin de Grasse</span>
+                <span class="clean-pill">Karité Brut</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">29,00 €</span>
+                <button class="btn-add-cart" onclick="addToCart({id: 'pl-savon-jasmin', name: 'Savon du Barbier aux Fleurs de Jasmin 150g', brand: 'Le Père Lucien', price: 29.00, image: 'assets/pl_product_savon.jpg'})">
+                  <span>Ajouter</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 2 : Rose de Pushkar -->
+          <article class="product-card" data-category="rasage" data-price-eur="29.00">
+            <div class="product-thumb-wrap">
+              <span class="product-badge-origin">Coup de Cœur Cyril</span>
+              <img src="assets/pl_product_rose.jpg" alt="Savon Karité et Rose de Pushkar" class="product-thumb">
+            </div>
+            <div class="product-info">
+              <div class="batch-number">UGS: ROSE-PUSHKAR-150G • POT 150G</div>
+              <span class="product-category">Savon à Raser</span>
+              <h3 class="product-name">Savon Karité &amp; Rose de Pushkar 150g</h3>
+              <p class="product-excerpt">
+                « C'est mon savon préféré. Gisèle a su recréer le parfum authentique de la rose sur tige fraîchement cueillie. » — Cyril Lelégard.
+              </p>
+              <div class="botanical-notes">
+                <div class="botanical-title">✦ Accord du Nez Gisèle Lelégard</div>
+                <div class="botanical-text">
+                  <strong>Absolu :</strong> Rose de Pushkar précieuse<br>
+                  <strong>Accords :</strong> Essence de géranium rosat &amp; Musc blanc
+                </div>
+              </div>
+              <div class="clean-labels">
+                <span class="clean-pill">Absolu Pur</span>
+                <span class="clean-pill">11 Avis (5/5)</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">29,00 €</span>
+                <button class="btn-add-cart" onclick="addToCart({id: 'pl-rose-pushkar', name: 'Savon Karité & Rose de Pushkar 150g', brand: 'Le Père Lucien', price: 29.00, image: 'assets/pl_product_rose.jpg'})">
+                  <span>Ajouter</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 3 : Traditionnel -->
+          <article class="product-card" data-category="rasage" data-price-eur="25.90">
+            <div class="product-thumb-wrap">
+              <span class="product-badge-origin">Formule Historique</span>
+              <img src="assets/le_savon_du_barbier_tin.jpg" alt="Savon Traditionnel Le Père Lucien" class="product-thumb">
+            </div>
+            <div class="product-info">
+              <div class="batch-number">LOT HISTORIQUE • BOÎTE MÉTAL 200G</div>
+              <span class="product-category">Savon à Raser</span>
+              <h3 class="product-name">Savon du Barbier Traditionnel 200g</h3>
+              <p class="product-excerpt">
+                La recette originale validée sur rasagetraditionnel.com en 2013. Complexe de dix huiles essentielles pures pour une mousse couvrante.
+              </p>
+              <div class="botanical-notes">
+                <div class="botanical-title">✦ 10 Huiles Essentielles Pures</div>
+                <div class="botanical-text">
+                  Lavande fine, Romarin, Thym, Eucalyptus, Menthe poivrée, Sauge, Cannelle, Girofle.
+                </div>
+              </div>
+              <div class="clean-labels">
+                <span class="clean-pill">10 Huiles Essentielles</span>
+                <span class="clean-pill">Glisse Parfaite</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">25,90 €</span>
+                <button class="btn-add-cart" onclick="addToCart({id: 'pl-savon-trad-200', name: 'Savon du Barbier Traditionnel 200g', brand: 'Le Père Lucien', price: 25.90, image: 'assets/le_savon_du_barbier_tin.jpg'})">
+                  <span>Ajouter</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 4 : Cèdre & Patchouli -->
+          <article class="product-card" data-category="rasage" data-price-eur="25.90">
+            <div class="product-thumb-wrap">
+              <span class="product-badge-origin">Notes Boisées</span>
+              <img src="assets/pl_product_cedre.jpg" alt="Savon Cèdre Patchouli" class="product-thumb">
+            </div>
+            <div class="product-info">
+              <div class="batch-number">POT MÉTAL RECYCLABLE 200G</div>
+              <span class="product-category">Savon à Raser</span>
+              <h3 class="product-name">Savon du Barbier Cèdre &amp; Patchouli</h3>
+              <p class="product-excerpt">
+                Un hommage aux barbiers d'antan. Fragrance chaude, terreuse et boisée. Laisse la peau nourrie et souple après le rasage.
+              </p>
+              <div class="botanical-notes">
+                <div class="botanical-title">✦ Profil Boisé</div>
+                <div class="botanical-text">
+                  Bois de cèdre de l'Atlas, Patchouli indonésien et zeste d'orange douce.
+                </div>
+              </div>
+              <div class="clean-labels">
+                <span class="clean-pill">Bois Précieux</span>
+                <span class="clean-pill">Anti-Dessèchement</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">25,90 €</span>
+                <button class="btn-add-cart" onclick="addToCart({id: 'pl-cedre-patchouli', name: 'Savon du Barbier Cèdre & Patchouli 200g', brand: 'Le Père Lucien', price: 25.90, image: 'assets/pl_product_cedre.jpg'})">
+                  <span>Ajouter</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 5 : Bay Rum -->
+          <article class="product-card" data-category="apres-rasage" data-price-eur="24.90">
+            <div class="product-thumb-wrap">
+              <span class="product-badge-origin">Grand Classique</span>
+              <img src="assets/pl_product_huile.jpg" alt="Bay Rum Après-Rasage" class="product-thumb">
+            </div>
+            <div class="product-info">
+              <div class="batch-number">FLACON VERRE 100ML • ALCOOL DE BLÉ BIO</div>
+              <span class="product-category">Après-Rasage Alcoolisé</span>
+              <h3 class="product-name">Bay Rum Le Père Lucien Lotion 100ml</h3>
+              <p class="product-excerpt">
+                Formulation authentique à base d'huiles essentielles de baies de Pimenta racemosa et d'épices. Resserre les pores et apaise le feu du rasoir.
+              </p>
+              <div class="botanical-notes">
+                <div class="botanical-title">✦ Épices &amp; Notes</div>
+                <div class="botanical-text">
+                  Baies Saint-Thomas, clou de girofle, cannelle bourbon, orange douce.
+                </div>
+              </div>
+              <div class="clean-labels">
+                <span class="clean-pill">Astringent Naturel</span>
+                <span class="clean-pill">Flacon Verre</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">24,90 €</span>
+                <button class="btn-add-cart" onclick="addToCart({id: 'pl-bay-rum', name: 'Bay Rum Le Père Lucien Lotion 100ml', brand: 'Le Père Lucien', price: 24.90, image: 'assets/pl_product_huile.jpg'})">
+                  <span>Ajouter</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 6 : Shampoing du Barbu -->
+          <article class="product-card" data-category="barbe" data-price-eur="12.90">
+            <div class="product-thumb-wrap">
+              <span class="product-badge-origin">Soin Barbe Solide</span>
+              <img src="assets/pl_product_shampoing.jpg" alt="Le Champoing du Barbu" class="product-thumb">
+            </div>
+            <div class="product-info">
+              <div class="batch-number">PAIN SOLIDE 100G • ÉCO-RESPONSABLE</div>
+              <span class="product-category">Soin de la Barbe</span>
+              <h3 class="product-name">Le Champoing du Barbu Solide 100g</h3>
+              <p class="product-excerpt">
+                Spécifiquement formulé pour laver la toison sans agresser l'épiderme. Enrichi en huile de ricin fortifiante et en argile verte du Velay.
+              </p>
+              <div class="clean-labels">
+                <span class="clean-pill">Huile de Ricin</span>
+                <span class="clean-pill">Argile du Velay</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">12,90 €</span>
+                <button class="btn-add-cart" onclick="addToCart({id: 'pl-champoing-barbu', name: 'Le Champoing du Barbu Solide 100g', brand: 'Le Père Lucien', price: 12.90, image: 'assets/pl_product_shampoing.jpg'})">
+                  <span>Ajouter</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 7 : Blaireau Hêtre -->
+          <article class="product-card" data-category="accessoire" data-price-eur="42.00">
+            <div class="product-thumb-wrap">
+              <span class="product-badge-origin">Tourné Main</span>
+              <img src="assets/pl_product_blaireau.jpg" alt="Blaireau Traditionnel" class="product-thumb">
+            </div>
+            <div class="product-info">
+              <div class="batch-number">BOIS DE HÊTRE DE L'ALLIER • TOURÉ MAIN</div>
+              <span class="product-category">Accessoires Nobles</span>
+              <h3 class="product-name">Blaireau Traditionnel en Hêtre de l'Allier</h3>
+              <p class="product-excerpt">
+                Fabriqué à la main. Émulsionne le savon en une micro-mousse protectrice, ouvre les pores et redresse le poil pour un rasage sans irritation.
+              </p>
+              <div class="clean-labels">
+                <span class="clean-pill">Bois Bourbonnais</span>
+                <span class="clean-pill">Garantie Durable</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">42,00 €</span>
+                <button class="btn-add-cart" onclick="addToCart({id: 'pl-blaireau-hetre', name: 'Blaireau Traditionnel en Hêtre de l\'Allier', brand: 'Le Père Lucien', price: 42.00, image: 'assets/pl_product_blaireau.jpg'})">
+                  <span>Ajouter</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Produit 8 : Rasoir Parker -->
+          <article class="product-card" data-category="accessoire" data-price-eur="36.00">
+            <div class="product-thumb-wrap">
+              <span class="product-badge-origin">Zéro Plastique</span>
+              <img src="assets/pl_product_rasoir.jpg" alt="Rasoir Parker 89R" class="product-thumb">
+            </div>
+            <div class="product-info">
+              <div class="batch-number">MÉTAL CHROMÉ INOX • PEIGNE FERMÉ</div>
+              <span class="product-category">Matériel de Rasage</span>
+              <h3 class="product-name">Rasoir de Sûreté Traditionnel Parker 89R</h3>
+              <p class="product-excerpt">
+                L'outil indispensable pour un rasage de près sans rougeur. Tête peigne fermé sécurisante, compatible avec toutes les lames à double tranchant standard.
+              </p>
+              <div class="clean-labels">
+                <span class="clean-pill">Garanti à Vie</span>
+                <span class="clean-pill">Anti-Rougeur</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">36,00 €</span>
+                <button class="btn-add-cart" onclick="addToCart({id: 'pl-rasoir-parker', name: 'Rasoir de Sûreté Traditionnel Parker 89R', brand: 'Le Père Lucien', price: 36.00, image: 'assets/pl_product_rasoir.jpg'})">
+                  <span>Ajouter</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <!-- Bandeau de Réassurance E-commerce & SSL (Figure 5 du Cas M2067) -->
+  <section class="ecommerce-reassurance-bar">
+    <div class="container reassurance-grid">
+      <div class="reassurance-card">
+        <div class="reassurance-icon">🔒</div>
+        <div>
+          <div class="reassurance-title">Chiffrement SSL HTTPS</div>
+          <div class="reassurance-subtitle">Transactions 100% sécurisées (CB, PayPal, Apple Pay)</div>
+        </div>
+      </div>
+      <div class="reassurance-card">
+        <div class="reassurance-icon">🇫🇷</div>
+        <div>
+          <div class="reassurance-title">Atelier Bourbonnais</div>
+          <div class="reassurance-subtitle">Fabriqué à Teillet-Argenty (Allier, Auvergne)</div>
+        </div>
+      </div>
+      <div class="reassurance-card">
+        <div class="reassurance-icon">📦</div>
+        <div>
+          <div class="reassurance-title">Livraison Rapide 24/48h</div>
+          <div class="reassurance-subtitle">Frais de port offerts dès 80€ ($88) d'achats</div>
+        </div>
+      </div>
+      <div class="reassurance-card">
+        <div class="reassurance-icon">♻️</div>
+        <div>
+          <div class="reassurance-title">Zéro Déchet Plastique</div>
+          <div class="reassurance-subtitle">Boîtes alu recyclables à l'infini &amp; recharges économiques</div>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- Tiroir Panier Partagé avec Express Checkout -->
+  <div class="cart-drawer-overlay"></div>
+  <aside class="cart-drawer" aria-label="Panier d'achats">
+    <div class="cart-header">
+      <h3 class="cart-title">Votre Rituel d'Apothicaire</h3>
+      <button class="close-cart-btn" aria-label="Fermer le panier">&times;</button>
+    </div>
+    <div class="cart-shipping-notice">
+      <div class="shipping-status-text">Calcul des frais de port en cours...</div>
+      <div class="shipping-bar-bg">
+        <div class="shipping-bar-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+    <div class="cart-body">
+      <!-- Items injectés par JS -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Sous-total</span>
+        <span class="cart-subtotal-val">0,00 €</span>
+      </div>
+      <button class="btn-checkout">Valider la Commande</button>
+      
+      <div class="express-pay-box">
+        <button class="btn-apple-pay">
+          <span>Pay with</span>
+          <strong style="font-size:15px;">Pay</strong>
+        </button>
+      </div>
+
+      <div class="cart-eco-badges">
+        <span>🍃 Carbon-Neutral</span>
+        <span>♻️ Plastic-Free</span>
+        <span>🇫🇷 Made in France</span>
+      </div>
+    </div>
+  </aside>  <!-- Pied de Page & Arborescence Complète -->
+  <footer id="engagements" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4 class="footer-col-title">Le Père Lucien</h4>
+        <p style="font-size:13px;line-height:1.7;margin-bottom:16px;">
+          Savonnerie artisanale fondée en juin 2013 par Cyril Lelégard.<br>
+          Ancienne bâtisse de lavandière,<br>
+          03410 Teillet-Argenty, Allier, France.
+        </p>
+        <p style="font-size:12px;color:var(--gold-light);">✦ Formulations 100% végétales &amp; Saponification au chaudron</p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Pages du Site</h4>
+        <ul class="footer-links">
+          <li><a href="pere-lucien.html">Accueil Le Père Lucien</a></li>
+          <li><a href="boutique-pere-lucien.html">Boutique en Ligne &amp; Soins</a></li>
+          <li><a href="boutique-pere-lucien.html#nouveaute">Nouveau Savon au Jasmin (2024)</a></li>
+          <li><a href="atelier-pere-lucien.html">L'Atelier &amp; 13 Prototypes</a></li>
+          <li><a href="presse-pere-lucien.html">Revue de Presse &amp; Médias</a></li>
+          <li><a href="distributeurs-pere-lucien.html">Points de Vente Mondiaux</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Maison &amp; Facettes</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Sélecteur Double Face</a></li>
+          <li><a href="mere-martine.html">Mère Martine (Salon Féminin 1968)</a></li>
+          <li><a href="atelier-pere-lucien.html#lucien">Hommage à Lucien Lelégard</a></li>
+          <li><a href="distributeurs-pere-lucien.html#partenaires">Forum rasagetraditionnel.com</a></li>
+          <li><a href="#">Conditions Générales de Vente</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Gazette de l'Atelier</h4>
+        <p style="font-size:12px;margin-bottom:12px;">Recevez en avant-première nos lancements de cuvées limitées et conseils de rasage.</p>
+        <form class="footer-newsletter" onsubmit="event.preventDefault(); alert('Merci de votre inscription à la gazette du Père Lucien !');">
+          <input type="email" placeholder="Votre adresse courriel..." required>
+          <button type="submit" class="btn-checkout" style="padding:10px;font-size:11px;">S'inscrire</button>
+        </form>
+        <div style="font-size:11px;color:var(--gold-light);margin-top:14px;">
+          🔒 Navigation sécurisée SSL HTTPS • Données protégées
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2013-2024 Savonnerie Le Père Lucien — Cyril Lelégard. Tous droits réservés.</div>
+      <div>Teillet-Argenty (Allier) • Savonnerie Artisanale Française • Partenaire rasagetraditionnel.com</div>
+    </div>
+  </footer>  <script src="js/app.js"></script>
+</body>
+</html>
