@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /panier/
+Disallow: /commande/
+Disallow: /mon-compte/
+Disallow: /*?q=
+Allow: /
+
+Sitemap: https://www.leperelucien.com/sitemap.xml
