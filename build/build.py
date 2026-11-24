@@ -789,23 +789,36 @@ CAT_SHORT = {
 }
 
 
-def catalogue_index(brand, groups):
-    """Meuble d'apothicaire : un tiroir par catégorie, tous de même taille.
-    Chaque tiroir porte une icône au trait, un porte-étiquette avec le nom, le nombre de produits et un bouton."""
+TAB_COLORS = ["#E7D3A8", "#CFDCC1", "#F1CDD5", "#C9D6F0", "#EBC9B4", "#DAD0E8", "#E3E0C8"]
+
+
+def catalogue_tabs(brand, tabs):
+    """Intercalaires de classeur : un onglet coloré par catégorie, une feuille par onglet
+    (phrase d'accroche, 4 produits, lien vers la catégorie). Sans JavaScript, toutes les feuilles s'affichent."""
     caturl = martine_cat_url if brand == "martine" else lucien_cat_url
     C = CM.CATEGORIES if brand == "martine" else CL.CATEGORIES
     pre = "m:" if brand == "martine" else ""
-    drawers = []
-    for title, keys in groups:
-        for k in keys:
-            n = len(products_in(brand, k))
-            drawers.append(f"""<a class="drawer reveal" href="{caturl(k)}">
-  <span class="drawer-tag">{esc(title)}</span>
-  {duo(CAT_ICON.get(pre + k, "leaf"), "duo drawer-ico")}
-  <span class="drawer-label"><span class="drawer-name">{esc(C[k]['nom'])}</span><span class="drawer-desc">{esc(CAT_SHORT.get(pre + k, ''))}</span></span>
-  <span class="drawer-foot"><span class="drawer-knob" aria-hidden="true"></span><span class="drawer-n">{n} produit{'s' if n > 1 else ''}</span></span>
-</a>""")
-    return f'<div class="cabinet cabinet-{brand}"><div class="cabinet-in">{"".join(drawers)}</div></div>'
+    uid = f"tabs-{brand}"
+    btns, panels = [], []
+    for i, (label, key) in enumerate(tabs):
+        prods = [q for q in ordered(products_in(brand, key)) if q["images"]][:4]
+        n = len(products_in(brand, key))
+        color = TAB_COLORS[i % len(TAB_COLORS)]
+        btns.append(f'<button type="button" class="tab" role="tab" id="{uid}-t{i}" aria-controls="{uid}-p{i}" aria-selected="{"true" if i == 0 else "false"}" '
+                    f'tabindex="{0 if i == 0 else -1}" style="--tab:{color}">{duo(CAT_ICON.get(pre + key, "leaf"), "duo tab-ico")}<span>{esc(label)}</span></button>')
+        desc = CAT_SHORT.get(pre + key, "") or clip(C[key].get("intro", ""), 90)
+        panels.append(f"""<div class="sheet" role="tabpanel" id="{uid}-p{i}" aria-labelledby="{uid}-t{i}" style="--tab:{color}" data-sheet>
+  <div class="sheet-hd">
+    <p class="sheet-title"><a href="{caturl(key)}">{esc(C[key]['nom'])}</a></p>
+    <p class="sheet-desc">{esc(desc)}</p>
+    <a class="btn btn-ghost sheet-more" href="{caturl(key)}">Voir les {n} produits {icon('arrow-right','i i-sm')}</a>
+  </div>
+  <div class="grid sheet-grid">{''.join(product_card(q) for q in prods)}</div>
+</div>""")
+    return f"""<div class="binder" data-tabs>
+  <div class="tabs" role="tablist" aria-label="Catégories">{''.join(btns)}</div>
+  {''.join(panels)}
+</div>"""
 
 
 def reassure_strip(brand):
@@ -1448,14 +1461,9 @@ def render_home_lucien():
 
 <section class="sec catalogue wrap" aria-labelledby="gammes-h">
   <div class="sec-hd"><h2 class="h2 reveal" id="gammes-h">Le catalogue de l'atelier</h2><a class="link-arrow" href="/boutique/">Toute la boutique {icon('arrow-right','i i-sm')}</a></div>
-  {catalogue_index("lucien", [("Rasage", [k for k, v in CL.CATEGORIES.items() if v["parent"] == "rasage"]),
-                              ("Barbe et moustache", [k for k, v in CL.CATEGORIES.items() if v["parent"] == "barbe-moustache"]),
-                              ("Toilette et cadeaux", ["corps-cheveux", "parfums", "accessoires-toilette", "coin-des-affaires"])])}
-</section>
-
-<section class="sec rail-sec wrap" aria-labelledby="best-h">
-  <div class="sec-hd"><h2 class="h2 reveal" id="best-h">Les plus demandés</h2><a class="link-arrow" href="/boutique/">Toute la boutique {icon('arrow-right','i i-sm')}</a></div>
-  <div class="rail">{''.join(product_card(q) for q in best)}</div>
+  {catalogue_tabs("lucien", [("Savons à raser", "rasage/savons-a-raser"), ("Après-rasage", "rasage/avant-apres-rasage"),
+                             ("Blaireaux", "rasage/blaireaux"), ("Rasoirs", "rasage/rasoirs-de-surete"), ("Barbe", "barbe-moustache"),
+                             ("Corps", "corps-cheveux"), ("Coffrets", "coin-des-affaires")])}
 </section>
 
 <section class="story">
@@ -1541,8 +1549,8 @@ def render_home_martine():
 
 <section class="sec catalogue wrap" aria-labelledby="mmcat-h">
   <div class="sec-hd"><h2 class="h2 reveal" id="mmcat-h">Le comptoir de Mère Martine</h2><a class="link-arrow" href="{CM.BASE}/corps/">Tous les soins {icon('arrow-right','i i-sm')}</a></div>
-  {catalogue_index("martine", [("Pour le corps", [k for k, v in CM.CATEGORIES.items() if v["parent"] == "corps"]),
-                               ("Pour les cheveux", [k for k, v in CM.CATEGORIES.items() if v["parent"] == "cheveux"] + ["coin-des-affaires"])])}
+  {catalogue_tabs("martine", [("Huiles", "corps/huiles"), ("Crèmes", "corps/cremes"), ("Baumes", "corps/baumes-solides"),
+                              ("Savons", "corps/savons"), ("Rasage", "corps/rasage-feminin"), ("Cheveux", "cheveux"), ("Coffrets", "coin-des-affaires")])}
 </section>
 
 <section class="process process-mm" aria-labelledby="atelier-mm-h">
@@ -1557,11 +1565,6 @@ def render_home_martine():
         ("atelier-versage", "Couler", "Huiles et miels sont versés à la louche, flacon par flacon.", "en petits lots"),
         ("atelier-bocaux", "Conserver", "Les macérats reposent en bocaux, à l'abri de la lumière.", "au calme")], (-2, 1.6, -1.4, 2.2)))}</div>
   </div>
-</section>
-
-<section class="sec rail-sec wrap" aria-labelledby="mmbest-h">
-  <div class="sec-hd"><h2 class="h2 reveal" id="mmbest-h">Les essentiels</h2><a class="link-arrow" href="{CM.BASE}/corps/">Tous les soins {icon('arrow-right','i i-sm')}</a></div>
-  <div class="rail">{''.join(product_card(q) for q in best)}</div>
 </section>
 
 <section class="ritual">
