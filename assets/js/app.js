@@ -15,10 +15,11 @@
     if (FILE && u.endsWith("/")) u += "index.html";
     return u;
   };
-  const loadScript = (src) => new Promise((ok, ko) => { const s = document.createElement("script"); s.src = BASE + src; s.onload = ok; s.onerror = ko; document.head.appendChild(s); });
+  const VER = (((document.currentScript && document.currentScript.src) || "").split("?v=")[1] || "");
+  const loadScript = (src) => new Promise((ok, ko) => { const s = document.createElement("script"); s.src = BASE + src + (VER ? "?v=" + VER : ""); s.onload = ok; s.onerror = ko; document.head.appendChild(s); });
   if (FILE) {
     const fl = document.createElement("link");
-    fl.rel = "stylesheet"; fl.href = BASE + "assets/css/fonts-embedded.css";
+    fl.rel = "stylesheet"; fl.href = BASE + "assets/css/fonts-embedded.css" + (VER ? "?v=" + VER : "");
     document.head.appendChild(fl);
   }
   if (FILE) {
