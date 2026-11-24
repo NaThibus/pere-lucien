@@ -301,6 +301,32 @@
     });
   });
 
+  /* ---------- Intercalaires (onglets de catégories) ---------- */
+  $$("[data-tabs]").forEach((box) => {
+    const tabs = $$('[role="tab"]', box);
+    const show = (tab, focus) => {
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute("aria-selected", String(on));
+        t.tabIndex = on ? 0 : -1;
+        const panel = document.getElementById(t.getAttribute("aria-controls"));
+        if (panel) panel.hidden = !on;
+      });
+      if (focus) tab.focus();
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener("click", () => show(t));
+      t.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+          e.preventDefault();
+          show(tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length], true);
+        }
+      });
+    });
+    box.classList.add("is-ready");
+    show(tabs[0]);
+  });
+
   /* ---------- Apparitions au défilement ---------- */
   const reveals = $$(".reveal");
   if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {

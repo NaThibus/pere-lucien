@@ -1183,3 +1183,41 @@ html[data-brand="martine"] .ft-sign-name { font-family: "Cormorant", Georgia, se
   .mmh .hero-ctas .btn { flex: 1 1 100%; }
   .ft-sign { flex-direction: column; align-items: flex-start; }
 }
+
+/* ==========================================================================
+   V3.5 : intercalaires de classeur (remplace le meuble d'apothicaire).
+   ========================================================================== */
+.binder { margin-top: 10px; }
+.tabs { display: flex; gap: 6px; padding-left: 10px; overflow-x: auto; scrollbar-width: none; position: relative; z-index: 2; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { flex: none; display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px 14px; margin-bottom: -2px; border: 1px solid rgb(60 40 20 / .18); border-bottom: 0;
+  border-radius: 12px 12px 0 0; background: var(--tab); color: #2A2018; font: 700 .82rem var(--mono); letter-spacing: .03em; text-transform: uppercase;
+  box-shadow: inset 0 -6px 8px -6px rgb(60 40 20 / .25); transform: translateY(6px); transition: transform .25s var(--ease), background-color .2s; }
+.tab:hover { transform: translateY(2px); }
+.tab[aria-selected="true"] { transform: translateY(0); box-shadow: none; padding-bottom: 18px; }
+.tab-ico { width: 22px; height: 22px; --duo: rgb(255 255 255 / .7); }
+.sheet { position: relative; padding: clamp(22px, 3vw, 38px); background: var(--paper); border: 1px solid rgb(60 40 20 / .18); border-top: 8px solid var(--tab);
+  border-radius: 4px 12px 12px 12px; box-shadow: 0 24px 40px -34px rgb(50 35 25 / .6);
+  background-image: linear-gradient(90deg, transparent 0 46px, color-mix(in srgb, #C0392B 22%, transparent) 46px 47px, transparent 47px); }
+.binder:not(.is-ready) .sheet + .sheet { margin-top: 18px; }
+.sheet-hd { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 6px 24px; padding-left: 40px; margin-bottom: 24px; }
+.sheet-title { margin: 0; font-family: var(--display); font-stretch: var(--stretch); font-weight: var(--h-weight); text-transform: var(--h-case); font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1; }
+.sheet-title a { text-decoration: none; }
+.sheet-desc { grid-column: 1; margin: 0; font-family: var(--mono); font-size: .9rem; color: var(--ink-2); }
+.sheet-more { grid-column: 2; grid-row: 1 / 3; }
+.sheet-grid { padding-left: 40px; }
+.sheet[hidden] { display: none; }
+@media (prefers-reduced-motion: no-preference) { .binder.is-ready .sheet:not([hidden]) { animation: fadeup .45s var(--ease); } }
+@media (max-width: 960px) {
+  .sheet-hd { grid-template-columns: 1fr; padding-left: 26px; }
+  .sheet-more { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 8px; }
+  .sheet-grid { padding-left: 26px; }
+  .sheet { background-image: linear-gradient(90deg, transparent 0 30px, color-mix(in srgb, #C0392B 22%, transparent) 30px 31px, transparent 31px); }
+}
+@media (max-width: 640px) {
+  .tab { padding: 10px 13px 12px; font-size: .74rem; }
+  .tab[aria-selected="true"] { padding-bottom: 15px; }
+  .sheet { padding: 18px 12px 18px 10px; }
+  .sheet-hd, .sheet-grid { padding-left: 20px; }
+  .sheet { background-image: linear-gradient(90deg, transparent 0 18px, color-mix(in srgb, #C0392B 22%, transparent) 18px 19px, transparent 19px); }
+}
