@@ -588,7 +588,11 @@ def footer(brand):
       {col("La maison", maison)}
       {col("Aide", aide)}
     </div>
-    {f'<div class="ft-brand"><img src="/assets/img/logo-mere-martine.svg" alt="La Mère Martine, cosmétique naturelle" width="150" height="150" loading="lazy"><p class="ft-word" aria-hidden="true">La Mère Martine</p></div>' if brand == "martine" else f'<p class="ft-word" aria-hidden="true">{word}</p>'}
+    <div class="ft-sign">
+      {'<img class="ft-sign-mark" src="/assets/img/logo-mere-martine.svg" alt="" width="96" height="96" loading="lazy">' if brand == "martine" else seal("lucien", "seal ft-sign-mark")}
+      <div class="ft-sign-txt"><p class="ft-sign-name">{word if brand != "martine" else "La Mère Martine"}</p>
+      <p class="ft-sign-sub">{"Cosmétique naturelle, préparée à la main dans l'Allier" if brand == "martine" else "Savonnerie artisanale à Teillet-Argenty, depuis 2013"}</p></div>
+    </div>
     <div class="ft-legal">
       <p>Laboratoires Lelégard SAS, ZA de la Souvol, allée des Entreprises, 03380 La Chapelaude. Fabriqué à Teillet-Argenty, Allier.</p>
       <p><a href="/mentions-legales/">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/cgv/">CGV</a></p>
@@ -738,18 +742,23 @@ def is_maison(p):
     return "le pere lucien" in n or (p["cat"] in MAISON_CATS and "parker" not in n and "darwin" not in n)
 
 
+_seal_n = [0]
+
+
 def seal(brand, cls="seal"):
     """Tampon circulaire « fait main » (texte sur un cercle), qui tourne lentement."""
+    _seal_n[0] += 1
+    uid = f"s{_seal_n[0]}"
     txt = "FAIT MAIN · TEILLET-ARGENTY · ALLIER · DEPUIS 2013 · "
     if brand == "lucien":
         center = ('<image href="/assets/img/lucien-lelegard-portrait.webp" x="33" y="28" width="54" height="64" '
-                  'preserveAspectRatio="xMidYMid slice" clip-path="url(#seal-clip)"/>')
+                  'preserveAspectRatio="xMidYMid slice" clip-path="url(#{uid}-clip)"/>')
     else:
         center = '<text x="60" y="70" text-anchor="middle" class="seal-mono">MM</text>'
     return f"""<svg class="{cls}" viewBox="0 0 120 120" role="img" aria-label="Fait main à Teillet-Argenty, Allier, depuis 2013">
-  <defs><path id="seal-path" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/><clipPath id="seal-clip"><circle cx="60" cy="60" r="27"/></clipPath></defs>
+  <defs><path id="{uid}-path" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/><clipPath id="{uid}-clip"><circle cx="60" cy="60" r="27"/></clipPath></defs>
   <circle cx="60" cy="60" r="58" class="seal-bg"/><circle cx="60" cy="60" r="31" class="seal-ring"/>
-  <g class="seal-spin"><text class="seal-txt"><textPath href="#seal-path" textLength="272">{txt}</textPath></text></g>
+  <g class="seal-spin"><text class="seal-txt"><textPath href="#{uid}-path" textLength="272">{txt}</textPath></text></g>
   {center}
 </svg>"""
 
@@ -781,23 +790,22 @@ CAT_SHORT = {
 
 
 def catalogue_index(brand, groups):
-    """Index façon catalogue ancien : icône au trait, nom, points de conduite, nombre de produits.
-    La photo de la catégorie n'apparaît qu'au survol."""
+    """Meuble d'apothicaire : un tiroir par catégorie, tous de même taille.
+    Chaque tiroir porte une icône au trait, un porte-étiquette avec le nom, le nombre de produits et un bouton."""
     caturl = martine_cat_url if brand == "martine" else lucien_cat_url
+    C = CM.CATEGORIES if brand == "martine" else CL.CATEGORIES
     pre = "m:" if brand == "martine" else ""
-    cols = []
+    drawers = []
     for title, keys in groups:
-        rows = []
         for k in keys:
-            C = CM.CATEGORIES if brand == "martine" else CL.CATEGORIES
             n = len(products_in(brand, k))
-            img = banner(brand, k)
-            thumb = f'<img class="idx-thumb" src="{img}" alt="" loading="lazy" width="240" height="240">' if img else ""
-            rows.append(f"""<li><a class="idx-row" href="{caturl(k)}">{duo(CAT_ICON.get(pre + k, "leaf"), "duo idx-ico")}
-  <span class="idx-txt"><span class="idx-name">{esc(C[k]['nom'])}</span><span class="idx-desc">{esc(CAT_SHORT.get(pre + k, ''))}</span></span>
-  <span class="idx-dots" aria-hidden="true"></span><span class="idx-n">{n}</span>{thumb}</a></li>""")
-        cols.append(f'<div class="idx-col reveal"><p class="idx-h">{esc(title)}</p><ul>{"".join(rows)}</ul></div>')
-    return f'<div class="idx">{"".join(cols)}</div>'
+            drawers.append(f"""<a class="drawer reveal" href="{caturl(k)}">
+  <span class="drawer-tag">{esc(title)}</span>
+  {duo(CAT_ICON.get(pre + k, "leaf"), "duo drawer-ico")}
+  <span class="drawer-label"><span class="drawer-name">{esc(C[k]['nom'])}</span><span class="drawer-desc">{esc(CAT_SHORT.get(pre + k, ''))}</span></span>
+  <span class="drawer-foot"><span class="drawer-knob" aria-hidden="true"></span><span class="drawer-n">{n} produit{'s' if n > 1 else ''}</span></span>
+</a>""")
+    return f'<div class="cabinet cabinet-{brand}"><div class="cabinet-in">{"".join(drawers)}</div></div>'
 
 
 def reassure_strip(brand):
@@ -1514,21 +1522,20 @@ def render_home_martine():
     coffrets = pick(["coffret-rituel-du-soir", "coffret-rasage-douceur", "coffret-cent-coups-de-brosse"], "martine")
     posts = "".join(article_card(a, "martine") for a in articles.MARTINE[:6])
     body = f"""
-<section class="hero hero-mm wrap">
-  <div class="hero-copy">
-    <img class="hero-logo" src="/assets/img/logo-mere-martine.svg" alt="La Mère Martine, cosmétique naturelle" width="132" height="132">
-    <h1 class="hero-h1"><span class="line"><span>Des soins faits main,</span></span><span class="line"><span><em>comme autrefois.</em></span></span></h1>
-    <p class="hero-sub">Huiles, savons au lait, baumes et brosses en poils de sanglier, préparés à la main dans l'Allier.</p>
-    {stamp("Recette traditionnelle", "préparée en petits lots", "stamp-hero")}
+<section class="mmh wrap" aria-labelledby="mmh-title">
+  <figure class="mmh-photo">
+    <img src="/assets/img/ambiance/atelier-lavande-mains.webp" alt="Mains qui préparent un soin à la lavande et aux fleurs fraîches, à l'atelier" width="736" height="1104" fetchpriority="high">
+    <figcaption class="hand">l'atelier, un matin de juin</figcaption>
+  </figure>
+  <div class="mmh-card">
+    <img class="mmh-logo" src="/assets/img/logo-mere-martine.svg" alt="La Mère Martine, cosmétique naturelle" width="150" height="150">
+    <h1 class="mmh-title" id="mmh-title">Des soins faits main,<br><em>comme autrefois.</em></h1>
+    <p class="mmh-sub">Huiles, savons au lait, baumes et brosses en poils de sanglier, préparés à la main dans l'Allier.</p>
     <div class="hero-ctas">
       <a class="btn btn-accent btn-lg" href="{CM.BASE}/corps/">Soins du corps {icon('arrow-right','i i-sm')}</a>
       <a class="btn btn-ghost btn-lg" href="{CM.BASE}/cheveux/">Soins des cheveux</a>
     </div>
-  </div>
-  <div class="hero-media hero-media-mm">
-    <figure class="hero-arch"><img src="/assets/img/ambiance/atelier-lavande-mains.webp" alt="Mains qui préparent un soin à la lavande et aux fleurs fraîches" width="933" height="1400" fetchpriority="high"></figure>
-    <figure class="hero-oval"><img src="/assets/img/ambiance/mere-martine-1920-sm.webp" alt="Portrait ancien de Mère Martine" width="360" height="640"></figure>
-    <p class="hero-note hand">préparé à la main, en petits lots</p>
+    {stamp("Recette traditionnelle", "préparée en petits lots", "stamp-mmh")}
   </div>
 </section>
 
@@ -1618,7 +1625,7 @@ def render_home_martine():
     write({"brand": "martine", "path": f"{CM.BASE}/", "title": "Mère Martine : soins naturels femme, corps et cheveux",
            "desc": "Huile sèche, crème corps parfumée, savon au lait de chèvre, brosse en poils de sanglier et rasage féminin. Soins naturels fabriqués dans l'Allier.",
            "priority": 1.0, "freq": "daily", "ld": ld, "og": "/assets/img/ambiance/atelier-lavande-mains.webp",
-           "preload": '<link rel="preload" as="image" href="/assets/img/martine/huile-corps.webp">'}, body)
+           "preload": '<link rel="preload" as="image" href="/assets/img/ambiance/atelier-lavande-mains.webp">'}, body)
 
 
 # ---------------------------------------------------------------------------
