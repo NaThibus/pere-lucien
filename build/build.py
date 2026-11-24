@@ -46,7 +46,7 @@ _icon_cache = {}
 def icon(name, cls="i"):
     if name not in _icon_cache:
         svg = (ICONS_DIR / f"{name}.svg").read_text(encoding="utf-8")
-        svg = svg.replace("<svg ", '<svg aria-hidden="true" focusable="false" ', 1)
+        svg = svg.replace("<svg ", '<svg aria-hidden="true" focusable="false" width="20" height="20" ', 1)
         _icon_cache[name] = svg
     return _icon_cache[name].replace("<svg ", f'<svg class="{cls}" ', 1)
 
@@ -58,7 +58,7 @@ def duo(name, cls="duo"):
     """Icône Phosphor « duotone » : trait encre + aplat de couleur (variable CSS --duo)."""
     if name not in _duo_cache:
         svg = (ICONS_DIR / "duo" / f"{name}.svg").read_text(encoding="utf-8")
-        svg = svg.replace('opacity="0.2"', 'class="duo-fill"').replace("<svg ", '<svg aria-hidden="true" focusable="false" ', 1)
+        svg = svg.replace('opacity="0.2"', 'class="duo-fill"').replace("<svg ", '<svg aria-hidden="true" focusable="false" width="32" height="32" ', 1)
         _duo_cache[name] = svg
     return _duo_cache[name].replace("<svg ", f'<svg class="{cls}" ', 1)
 
@@ -634,6 +634,11 @@ OVERLAYS = f"""
 <div class="toast" role="status" aria-live="polite" data-toast></div>"""
 
 
+def asset_version(rel):
+    """Empreinte courte du contenu d'un fichier : force les navigateurs à recharger après chaque mise à jour."""
+    return hashlib.md5((SITE / rel).read_bytes()).hexdigest()[:10]
+
+
 def head(page):
     canonical = DOMAIN + page["path"]
     og_img = page.get("og") or "/assets/img/og-default.jpg"
@@ -670,8 +675,8 @@ def head(page):
 <link rel="preload" href="/assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
 {'<link rel="preload" href="/assets/fonts/cormorant.woff2" as="font" type="font/woff2" crossorigin>' if page["brand"] == "martine" else ''}
 {page.get('preload', '')}
-<link rel="stylesheet" href="/assets/css/style.css">
-<script src="/assets/js/app.js" defer></script>
+<link rel="stylesheet" href="/assets/css/style.css?v={asset_version('assets/css/style.css')}">
+<script src="/assets/js/app.js?v={asset_version('assets/js/app.js')}" defer></script>
 {ld_html}
 </head>"""
 
