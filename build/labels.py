@@ -104,10 +104,11 @@ def make_label(dest, brand, name, kind, size_line, palette="rose", seed=0):
 
     cx = LW / 2
     if brand == "martine":
-        d.text((cx, 92), "Mère Martine", font=font("archivo-wide-italic.ttf", 50), fill=accent + (255,), anchor="mm")
-        house = "SOINS FAITS MAIN · ALLIER"
-        name_font = font("archivo-wide.ttf", 54)
-        wrap = 16
+        accent = (161, 61, 95)
+        d.text((cx, 90), "La Mère Martine", font=font("cormorant-semibold.ttf", 54), fill=accent + (255,), anchor="mm")
+        house = "COSMÉTIQUE NATURELLE · ALLIER"
+        name_font = font("cormorant-semibold.ttf", 66)
+        wrap = 17
     else:
         d.text((cx, 92), "LE PÈRE LUCIEN", font=font("archivo-cond-black.ttf", 52), fill=accent + (255,), anchor="mm")
         house = "SAVONNERIE · TEILLET-ARGENTY"

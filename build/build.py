@@ -51,6 +51,18 @@ def icon(name, cls="i"):
     return _icon_cache[name].replace("<svg ", f'<svg class="{cls}" ', 1)
 
 
+_duo_cache = {}
+
+
+def duo(name, cls="duo"):
+    """Icône Phosphor « duotone » : trait encre + aplat de couleur (variable CSS --duo)."""
+    if name not in _duo_cache:
+        svg = (ICONS_DIR / "duo" / f"{name}.svg").read_text(encoding="utf-8")
+        svg = svg.replace('opacity="0.2"', 'class="duo-fill"').replace("<svg ", '<svg aria-hidden="true" focusable="false" ', 1)
+        _duo_cache[name] = svg
+    return _duo_cache[name].replace("<svg ", f'<svg class="{cls}" ', 1)
+
+
 def euro(v):
     s = f"{v:,.2f}".replace(",", " ").replace(".", ",")
     return f"{s} €"
@@ -553,7 +565,7 @@ def footer(brand):
     word = "Mère Martine" if brand == "martine" else "Le Père Lucien"
     soc = "".join(f'<a class="soc" href="{u}" rel="noopener" target="_blank" aria-label="{n.capitalize()}">{icon(n + "-logo")}</a>' for n, u in SOCIAL.items())
     tag = "#meremartine" if brand == "martine" else "#leperelucien"
-    return f"""<footer class="site-footer">
+    return reassure_strip(brand) + f"""<footer class="site-footer">
   <div class="wrap">
     <div class="ft-top">
       <form class="news" data-fake-form novalidate>
@@ -742,6 +754,65 @@ def seal(brand, cls="seal"):
 </svg>"""
 
 
+CAT_ICON = {
+    "rasage": "bowl-steam", "rasage/savons-a-raser": "hand-soap", "rasage/avant-apres-rasage": "spray-bottle", "rasage/blaireaux": "paint-brush-broad",
+    "rasage/rasoirs-de-surete": "knife", "rasage/shavettes-coupe-choux": "knife", "rasage/lames": "sparkle", "rasage/bols": "bowl-food",
+    "rasage/accessoires": "package", "barbe-moustache": "scissors", "barbe-moustache/huiles-baumes": "eyedropper", "barbe-moustache/shampoings": "drop",
+    "barbe-moustache/cires-moustache": "jar", "barbe-moustache/peignes-brosses": "paint-brush", "corps-cheveux": "bathtub", "parfums": "flask",
+    "accessoires-toilette": "hand", "coin-des-affaires": "tag",
+    "m:corps/huiles": "drop", "m:corps/cremes": "jar", "m:corps/baumes-solides": "hand-heart", "m:corps/savons": "hand-soap",
+    "m:corps/rasage-feminin": "feather", "m:cheveux/soins": "eyedropper", "m:cheveux/brosses": "paint-brush", "m:cheveux/pommades-coiffantes": "flower-tulip",
+    "m:coin-des-affaires": "gift",
+}
+CAT_SHORT = {
+    "rasage/savons-a-raser": "Savon du barbier, en pot ou en recharge", "rasage/avant-apres-rasage": "Lotions, eaux de toilette, Cologne",
+    "rasage/blaireaux": "Synthétiques, pur blaireau, MRed", "rasage/rasoirs-de-surete": "Peigne fermé, ouvert, papillon",
+    "rasage/shavettes-coupe-choux": "Coupe-choux neufs et d'occasion", "rasage/lames": "Gillette, Derby, Feather, Astra",
+    "rasage/bols": "Grès tourné à la main", "rasage/accessoires": "Supports, trousses, cuirs",
+    "barbe-moustache/huiles-baumes": "Jojoba et karité, huit parfums", "barbe-moustache/shampoings": "Shampoing solide du barbu",
+    "barbe-moustache/cires-moustache": "Fixation forte, naturelle", "barbe-moustache/peignes-brosses": "Corne, bois, poils de sanglier",
+    "corps-cheveux": "Savons saponifiés à froid", "parfums": "Eaux de toilette et de Cologne", "accessoires-toilette": "Pinces, manucure, trousses",
+    "coin-des-affaires": "Coffrets et savons déclassés",
+    "m:corps/huiles": "Huile sèche, nourrissante, de soin", "m:corps/cremes": "Crèmes et laits parfumés", "m:corps/baumes-solides": "Galets, sticks et beurres",
+    "m:corps/savons": "Lait de chèvre, d'ânesse, lavande", "m:corps/rasage-feminin": "Rasoir, pain de rasage, huiles",
+    "m:cheveux/soins": "Shampoings, huiles, bain d'huile", "m:cheveux/brosses": "Poils de sanglier", "m:cheveux/pommades-coiffantes": "Pommade, cire, brume au lin",
+    "m:coin-des-affaires": "Coffrets prêts à offrir",
+}
+
+
+def catalogue_index(brand, groups):
+    """Index façon catalogue ancien : icône au trait, nom, points de conduite, nombre de produits.
+    La photo de la catégorie n'apparaît qu'au survol."""
+    caturl = martine_cat_url if brand == "martine" else lucien_cat_url
+    pre = "m:" if brand == "martine" else ""
+    cols = []
+    for title, keys in groups:
+        rows = []
+        for k in keys:
+            C = CM.CATEGORIES if brand == "martine" else CL.CATEGORIES
+            n = len(products_in(brand, k))
+            img = banner(brand, k)
+            thumb = f'<img class="idx-thumb" src="{img}" alt="" loading="lazy" width="240" height="240">' if img else ""
+            rows.append(f"""<li><a class="idx-row" href="{caturl(k)}">{duo(CAT_ICON.get(pre + k, "leaf"), "duo idx-ico")}
+  <span class="idx-txt"><span class="idx-name">{esc(C[k]['nom'])}</span><span class="idx-desc">{esc(CAT_SHORT.get(pre + k, ''))}</span></span>
+  <span class="idx-dots" aria-hidden="true"></span><span class="idx-n">{n}</span>{thumb}</a></li>""")
+        cols.append(f'<div class="idx-col reveal"><p class="idx-h">{esc(title)}</p><ul>{"".join(rows)}</ul></div>')
+    return f'<div class="idx">{"".join(cols)}</div>'
+
+
+def reassure_strip(brand):
+    items = [("leaf", "Ingrédients naturels", "Huiles végétales, sans conservateur", "#B7C9A2"),
+             ("barn", "Fabriqué dans l'Allier", "À Teillet-Argenty, depuis 2013", "#F2C6CF" if brand == "martine" else "#C2D0F2"),
+             ("hand-heart", "Fait à la main", "En petites séries, à l'atelier", "#F1D08C"),
+             ("package", "Expédié avec soin", "Sous 48 h, colis neutre en carbone", "#E9B9A2")]
+    cells = "".join(f'<li style="--duo:{c}">{duo(i, "duo strip-ico")}<strong>{esc(t)}</strong><span>{esc(d)}</span></li>' for i, t, d, c in items)
+    return f'<section class="strip" aria-label="Nos engagements"><ul class="wrap">{cells}</ul></section>'
+
+
+def stamp(line1, line2="", cls=""):
+    return f'<p class="stamp {cls}" aria-hidden="true"><span>{esc(line1)}</span>{f"<small>{esc(line2)}</small>" if line2 else ""}</p>'
+
+
 def card_img(p):
     if p["brand"] == "martine":
         return p["card_img"]
@@ -806,11 +877,15 @@ def share_block(url, title, img):
 
 
 def article_card(a, brand, big=False):
+    """Fiche conseil façon carte de recette : papier ligné, vignette, titre, chapô."""
     img = f"/assets/img/{a['image']}"
-    return f"""<a class="post {'post-big' if big else ''}" href="{article_url(brand, a['slug'])}">
-  <span class="post-media"><img src="{img}" alt="" loading="lazy" decoding="async" width="600" height="450"></span>
-  <span class="post-meta">{a['minutes']} min de lecture</span>
-  <span class="post-title">{esc(a['titre'])}</span>
+    sm = img.replace(".webp", "-sm.webp") if "/ambiance/" in img else img
+    return f"""<a class="fiche reveal" href="{article_url(brand, a['slug'])}">
+  <span class="fiche-img"><img src="{sm}" alt="" loading="lazy" decoding="async" width="300" height="300"></span>
+  <span class="fiche-meta">Fiche conseil · {a['minutes']} min</span>
+  <span class="fiche-title">{esc(a['titre'])}</span>
+  <span class="fiche-desc">{esc(clip(a['desc'], 120))}</span>
+  <span class="fiche-cta">Lire la fiche {icon('arrow-right', 'i i-sm')}</span>
 </a>"""
 
 
@@ -981,6 +1056,7 @@ def render_product(p):
   <div class="pdp-info">
     <a class="pdp-cat" href="{cat_url}">{esc(cat['nom'])}</a>
     <h1 class="pdp-title">{esc(p['nom'])}</h1>
+    {stamp("Fabriqué en petite série", "à l'atelier, dans l'Allier", "stamp-pdp") if is_maison(p) else ""}
     <p class="pdp-price">{price_html(p, 'price price-lg')}<small>TTC</small></p>
     <p class="pdp-lede">{esc(p['accroche'])}</p>
     {var_html}
@@ -1102,7 +1178,7 @@ def cat_header(brand, c, pills, img):
         if brand == "martine":
             media = f'<figure class="cat-media cat-arch reveal"><img src="{img}" alt="" width="700" height="900" fetchpriority="high"></figure>'
         else:
-            media = f'<figure class="cat-media cat-photo reveal"><span class="tape" aria-hidden="true"></span><img src="{img}" alt="" width="700" height="700" fetchpriority="high"></figure>'
+            media = f'<figure class="cat-media cat-photo reveal"><span class="tape" aria-hidden="true"></span><img src="{img}" alt="" width="700" height="700" fetchpriority="high">{stamp("Recette de l'atelier", "", "stamp-cat")}</figure>'
     return f"""<header class="cat-hd wrap{' has-media' if img else ''}">
   <div class="cat-hd-text">
     <h1 class="cat-h1">{esc(c['h1'])}</h1>
@@ -1345,6 +1421,7 @@ def render_home_lucien():
   <div class="hero-copy">
     <h1 class="hero-h1"><span class="line"><span>Le rasage,</span></span><span class="line"><span>fait main</span></span><span class="line"><span>dans l'Allier.</span></span></h1>
     <p class="hero-sub">Savons à raser, soins de barbe et savons de toilette, fabriqués à Teillet-Argenty depuis 2013.</p>
+    {stamp("Fabriqué en petite série", "Teillet-Argenty, Allier", "stamp-hero")}
     <div class="hero-ctas">
       <a class="btn btn-accent btn-lg" href="/rasage/savons-a-raser/">Voir les savons {icon('arrow-right','i i-sm')}</a>
       <a class="btn btn-ghost btn-lg" href="/conseils/debuter-rasage-traditionnel/">Débuter le rasage</a>
@@ -1361,9 +1438,11 @@ def render_home_lucien():
   {''.join('<span>Saponifié à semi-ébullition</span><span>Sans conservateur</span><span>Pots en acier rechargeables</span><span>Fabriqué à Teillet-Argenty</span><span>Vendu dans une vingtaine de pays</span>' for _ in range(2))}
 </div></div>
 
-<section class="sec wrap" aria-labelledby="gammes-h">
-  <h2 class="h2 reveal" id="gammes-h">Les gammes</h2>
-  <div class="bento">{bento}</div>
+<section class="sec catalogue wrap" aria-labelledby="gammes-h">
+  <div class="sec-hd"><h2 class="h2 reveal" id="gammes-h">Le catalogue de l'atelier</h2><a class="link-arrow" href="/boutique/">Toute la boutique {icon('arrow-right','i i-sm')}</a></div>
+  {catalogue_index("lucien", [("Rasage", [k for k, v in CL.CATEGORIES.items() if v["parent"] == "rasage"]),
+                              ("Barbe et moustache", [k for k, v in CL.CATEGORIES.items() if v["parent"] == "barbe-moustache"]),
+                              ("Toilette et cadeaux", ["corps-cheveux", "parfums", "accessoires-toilette", "coin-des-affaires"])])}
 </section>
 
 <section class="sec rail-sec wrap" aria-labelledby="best-h">
@@ -1416,12 +1495,7 @@ def render_home_lucien():
   <div class="ugc-grid">{ugc_html}</div>
 </section>
 
-<section class="assure wrap" aria-label="Nos engagements">
-  <p>{icon('truck')}<span><strong>Livraison offerte</strong> dès 80 € en France</span></p>
-  <p>{icon('recycle')}<span><strong>Recharges</strong> pour garder vos pots</span></p>
-  <p>{icon('leaf')}<span><strong>Colis neutres</strong> en carbone avec Colissimo</span></p>
-  <p>{icon('map-pin')}<span><strong>Fabriqué</strong> à Teillet-Argenty, Allier</span></p>
-</section>"""
+"""
     write({"brand": "lucien", "path": "/", "title": "Le Père Lucien : savon à raser artisanal fabriqué en France",
            "desc": "Savonnerie artisanale de l'Allier : savons à raser, soins de barbe, savons de toilette et matériel de rasage traditionnel. Livraison offerte dès 80 €.",
            "priority": 1.0, "freq": "daily", "ld": [org_ld(), website_ld()], "og": "/assets/img/og-default.jpg",
@@ -1438,13 +1512,14 @@ def render_home_martine():
 </a>""" for k, v in cats)
     best = pick(["huile-seche-satinante-corps-cheveux", "savon-lait-de-chevre-bio", "creme-corps-velours", "brosse-cheveux-poils-sanglier", "pain-fondant-anti-irritations", "shampoing-sec-poudre-saupoudreuse"], "martine")
     coffrets = pick(["coffret-rituel-du-soir", "coffret-rasage-douceur", "coffret-cent-coups-de-brosse"], "martine")
-    posts = "".join(article_card(a, "martine", big=(i == 0)) for i, a in enumerate(articles.MARTINE[:5]))
+    posts = "".join(article_card(a, "martine") for a in articles.MARTINE[:6])
     body = f"""
 <section class="hero hero-mm wrap">
   <div class="hero-copy">
     <img class="hero-logo" src="/assets/img/logo-mere-martine.svg" alt="La Mère Martine, cosmétique naturelle" width="132" height="132">
     <h1 class="hero-h1"><span class="line"><span>Des soins faits main,</span></span><span class="line"><span><em>comme autrefois.</em></span></span></h1>
     <p class="hero-sub">Huiles, savons au lait, baumes et brosses en poils de sanglier, préparés à la main dans l'Allier.</p>
+    {stamp("Recette traditionnelle", "préparée en petits lots", "stamp-hero")}
     <div class="hero-ctas">
       <a class="btn btn-accent btn-lg" href="{CM.BASE}/corps/">Soins du corps {icon('arrow-right','i i-sm')}</a>
       <a class="btn btn-ghost btn-lg" href="{CM.BASE}/cheveux/">Soins des cheveux</a>
@@ -1457,9 +1532,10 @@ def render_home_martine():
   </div>
 </section>
 
-<section class="sec wrap" aria-labelledby="mmcat-h">
-  <h2 class="h2 reveal" id="mmcat-h">Par besoin</h2>
-  <div class="mm-cats">{cat_cells}</div>
+<section class="sec catalogue wrap" aria-labelledby="mmcat-h">
+  <div class="sec-hd"><h2 class="h2 reveal" id="mmcat-h">Le comptoir de Mère Martine</h2><a class="link-arrow" href="{CM.BASE}/corps/">Tous les soins {icon('arrow-right','i i-sm')}</a></div>
+  {catalogue_index("martine", [("Pour le corps", [k for k, v in CM.CATEGORIES.items() if v["parent"] == "corps"]),
+                               ("Pour les cheveux", [k for k, v in CM.CATEGORIES.items() if v["parent"] == "cheveux"] + ["coin-des-affaires"])])}
 </section>
 
 <section class="process process-mm" aria-labelledby="atelier-mm-h">
@@ -1856,7 +1932,8 @@ Sitemap: {DOMAIN}/sitemap.xml
     import base64
     fonts = SITE / "assets" / "fonts"
     faces = [("Archivo", "archivo", "normal", "100 900", "font-stretch: 62% 125%;"), ("Archivo", "archivo-italic", "italic", "100 900", "font-stretch: 62% 125%;"),
-             ("Geist", "geist", "normal", "100 900", ""), ("Geist Mono", "geist-mono", "normal", "400 500", ""), ("Homemade Apple", "homemade-apple", "normal", "400", ""), ("Cormorant", "cormorant", "normal", "300 700", ""), ("Cormorant", "cormorant-italic", "italic", "300 700", "")]
+             ("Geist", "geist", "normal", "100 900", ""), ("Geist Mono", "geist-mono", "normal", "400 500", ""), ("Homemade Apple", "homemade-apple", "normal", "400", ""), ("Cormorant", "cormorant", "normal", "300 700", ""), ("Cormorant", "cormorant-italic", "italic", "300 700", ""),
+             ("Courier Prime", "courier-prime", "normal", "400", ""), ("Courier Prime", "courier-prime-bold", "normal", "700", "")]
     css = "".join(
         f'@font-face {{ font-family: "{fam}"; src: url(data:font/woff2;base64,{base64.b64encode((fonts / (f + ".woff2")).read_bytes()).decode()}) format("woff2"); '
         f'font-weight: {w}; font-style: {st}; {extra} font-display: swap; }}' + chr(10) for fam, f, st, w, extra in faces)

@@ -62,37 +62,7 @@ html[data-brand="martine"] {
   --h-case: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #121213;
-    --bg-2: #19191B;
-    --surface: #1D1D20;
-    --ink: #ECEBE6;
-    --ink-2: #A9A8A2;
-    --line: #2F2F33;
-    --accent: #3652E6;
-    --accent-hover: #4A64EE;
-    --accent-text: #9EAEFF;
-    --accent-soft: #232B4D;
-    --t0: #DEDFE3;
-    --t1: #E2E0DA;
-    --t2: #D8DDD5;
-    --t-sage: #CFD8C9;
-    --t-stone: #DCD7CC;
-    --t-rose: #E9CABF;
-    --shadow: 0 18px 40px -24px rgb(0 0 0 / .7);
-    color-scheme: dark;
-  }
-  html[data-brand="martine"] {
-    --accent: #B8432F;
-    --accent-hover: #C9553F;
-    --accent-text: #F0A590;
-    --accent-soft: #3A2420;
-    --t0: #EBD6CE;
-    --t1: #E6DDD5;
-    --t2: #DEDCD1;
-  }
-}
+
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -733,7 +703,7 @@ html[data-brand="martine"] .ft-word { font-stretch: 115%; font-weight: 500; font
 /* Grain de papier : calque fixe, sans coût de repeinte au défilement */
 body::after { content: ""; position: fixed; inset: 0; z-index: 120; pointer-events: none; opacity: .22; mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .3 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-@media (prefers-color-scheme: dark) { body::after { mix-blend-mode: screen; opacity: .08; } }
+
 
 /* Tampon circulaire */
 .seal { position: absolute; z-index: 3; width: clamp(96px, 10vw, 138px); height: auto; top: -26px; right: -22px; transform: rotate(-12deg); filter: drop-shadow(0 8px 16px rgb(0 0 0 / .14)); }
@@ -981,14 +951,7 @@ html[data-brand="martine"] .ft-word { font-family: "Cormorant", Georgia, serif; 
 /* cartes Lucien : bordure d'étiquette imprimée */
 html[data-brand="lucien"] .card-media { box-shadow: inset 0 0 0 1px rgb(30 26 22 / .08); }
 
-@media (prefers-color-scheme: dark) {
-  :root { --bg: #15120F; --bg-2: #1C1814; --surface: #221D18; --ink: #EEE7DC; --ink-2: #B0A698; --line: #342D25; --paper: #F6F0E4; }
-  html[data-brand="martine"] { --bg: #1B1216; --bg-2: #22171C; --surface: #2A1D23; --ink: #F5E6EC; --ink-2: #C7AEB9; --line: #3C2A32; --accent: #B8496E; --accent-hover: #C95A7F; --accent-text: #F2A7C0; --accent-soft: #3A2129; }
-  .process-mm { background: #3A2A2E; }
-  .process-mm .process-hd p { color: #E7CFD6; }
-  .process-mm .h2 { color: #F5E6EC; }
-  .range-mm { background: #24181D; }
-}
+
 
 @media (max-width: 960px) {
   .cat-hd.has-media { grid-template-columns: 1fr; }
@@ -1010,3 +973,128 @@ html[data-brand="lucien"] .card-media { box-shadow: inset 0 0 0 1px rgb(30 26 22
   .ft-brand { flex-direction: column; align-items: flex-start; }
   .al-logo { width: 76px; height: 76px; right: -4px; bottom: auto; top: -26px; }
 }
+
+/* ==========================================================================
+   V3.3 « terroir » : parchemin, encre, machine à écrire, tampons, index de
+   catalogue ancien, fiches recette, cartes produit façon étiquette.
+   Le site reste toujours sur papier (pas de mode sombre).
+   ========================================================================== */
+@font-face { font-family: "Courier Prime"; src: url("../fonts/courier-prime.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Courier Prime"; src: url("../fonts/courier-prime-bold.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+:root {
+  color-scheme: light;
+  --bg: #F3EEE4; --bg-2: #E9E1D2; --surface: #FAF7F0; --paper: #FCF9F2; --ink: #1F1A15; --ink-2: #5A5047; --line: #D9CFBE;
+  --mono: "Courier Prime", "Courier New", ui-monospace, monospace;
+  --ink-stamp: #A33A2C;
+}
+html[data-brand="martine"] { --bg: #F6EFE8; --bg-2: #EEE2D9; --surface: #FBF7F2; --paper: #FFFCF7; --line: #E3D4C9; --ink-stamp: #A13D5F; }
+body::after { opacity: .3; mix-blend-mode: multiply; }
+
+/* typographie machine à écrire pour les détails */
+.price, .card-cat, .crumbs ol, .count, .pill small, .facet small, .subcat-h small, .post-meta, .art-meta, .inci, .specs,
+.pdp-price small, .reassure, .cart-total strong, .sr-p, .fiche-meta, .idx-n, .idx-desc, .guide-k, .al-h + dl dt, .topbar, .card-cat .handmade + * { font-family: var(--mono); }
+.card-cat { letter-spacing: .01em; text-transform: none; }
+.price { font-weight: 700; letter-spacing: -.01em; }
+.topbar { letter-spacing: .02em; }
+
+/* ---------------- cartes produit façon étiquette ---------------- */
+.card { background: var(--paper); border: 1px solid var(--line); padding: 10px 10px 14px; box-shadow: 0 1px 0 rgb(60 40 20 / .04), 0 10px 24px -22px rgb(60 40 20 / .5); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.card:hover { transform: translateY(-3px); box-shadow: 0 1px 0 rgb(60 40 20 / .04), 0 18px 30px -20px rgb(60 40 20 / .55); }
+.card-media, html[data-brand="martine"] .card-media { border-radius: 4px; }
+.card-body { padding: 12px 4px 0; }
+.card-body::before { content: ""; display: block; height: 0; border-top: 1px dashed var(--line); margin: 0 0 10px; }
+html[data-brand="martine"] .card-title { font-family: var(--display); font-size: 1.22rem; font-weight: 600; line-height: 1.15; }
+.quick { top: 18px; right: 18px; }
+.badge { border-radius: 2px; font-family: var(--mono); font-weight: 700; }
+.card-on-color { background: #FFF9F5; }
+
+/* ---------------- index façon catalogue ancien ---------------- */
+.catalogue .sec-hd { margin-bottom: 18px; }
+.idx { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px clamp(24px, 3vw, 48px); padding: clamp(22px, 3vw, 40px); background: var(--paper); border: 1px solid var(--line); outline: 1px solid var(--line); outline-offset: 6px; margin: 6px; }
+html[data-brand="martine"] .idx { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.idx-h { margin: 0 0 6px; padding-bottom: 8px; border-bottom: 2px solid var(--ink); font-family: var(--display); font-stretch: var(--stretch); font-weight: var(--h-weight); text-transform: var(--h-case); font-size: 1.35rem; }
+html[data-brand="martine"] .idx-h { font-size: 1.7rem; font-style: italic; }
+.idx ul { list-style: none; margin: 0; padding: 0; }
+.idx li + li { border-top: 1px dotted var(--line); }
+.idx-row { position: relative; display: grid; grid-template-columns: 42px minmax(0, auto) 1fr auto; align-items: center; gap: 12px; padding: 12px 4px; text-decoration: none; }
+.idx-ico { width: 38px; height: 38px; color: var(--ink); --duo: #D9C9A6; transition: transform .3s var(--ease); }
+html[data-brand="martine"] .idx-ico { --duo: #F1C3CF; }
+.idx-row:nth-child(odd) .idx-ico { --duo: #BFCFAF; }
+.idx-txt { display: grid; gap: 1px; min-width: 0; }
+.idx-name { font-weight: 600; font-size: 1.02rem; line-height: 1.2; }
+html[data-brand="martine"] .idx-name { font-family: var(--display); font-size: 1.32rem; font-weight: 600; }
+.idx-desc { font-size: .8rem; color: var(--ink-2); line-height: 1.35; }
+.idx-dots { align-self: end; margin-bottom: 8px; border-bottom: 2px dotted color-mix(in srgb, var(--ink) 35%, transparent); min-width: 16px; }
+.idx-n { font-weight: 700; font-size: .95rem; }
+.idx-row:hover .idx-name { color: var(--accent-text); }
+.idx-row:hover .idx-ico { transform: rotate(-8deg) scale(1.08); }
+.idx-thumb { position: absolute; z-index: 5; right: -30px; top: 50%; width: 150px; height: 150px; object-fit: cover; border: 7px solid #fff; box-shadow: 0 14px 30px -12px rgb(40 30 20 / .45);
+  opacity: 0; pointer-events: none; transform: translateY(-50%) rotate(4deg) scale(.92); transition: opacity .25s, transform .35s var(--ease); }
+.idx-row:hover .idx-thumb, .idx-row:focus-visible .idx-thumb { opacity: 1; transform: translateY(-50%) rotate(-3deg) scale(1); }
+@media (hover: none) { .idx-thumb { display: none; } }
+
+/* ---------------- bandeau illustré (avant le pied de page) ---------------- */
+.strip { background: var(--bg-2); border-top: 1px solid var(--line); padding-block: clamp(34px, 5vw, 56px); }
+.strip ul { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 0 auto; }
+.strip li { display: grid; justify-items: center; text-align: center; gap: 4px; }
+.strip-ico { width: 64px; height: 64px; color: #2A231C; margin-bottom: 8px; }
+.duo .duo-fill { fill: var(--duo, #D9C9A6); opacity: 1; }
+.strip strong { font-family: var(--display); font-stretch: var(--stretch); font-weight: var(--h-weight); font-size: 1.15rem; text-transform: var(--h-case); }
+html[data-brand="martine"] .strip strong { font-size: 1.45rem; }
+.strip span { font-size: .92rem; color: var(--ink-2); }
+
+/* ---------------- tampons encreurs ---------------- */
+.stamp { display: inline-grid; justify-items: center; gap: 2px; margin: 22px 0 0; padding: 8px 16px 9px; border: 2.5px solid var(--ink-stamp); outline: 1px solid var(--ink-stamp); outline-offset: 3px;
+  color: var(--ink-stamp); font-family: var(--mono); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; line-height: 1.2;
+  transform: rotate(-4deg); mix-blend-mode: multiply; opacity: .88;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='60'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.2 2.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23r)'/%3E%3C/svg%3E");
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='60'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.2 2.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23r)'/%3E%3C/svg%3E"); }
+.stamp small { font-size: .66rem; font-weight: 400; letter-spacing: .06em; text-transform: none; }
+.stamp-pdp { margin-top: 14px; }
+.stamp-cat { position: absolute; left: -22px; bottom: 14px; margin: 0; background: color-mix(in srgb, var(--paper) 70%, transparent); transform: rotate(-9deg); }
+
+/* ---------------- fiches conseil (cartes recette) ---------------- */
+.posts, .posts-3, .posts-index { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.fiche { position: relative; display: grid; grid-template-columns: 1fr 96px; grid-template-rows: auto auto 1fr auto; gap: 6px 16px; padding: 22px 22px 18px;
+  background: #FFFDF7; background-image: repeating-linear-gradient(transparent 0 27px, color-mix(in srgb, var(--accent) 14%, transparent) 27px 28px); background-position: 0 52px;
+  border: 1px solid var(--line); border-top: 5px solid var(--accent); text-decoration: none; box-shadow: 0 14px 28px -22px rgb(50 35 25 / .5); transition: transform .3s var(--ease); }
+.fiche:nth-child(3n+1) { transform: rotate(-.6deg); }
+.fiche:nth-child(3n+2) { transform: rotate(.5deg); }
+.fiche:hover { transform: rotate(0) translateY(-4px); }
+.fiche-img { grid-column: 2; grid-row: 1 / 3; width: 96px; height: 96px; padding: 5px; background: #fff; box-shadow: 0 6px 14px -8px rgb(40 30 20 / .5); transform: rotate(4deg); }
+.fiche-img img { width: 100%; height: 100%; object-fit: cover; }
+.fiche-meta { grid-column: 1; font-size: .78rem; color: var(--accent-text); }
+.fiche-title { grid-column: 1; font-family: var(--display); font-stretch: var(--stretch); font-weight: var(--h-weight); text-transform: var(--h-case); font-size: 1.3rem; line-height: 1.12; }
+html[data-brand="martine"] .fiche-title { font-size: 1.6rem; text-transform: none; }
+.fiche-desc { grid-column: 1 / -1; font-size: .92rem; color: var(--ink-2); line-height: 28px; margin-top: 4px; }
+.fiche-cta { grid-column: 1 / -1; display: inline-flex; align-items: center; gap: .4em; font-family: var(--hand); font-size: .95rem; color: var(--accent-text); margin-top: 6px; }
+
+/* ---------------- blocs éditoriaux superposés (photo + carte papier) ---------------- */
+.story-copy, .persona-copy { position: relative; background: var(--paper); border: 1px solid var(--line); padding: clamp(24px, 3.4vw, 48px); box-shadow: 0 24px 50px -36px rgb(50 35 25 / .55); }
+@media (min-width: 961px) {
+  .story-in { grid-template-columns: .8fr 1.2fr; gap: 0; }
+  .story-copy { margin-left: -70px; z-index: 2; }
+  .persona-in { gap: 0; }
+  .persona-copy { margin-left: -60px; z-index: 2; }
+}
+.story-img { background: var(--paper); padding: 16px 16px 40px; box-shadow: 0 18px 40px -24px rgb(50 35 25 / .5); transform: rotate(-2deg); }
+
+@media (max-width: 960px) {
+  .idx, html[data-brand="martine"] .idx { grid-template-columns: 1fr; }
+  .strip ul { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
+  .posts, .posts-3, .posts-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stamp-cat { left: 8px; }
+}
+@media (max-width: 640px) {
+  .idx { padding: 18px 14px; margin: 4px; outline-offset: 4px; }
+  .idx-row { grid-template-columns: 34px minmax(0, 1fr) auto; }
+  .idx-dots { display: none; }
+  .idx-ico { width: 32px; height: 32px; }
+  .posts, .posts-3, .posts-index { grid-template-columns: 1fr; }
+  .strip-ico { width: 52px; height: 52px; }
+  .card { padding: 7px 7px 12px; }
+  .stamp { font-size: .7rem; }
+}
+
+.pl-h { font-family: "Archivo", "Arial Narrow", sans-serif; font-stretch: 75%; font-weight: 820; letter-spacing: -.01em; }
