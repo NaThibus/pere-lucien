@@ -647,7 +647,7 @@ def head(page):
     robots = '<meta name="robots" content="noindex, follow">' if page.get("noindex") else '<meta name="robots" content="index, follow, max-image-preview:large">'
     ld = page.get("ld") or []
     ld_html = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
-    theme = "#8C2D4A" if page["brand"] == "martine" else "#1F3FD1"
+    theme = "#8C2D4A" if page["brand"] == "martine" else "#AD4A1D"
     site_name = "Mère Martine" if page["brand"] == "martine" else "Le Père Lucien"
     return f"""<!doctype html>
 <html lang="fr" data-brand="{page['brand']}">
@@ -1940,7 +1940,7 @@ Sitemap: {DOMAIN}/sitemap.xml
     cat = {p["ref"]: {"n": p["nom"], "p": p["prix"], "i": card_img(p), "u": p["url"]} for p in PRODUCTS}
     (SITE / "assets" / "catalogue.js").write_text("window.PL_CATALOGUE=" + json.dumps(cat, ensure_ascii=False) + ";", encoding="utf-8")
     # favicons
-    (IMG / "favicon-lucien.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1F3FD1"/><text x="32" y="43" text-anchor="middle" font-family="Arial Narrow,Arial,sans-serif" font-weight="700" font-size="30" fill="#FBF7F0">PL</text></svg>', encoding="utf-8")
+    (IMG / "favicon-lucien.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#AD4A1D"/><text x="32" y="43" text-anchor="middle" font-family="Arial Narrow,Arial,sans-serif" font-weight="700" font-size="30" fill="#FFF8F0">PL</text></svg>', encoding="utf-8")
     (IMG / "favicon-martine.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="32" fill="#8C2D4A"/><text x="32" y="43" text-anchor="middle" font-family="Arial,sans-serif" font-style="italic" font-size="30" fill="#F7E6E0">MM</text></svg>', encoding="utf-8")
     # Polices embarquées en base64 : chargées seulement en ouverture directe (file://),
     # où Chrome bloque les polices locales.
