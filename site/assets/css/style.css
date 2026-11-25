@@ -20,20 +20,20 @@
   --ink: #151515;
   --ink-2: #55544F;
   --line: #D9D7D0;
-  --accent: #1F3FD1;
-  --accent-hover: #1833B4;
+  --accent: #7B4A2B;
+  --accent-hover: #643A20;
   --accent-ink: #F7F7F4;
-  --accent-text: #1F3FD1;
-  --accent-soft: #DFE4F8;
+  --accent-text: #7B4A2B;
+  --accent-soft: #E7DCCB;
   --t0: #E7E8EC;
   --t1: #ECEAE4;
   --t2: #E1E6DF;
   --t-sage: #D9E1D3;
   --t-stone: #E4E0D6;
   --t-rose: #F2D3C9;
-  --mm: #B8432F;
+  --mm: #8C2D4A;
   --mm-soft: #F3D5CB;
-  --pl: #1F3FD1;
+  --pl: #7B4A2B;
   --shadow: 0 18px 40px -24px rgb(31 35 60 / .35);
   --r: 14px;
   --r-in: 10px;
@@ -50,9 +50,9 @@
 }
 
 html[data-brand="martine"] {
-  --accent: #B8432F;
-  --accent-hover: #9C3626;
-  --accent-text: #A63B28;
+  --accent: #8C2D4A;
+  --accent-hover: #74243D;
+  --accent-text: #8C2D4A;
   --accent-soft: #F3D5CB;
   --t0: #F4E1DA;
   --t1: #EFE7E0;
@@ -94,10 +94,10 @@ html[data-brand="martine"] .h2 { letter-spacing: -.025em; }
 .btn-ghost:hover { background: var(--ink); color: var(--bg); }
 .btn-lg { min-height: 54px; padding-inline: 1.6em; font-size: 1.02rem; }
 .btn-block { width: 100%; }
-.btn-mm { background: #B8432F; border-color: #B8432F; color: #FBF1EE; }
-.btn-mm:hover { background: #9C3626; border-color: #9C3626; }
-.btn-pl { background: #1F3FD1; border-color: #1F3FD1; color: #F7F7F4; }
-.btn-pl:hover { background: #1833B4; }
+.btn-mm { background: #8C2D4A; border-color: #8C2D4A; color: #FBF1EE; }
+.btn-mm:hover { background: #74243D; border-color: #74243D; }
+.btn-pl { background: #7B4A2B; border-color: #7B4A2B; color: #F7F7F4; }
+.btn-pl:hover { background: #643A20; }
 .link-arrow { display: inline-flex; align-items: center; gap: .45em; font-weight: 560; text-decoration: none; color: var(--accent-text); }
 .link-arrow .i { transition: transform .25s var(--ease); }
 .link-arrow:hover .i { transform: translateX(4px); }
@@ -123,7 +123,7 @@ html[data-brand="martine"] .h2 { letter-spacing: -.025em; }
 .switch { display: inline-flex; align-items: center; gap: .35em; padding: 8px 14px; border-radius: 999px; font-size: .88rem; font-weight: 600; text-decoration: none; margin-right: 6px; transition: transform .2s var(--ease); }
 .switch:hover { transform: translateY(-1px); }
 .switch-mm { background: #F3D5CB; color: #7A2A1D; }
-.switch-pl { background: #DFE4F8; color: #1630A8; }
+.switch-pl { background: #E7DCCB; color: #643A20; }
 .cart-count { position: absolute; top: 4px; right: 2px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font: 600 .7rem/18px var(--mono); text-align: center; }
 .cart-count.bump { animation: bump .45s var(--ease); }
 @keyframes bump { 40% { transform: scale(1.35); } }
@@ -153,7 +153,7 @@ html[data-brand="martine"] .h2 { letter-spacing: -.025em; }
 .m-group ul { list-style: none; margin: 0; padding: 6px 0 12px; display: grid; }
 .m-group ul a { display: block; padding: 9px 0; text-decoration: none; color: var(--ink-2); }
 .m-other { margin-top: 22px; display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border-radius: var(--r); text-decoration: none; background: #F3D5CB; color: #4A1A12; }
-html[data-brand="martine"] .m-other { background: #DFE4F8; color: #13246F; }
+html[data-brand="martine"] .m-other { background: #E7DCCB; color: #13246F; }
 .m-other span { display: grid; }
 .m-other strong { font-family: var(--display); font-size: 1.3rem; }
 
@@ -453,13 +453,13 @@ html[data-brand="lucien"] .prose h2 { font-stretch: 85%; font-weight: 750; }
 .ritual-copy p { max-width: 46ch; color: #3B473E; font-size: 1.08rem; margin: 22px 0 28px; }
 .ritual .link-arrow { color: #17201A; }
 .ritual-img { margin: 0; border-radius: 999px 999px var(--r) var(--r); overflow: hidden; }
-.pl-band { background: #1F3FD1; color: #F3F2EE; padding-block: clamp(56px, 7vw, 96px); }
+.pl-band { background: #7B4A2B; color: #F3F2EE; padding-block: clamp(56px, 7vw, 96px); }
 .pl-in { display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(28px, 6vw, 96px); align-items: center; }
 .pl-copy { display: grid; gap: 22px; justify-items: start; }
 .pl-img { margin: 0; border-radius: var(--r); overflow: hidden; max-width: 380px; justify-self: end; transform: rotate(2deg); }
 .pl-h { font-family: var(--display); font-stretch: 75%; font-weight: 820; text-transform: uppercase; font-size: clamp(2.2rem, 5vw, 4.4rem); max-width: 16ch; line-height: .95; }
 .pl-in p { max-width: 54ch; margin: 0; color: #DCE1F7; font-size: 1.06rem; }
-.pl-band .btn-pl { background: #F3F2EE; color: #1630A8; border-color: #F3F2EE; }
+.pl-band .btn-pl { background: #F3F2EE; color: #643A20; border-color: #F3F2EE; }
 
 /* ---------- Pages éditoriales ---------- */
 .split { display: grid; grid-template-columns: 1fr .8fr; gap: clamp(28px, 6vw, 96px); align-items: start; padding-bottom: 90px; }
@@ -496,7 +496,7 @@ html[data-brand="lucien"] .prose h2 { font-stretch: 85%; font-weight: 750; }
 .field input:focus, .field select:focus, .field textarea:focus, .news input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
 .form .btn { justify-self: start; }
 .form-msg { margin: 0; font-size: .92rem; color: var(--accent-text); min-height: 1.4em; }
-.form-msg.is-err { color: #C0392B; }
+.form-msg.is-err { color: #8C2D4A; }
 .sitemap-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; padding-bottom: 40px; }
 .sitemap-cols ul, .sitemap-prods ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; font-size: .93rem; }
 .sitemap-prods { padding-bottom: 90px; }
@@ -563,7 +563,7 @@ html[data-brand="martine"] .site-footer { background: #2A1612; color: #F6E8E3; }
 .news-row { display: flex; gap: 10px; max-width: 520px; }
 .news input { background: rgb(255 255 255 / .06); border-color: rgb(255 255 255 / .2); color: #F3F2EE; border-radius: 999px; padding-inline: 20px; }
 .news input::placeholder { color: rgb(233 232 227 / .6); }
-.site-footer .form-msg { color: #C9D2FF; }
+.site-footer .form-msg { color: #E7DCCB; }
 html[data-brand="martine"] .site-footer .form-msg { color: #F5C0B1; }
 .ft-h { margin: 0 0 14px; font-size: .84rem; color: rgb(233 232 227 / .62); font-weight: 600; }
 .socs { display: flex; gap: 8px; }
@@ -735,7 +735,7 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 120; pointer-even
 .polaroid figcaption { display: grid; gap: 6px; padding: 14px 4px 0; color: #2B1E12; }
 .polaroid strong { font-family: var(--display); font-stretch: 80%; font-weight: 780; text-transform: uppercase; font-size: 1.15rem; letter-spacing: .01em; }
 .polaroid span { font-size: .9rem; color: #5A4632; line-height: 1.5; }
-.polaroid em { color: #A63B28; font-size: .95rem; margin-top: 4px; }
+.polaroid em { color: #8C2D4A; font-size: .95rem; margin-top: 4px; }
 .tape { position: absolute; z-index: 2; top: -12px; left: 50%; width: 92px; height: 26px; transform: translateX(-50%) rotate(-4deg); background: rgb(246 236 210 / .82); box-shadow: 0 1px 2px rgb(0 0 0 / .08); }
 .polaroid:nth-child(2n) .tape { transform: translateX(-50%) rotate(5deg); }
 .process .link-arrow { color: #22170D; }
@@ -747,8 +747,8 @@ body::after { content: ""; position: fixed; inset: 0; z-index: 120; pointer-even
 /* Fiche d'atelier sur les fiches produit */
 .atelier-label { position: relative; margin-top: 28px; padding: 24px 26px 22px; background: var(--paper); color: #241A12; border: 1.5px solid #2A2018; outline: 1px solid #2A2018; outline-offset: -7px; border-radius: 4px; }
 .al-h { margin: 0 0 14px; font-family: var(--display); font-stretch: var(--stretch); font-weight: 750; text-transform: var(--h-case); font-size: 1.2rem; }
-html[data-brand="martine"] .al-h, html[data-brand="martine"] .al-sign { color: #A63B28; }
-html[data-brand="lucien"] .al-h, html[data-brand="lucien"] .al-sign { color: #1F3FD1; }
+html[data-brand="martine"] .al-h, html[data-brand="martine"] .al-sign { color: #8C2D4A; }
+html[data-brand="lucien"] .al-h, html[data-brand="lucien"] .al-sign { color: #7B4A2B; }
 .atelier-label dl { margin: 0; display: grid; gap: 8px; max-width: 78%; }
 .atelier-label dl div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; font-size: .9rem; border-bottom: 1px dotted #9C8B76; padding-bottom: 6px; }
 .atelier-label dt { font: 500 .76rem var(--mono); text-transform: uppercase; color: #6B5A46; padding-top: 2px; }
@@ -756,20 +756,20 @@ html[data-brand="lucien"] .al-h, html[data-brand="lucien"] .al-sign { color: #1F
 .al-sign { margin: 16px 0 0; font-family: var(--hand); font-size: 1rem; }
 .seal-sm { width: 92px; top: auto; bottom: -18px; right: -14px; transform: rotate(10deg); }
 .atelier-label .seal-bg { fill: #FBF7EF; }
-html[data-brand="lucien"] .atelier-label .seal-ring { stroke: #1F3FD1; }
-html[data-brand="lucien"] .atelier-label .seal-txt { fill: #1F3FD1; }
-html[data-brand="martine"] .atelier-label .seal-ring { stroke: #B8432F; }
-html[data-brand="martine"] .atelier-label .seal-txt, html[data-brand="martine"] .atelier-label .seal-mono { fill: #B8432F; }
+html[data-brand="lucien"] .atelier-label .seal-ring { stroke: #7B4A2B; }
+html[data-brand="lucien"] .atelier-label .seal-txt { fill: #7B4A2B; }
+html[data-brand="martine"] .atelier-label .seal-ring { stroke: #8C2D4A; }
+html[data-brand="martine"] .atelier-label .seal-txt, html[data-brand="martine"] .atelier-label .seal-mono { fill: #8C2D4A; }
 
 /* Fiche recette (Mère Martine) */
 .ritual-media { position: relative; }
 .recipe { position: absolute; left: -12%; bottom: -8%; width: min(320px, 70%); padding: 22px 22px 18px; background: #FFFDF6;
   background-image: repeating-linear-gradient(transparent 0 29px, #E8C9BF 29px 30px); background-position: 0 50px;
-  box-shadow: 0 18px 34px -16px rgb(40 30 20 / .4); transform: rotate(-3.5deg); color: #2B2420; border-top: 6px solid #B8432F; }
+  box-shadow: 0 18px 34px -16px rgb(40 30 20 / .4); transform: rotate(-3.5deg); color: #2B2420; border-top: 6px solid #8C2D4A; }
 .recipe.reveal.is-in { transform: rotate(-3.5deg); }
-.recipe-h { margin: 0 0 6px; font: 600 .78rem var(--mono); text-transform: uppercase; letter-spacing: .04em; color: #A63B28; }
+.recipe-h { margin: 0 0 6px; font: 600 .78rem var(--mono); text-transform: uppercase; letter-spacing: .04em; color: #8C2D4A; }
 .recipe ol { margin: 0; padding-left: 1.2em; font-size: .9rem; line-height: 30px; }
-.recipe-sign { margin: 8px 0 0; text-align: right; color: #A63B28; font-size: 1rem; }
+.recipe-sign { margin: 8px 0 0; text-align: right; color: #8C2D4A; font-size: 1rem; }
 
 /* Bordures « cousues » pour les encarts de liaison */
 .guide-link { border: 1.5px dashed color-mix(in srgb, var(--accent) 45%, transparent); }
@@ -811,7 +811,7 @@ html[data-brand="martine"] .atelier-label .seal-txt, html[data-brand="martine"] 
 /* --- Mère Martine : rose poudré, framboise, sauge, lavande ; Cormorant --- */
 html[data-brand="martine"] {
   --bg: #F9F1EE; --bg-2: #F2E3DE; --surface: #FFFAF8; --ink: #33222A; --ink-2: #6E5862; --line: #EAD5D0;
-  --accent: #A13D5F; --accent-hover: #8A3150; --accent-text: #93385A; --accent-soft: #F6DDE5; --accent-ink: #FFF8F9;
+  --accent: #8C2D4A; --accent-hover: #74243D; --accent-text: #8C2D4A; --accent-soft: #F6DDE5; --accent-ink: #FFF8F9;
   --t0: #F6E1E6; --t1: #EEE6F2; --t2: #E5ECDF; --t-rose: #F3D3DA; --t-sage: #DFE7D8; --paper: #FFFCF8;
   --display: "Cormorant", "Cormorant Garamond", Georgia, serif; --stretch: 100%; --h-weight: 500; --h-case: none;
   --r: 22px; --r-in: 14px;
@@ -832,19 +832,19 @@ html[data-brand="martine"] .post-title { font-size: clamp(1.4rem, 2vw, 1.75rem);
 html[data-brand="martine"] .post-big .post-title { font-size: clamp(1.8rem, 3vw, 2.6rem); }
 html[data-brand="martine"] .mm-cat-n { font-size: 1.5rem; }
 html[data-brand="martine"] .benefit-h { font-size: 1.7rem; }
-html[data-brand="martine"] .site-footer { background: #3A2230; color: #F8E9EE; }
-html[data-brand="martine"] .topbar { background: #3A2230; }
+html[data-brand="martine"] .site-footer { background: #3A2229; color: #F8E9EE; }
+html[data-brand="martine"] .topbar { background: #3A2229; }
 html[data-brand="martine"] .card-media { border-radius: 160px 160px var(--r-in) var(--r-in); }
 html[data-brand="martine"] .mm-cat-img { border-radius: 200px 200px var(--r) var(--r); }
 html[data-brand="martine"] .mm-cat:nth-child(even) .mm-cat-img { border-radius: var(--r) var(--r) 200px 200px; }
 html[data-brand="martine"] .pdp-main { border-radius: 260px 260px var(--r) var(--r); }
 html[data-brand="martine"] .post-media { border-radius: 200px 200px var(--r-in) var(--r-in); }
 html[data-brand="martine"] .post:nth-child(3n+2) .post-media { border-radius: var(--r); }
-html[data-brand="martine"] .switch-pl { background: #E3E7F7; color: #1630A8; }
+html[data-brand="martine"] .switch-pl { background: #E3E7F7; color: #643A20; }
 html[data-brand="martine"] .pill.is-on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 html[data-brand="martine"] .facet.is-on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 html[data-brand="martine"] .ritual { background: #E3EAD9; }
-html[data-brand="martine"] .recipe { border-top-color: #A13D5F; }
+html[data-brand="martine"] .recipe { border-top-color: #8C2D4A; }
 
 /* brin floral avant les titres de section Martine */
 html[data-brand="martine"] .h2::before, html[data-brand="martine"] .subcat-h::before {
@@ -884,7 +884,7 @@ html[data-brand="martine"] .hd { height: 76px; }
 /* atelier au féminin */
 .process-mm { background: #EFDCD5; }
 .process-mm .process-hd p, .process-mm .polaroid span { color: #5E4049; }
-.process-mm .polaroid em { color: #A13D5F; }
+.process-mm .polaroid em { color: #8C2D4A; }
 .process-mm .h2 { color: #33222A; }
 .process-mm .polaroid strong { font-family: "Cormorant", Georgia, serif; text-transform: none; font-size: 1.5rem; font-weight: 600; letter-spacing: 0; }
 
@@ -901,8 +901,8 @@ html[data-brand="martine"] .hd { height: 76px; }
 .al-logo { position: absolute; width: 96px; height: 96px; right: -18px; bottom: -22px; transform: rotate(8deg); filter: drop-shadow(0 6px 12px rgb(60 30 40 / .2)); }
 .mm-logo { width: 110px; height: auto; margin-bottom: 18px; }
 .mm-band { background: #F6DDE5; }
-.mm-band .btn-mm { background: #A13D5F; border-color: #A13D5F; color: #FFF8F9; }
-.mm-band .btn-mm:hover { background: #8A3150; }
+.mm-band .btn-mm { background: #8C2D4A; border-color: #8C2D4A; color: #FFF8F9; }
+.mm-band .btn-mm:hover { background: #74243D; }
 .mm-h { font-family: "Cormorant", Georgia, serif; font-stretch: 100%; font-style: italic; font-weight: 500; letter-spacing: -.01em; font-size: clamp(2.6rem, 5vw, 4.4rem); }
 .switch-mm { background: #F6DDE5; color: #7A2643; }
 .pill-mm { background: #F6DDE5; color: #6E2440; border-color: #F6DDE5; }
@@ -988,7 +988,7 @@ html[data-brand="lucien"] .card-media { box-shadow: inset 0 0 0 1px rgb(30 26 22
   --mono: "Courier Prime", "Courier New", ui-monospace, monospace;
   --ink-stamp: #A33A2C;
 }
-html[data-brand="martine"] { --bg: #F6EFE8; --bg-2: #EEE2D9; --surface: #FBF7F2; --paper: #FFFCF7; --line: #E3D4C9; --ink-stamp: #A13D5F; }
+html[data-brand="martine"] { --bg: #F6EFE8; --bg-2: #EEE2D9; --surface: #FBF7F2; --paper: #FFFCF7; --line: #E3D4C9; --ink-stamp: #8C2D4A; }
 body::after { opacity: .3; mix-blend-mode: multiply; }
 
 /* typographie machine à écrire pour les détails */
@@ -1136,7 +1136,7 @@ html[data-brand="martine"] .fiche-title { font-size: 1.6rem; text-transform: non
 .mmh-photo { grid-column: 6 / 13; grid-row: 1; justify-self: end; width: min(100%, 560px); margin: 0; padding: 14px 14px 46px; background: #FFFDF8;
   box-shadow: 0 30px 50px -30px rgb(60 30 40 / .55); transform: rotate(1.8deg); position: relative; }
 .mmh-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; }
-.mmh-photo figcaption { position: absolute; left: 0; right: 0; bottom: 10px; text-align: center; color: #93385A; font-size: 1rem; }
+.mmh-photo figcaption { position: absolute; left: 0; right: 0; bottom: 10px; text-align: center; color: #8C2D4A; font-size: 1rem; }
 .mmh-photo::before { content: ""; position: absolute; z-index: 2; top: -14px; left: 50%; width: 110px; height: 28px; transform: translateX(-50%) rotate(-3deg); background: rgb(246 232 214 / .85); }
 .mmh-card { grid-column: 1 / 8; grid-row: 1; z-index: 2; position: relative; display: grid; justify-items: center; text-align: center; gap: 4px;
   padding: clamp(30px, 4vw, 56px) clamp(24px, 4vw, 58px) clamp(32px, 4vw, 52px); background: #FFFCF7; border: 1.5px solid #3A2A2F;
@@ -1198,7 +1198,7 @@ html[data-brand="martine"] .ft-sign-name { font-family: "Cormorant", Georgia, se
 .tab-ico { width: 22px; height: 22px; --duo: rgb(255 255 255 / .7); }
 .sheet { position: relative; padding: clamp(22px, 3vw, 38px); background: var(--paper); border: 1px solid rgb(60 40 20 / .18); border-top: 8px solid var(--tab);
   border-radius: 4px 12px 12px 12px; box-shadow: 0 24px 40px -34px rgb(50 35 25 / .6);
-  background-image: linear-gradient(90deg, transparent 0 46px, color-mix(in srgb, #C0392B 22%, transparent) 46px 47px, transparent 47px); }
+  background-image: linear-gradient(90deg, transparent 0 46px, color-mix(in srgb, #8C2D4A 22%, transparent) 46px 47px, transparent 47px); }
 .binder:not(.is-ready) .sheet + .sheet { margin-top: 18px; }
 .sheet-hd { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 6px 24px; padding-left: 40px; margin-bottom: 24px; }
 .sheet-title { margin: 0; font-family: var(--display); font-stretch: var(--stretch); font-weight: var(--h-weight); text-transform: var(--h-case); font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1; }
@@ -1212,12 +1212,100 @@ html[data-brand="martine"] .ft-sign-name { font-family: "Cormorant", Georgia, se
   .sheet-hd { grid-template-columns: 1fr; padding-left: 26px; }
   .sheet-more { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 8px; }
   .sheet-grid { padding-left: 26px; }
-  .sheet { background-image: linear-gradient(90deg, transparent 0 30px, color-mix(in srgb, #C0392B 22%, transparent) 30px 31px, transparent 31px); }
+  .sheet { background-image: linear-gradient(90deg, transparent 0 30px, color-mix(in srgb, #8C2D4A 22%, transparent) 30px 31px, transparent 31px); }
 }
 @media (max-width: 640px) {
   .tab { padding: 10px 13px 12px; font-size: .74rem; }
   .tab[aria-selected="true"] { padding-bottom: 15px; }
   .sheet { padding: 18px 12px 18px 10px; }
   .sheet-hd, .sheet-grid { padding-left: 20px; }
-  .sheet { background-image: linear-gradient(90deg, transparent 0 18px, color-mix(in srgb, #C0392B 22%, transparent) 18px 19px, transparent 19px); }
+  .sheet { background-image: linear-gradient(90deg, transparent 0 18px, color-mix(in srgb, #8C2D4A 22%, transparent) 18px 19px, transparent 19px); }
 }
+
+/* ==========================================================================
+   V3.6 : palettes resserrées. Par marque : papier, nuance claire, nuance
+   foncée, encre, et une seule couleur forte (boutons, liens, tampons).
+   Le Père Lucien : bruns et sable. La Mère Martine : roses et bordeaux.
+   ========================================================================== */
+:root {
+  --bg: #F2ECE2; --paper: #FBF7F0; --surface: #FBF7F0;
+  --shade1: #E7DCCB; --shade2: #D6C3A5;
+  --ink: #2B2018; --ink-2: #5E5044; --line: #D8CBB8;
+  --accent: #7B4A2B; --accent-hover: #643A20; --accent-text: #7B4A2B; --accent-soft: #EFE5D6; --accent-ink: #FBF7F0;
+  --bg-2: var(--shade1); --t0: var(--shade1); --t1: #EEE5D7; --t2: var(--shade1);
+  --t-sage: var(--shade1); --t-stone: var(--shade1); --t-rose: var(--shade1); --kraft: var(--shade2);
+  --pl: var(--accent); --mm: var(--accent); --ink-stamp: var(--accent);
+}
+html[data-brand="martine"] {
+  --bg: #F8F0EE; --paper: #FFFAF8; --surface: #FFFAF8;
+  --shade1: #F0E0DE; --shade2: #E3C5C3;
+  --ink: #3A2229; --ink-2: #6B5157; --line: #E6D2CF;
+  --accent: #8C2D4A; --accent-hover: #74243D; --accent-text: #8C2D4A; --accent-soft: #F5E6E7; --accent-ink: #FFFAF8;
+  --bg-2: var(--shade1); --t0: var(--shade1); --t1: #F6EAE8; --t2: var(--shade1);
+  --t-sage: var(--shade1); --t-stone: var(--shade1); --t-rose: var(--shade1); --kraft: var(--shade2);
+  --pl: var(--accent); --mm: var(--accent); --ink-stamp: var(--accent);
+}
+
+/* encre foncée pour la barre du haut et le pied de page */
+.topbar, .site-footer, html[data-brand="martine"] .topbar, html[data-brand="martine"] .site-footer { background: var(--ink); }
+.site-footer .form-msg, html[data-brand="martine"] .site-footer .form-msg { color: var(--shade1); }
+
+/* boutons et pastilles : une seule couleur forte */
+.btn-mm, .btn-pl, .mm-band .btn-mm, .pl-band .btn-pl { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn-mm:hover, .btn-pl:hover, .mm-band .btn-mm:hover, .pl-band .btn-pl:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.switch-mm, .switch-pl, html[data-brand="martine"] .switch-pl, .pill-mm { background: var(--shade1); color: var(--ink); border-color: var(--shade1); }
+.m-other, html[data-brand="martine"] .m-other { background: var(--shade1); color: var(--ink); }
+
+/* aplats de section : uniquement les nuances de la marque */
+.tile-blue, .tile-rose, .tile-sage, .tile-stone, .hero-frame { background: var(--shade2); }
+.story { background: var(--shade1); }
+.process, .process-mm { background: var(--shade2); color: var(--ink); }
+.process-mm { background: var(--shade1); }
+.process .h2, .process-mm .h2, .process-hd p, .process-mm .process-hd p, .polaroid figcaption, .polaroid span { color: var(--ink); }
+.polaroid span, .process-hd p { color: var(--ink-2); }
+.polaroid em, .process-mm .polaroid em { color: var(--accent-text); }
+.process .link-arrow { color: var(--accent-text); }
+html[data-brand="martine"] .process .h2::before, html[data-brand="martine"] .pl-band .h2::before { background: var(--accent); }
+.mm-band { background: var(--shade1); color: var(--ink); }
+.mm-copy p { color: var(--ink-2); }
+.range-mm { background: var(--shade1); }
+.ritual, html[data-brand="martine"] .ritual { background: var(--shade2); color: var(--ink); }
+.ritual-copy p { color: var(--ink-2); }
+.ritual .link-arrow { color: var(--accent-text); }
+.persona { background: var(--shade1); }
+.pl-band { background: var(--shade2); color: var(--ink); }
+.pl-in p { color: var(--ink-2); }
+.cat-guide-in { background: var(--ink); color: var(--paper); }
+.card-on-color .card-media { background: var(--paper); }
+.card-on-color .card-cat, .card-on-color .card-title, .card-on-color .price { color: var(--ink); }
+
+/* étiquettes, tampons, fiches */
+html[data-brand="martine"] .al-h, html[data-brand="martine"] .al-sign, html[data-brand="lucien"] .al-h, html[data-brand="lucien"] .al-sign { color: var(--accent); }
+html[data-brand="lucien"] .atelier-label .seal-ring, html[data-brand="martine"] .atelier-label .seal-ring { stroke: var(--accent); }
+html[data-brand="lucien"] .atelier-label .seal-txt, html[data-brand="martine"] .atelier-label .seal-txt, html[data-brand="martine"] .atelier-label .seal-mono { fill: var(--accent); }
+.recipe, html[data-brand="martine"] .recipe { border-top-color: var(--accent); background-image: repeating-linear-gradient(transparent 0 29px, var(--shade2) 29px 30px); }
+.recipe-h, .recipe-sign, .mmh-photo figcaption { color: var(--accent-text); }
+
+/* icônes au trait : aplat dans la nuance claire de la marque */
+.duo .duo-fill { fill: var(--duo, var(--shade2)); }
+.strip li { --duo: var(--shade2); }
+.strip { background: var(--shade1); }
+
+/* intercalaires : deux nuances, l'onglet actif prend le papier de la feuille */
+.tab { background: var(--shade2); --duo: var(--paper); color: var(--ink); border-color: var(--line); }
+.tab:nth-child(even) { background: var(--shade1); }
+.tab[aria-selected="true"] { background: var(--paper); --duo: var(--shade2); }
+.sheet { border-top-color: var(--accent);
+  background-image: linear-gradient(90deg, transparent 0 46px, color-mix(in srgb, var(--accent) 28%, transparent) 46px 47px, transparent 47px); }
+@media (max-width: 960px) { .sheet { background-image: linear-gradient(90deg, transparent 0 30px, color-mix(in srgb, var(--accent) 28%, transparent) 30px 31px, transparent 31px); } }
+@media (max-width: 640px) { .sheet { background-image: linear-gradient(90deg, transparent 0 18px, color-mix(in srgb, var(--accent) 28%, transparent) 18px 19px, transparent 19px); } }
+
+/* ==========================================================================
+   V3.7 : Le Père Lucien garde son bleu cobalt comme couleur forte, sur une base
+   de bruns et de sable. Tampons en brun tabac.
+   ========================================================================== */
+:root { --accent: #1F3FD1; --accent-hover: #1833B4; --accent-text: #1F3FD1; --accent-soft: #EFE5D6; --accent-ink: #FBF7F0;
+  --pl: #1F3FD1; --ink-stamp: #7B4A2B; }
+html[data-brand="lucien"] .hero-frame, html[data-brand="lucien"] .tile-blue { background: var(--accent); }
+html[data-brand="lucien"] .mm-band .btn-mm { background: var(--accent); border-color: var(--accent); }
+html[data-brand="lucien"] .mm-band .btn-mm:hover { background: var(--accent-hover); border-color: var(--accent-hover); }

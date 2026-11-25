@@ -246,7 +246,8 @@ MIMG = IMG / "martine"
 LABELS_SRC = Path(__file__).resolve().parent / "labels.py"
 PHOTOS = MIMG / "photos"          # déposez ici <slug>.webp pour remplacer une étiquette
 PHOTOS.mkdir(parents=True, exist_ok=True)
-PALETTE_CAT = {"corps": "rose", "cheveux": "sage", "coin-des-affaires": "kraft"}
+PALETTE_CAT = {"corps": "rose", "cheveux": "poudre", "coin-des-affaires": "vieuxrose"}
+MM_LABEL_PALETTES = ("rose", "poudre", "vieuxrose")
 
 
 def fresh(path):
@@ -296,7 +297,7 @@ def derive_martine_images(p, seed):
     base = f"etiquette-{p['slug']}"
     dest = MIMG / f"{base}.webp"
     if not fresh(dest):
-        palette = p.get("palette") or PALETTE_CAT.get(p["categorie"].split("/")[0], "rose")
+        palette = MM_LABEL_PALETTES[seed % 3]
         head, _, tail = p["nom"].partition(",")
         labels.make_label(dest, "martine", head.strip(), tail.strip() or p.get("etiquette", ""), p["contenance"], palette, seed)
     return [f"/assets/img/martine/{base}.webp"], f"/assets/img/martine/{base}-sm.webp"
@@ -646,7 +647,7 @@ def head(page):
     robots = '<meta name="robots" content="noindex, follow">' if page.get("noindex") else '<meta name="robots" content="index, follow, max-image-preview:large">'
     ld = page.get("ld") or []
     ld_html = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
-    theme = "#A13D5F" if page["brand"] == "martine" else "#1F3FD1"
+    theme = "#8C2D4A" if page["brand"] == "martine" else "#1F3FD1"
     site_name = "Mère Martine" if page["brand"] == "martine" else "Le Père Lucien"
     return f"""<!doctype html>
 <html lang="fr" data-brand="{page['brand']}">
@@ -808,11 +809,10 @@ def catalogue_tabs(brand, tabs):
     for i, (label, key) in enumerate(tabs):
         prods = [q for q in ordered(products_in(brand, key)) if q["images"]][:4]
         n = len(products_in(brand, key))
-        color = TAB_COLORS[i % len(TAB_COLORS)]
         btns.append(f'<button type="button" class="tab" role="tab" id="{uid}-t{i}" aria-controls="{uid}-p{i}" aria-selected="{"true" if i == 0 else "false"}" '
-                    f'tabindex="{0 if i == 0 else -1}" style="--tab:{color}">{duo(CAT_ICON.get(pre + key, "leaf"), "duo tab-ico")}<span>{esc(label)}</span></button>')
+                    f'tabindex="{0 if i == 0 else -1}">{duo(CAT_ICON.get(pre + key, "leaf"), "duo tab-ico")}<span>{esc(label)}</span></button>')
         desc = CAT_SHORT.get(pre + key, "") or clip(C[key].get("intro", ""), 90)
-        panels.append(f"""<div class="sheet" role="tabpanel" id="{uid}-p{i}" aria-labelledby="{uid}-t{i}" style="--tab:{color}" data-sheet>
+        panels.append(f"""<div class="sheet" role="tabpanel" id="{uid}-p{i}" aria-labelledby="{uid}-t{i}" data-sheet>
   <div class="sheet-hd">
     <p class="sheet-title"><a href="{caturl(key)}">{esc(C[key]['nom'])}</a></p>
     <p class="sheet-desc">{esc(desc)}</p>
@@ -827,11 +827,11 @@ def catalogue_tabs(brand, tabs):
 
 
 def reassure_strip(brand):
-    items = [("leaf", "Ingrédients naturels", "Huiles végétales, sans conservateur", "#B7C9A2"),
-             ("barn", "Fabriqué dans l'Allier", "À Teillet-Argenty, depuis 2013", "#F2C6CF" if brand == "martine" else "#C2D0F2"),
-             ("hand-heart", "Fait à la main", "En petites séries, à l'atelier", "#F1D08C"),
-             ("package", "Expédié avec soin", "Sous 48 h, colis neutre en carbone", "#E9B9A2")]
-    cells = "".join(f'<li style="--duo:{c}">{duo(i, "duo strip-ico")}<strong>{esc(t)}</strong><span>{esc(d)}</span></li>' for i, t, d, c in items)
+    items = [("leaf", "Ingrédients naturels", "Huiles végétales, sans conservateur"),
+             ("barn", "Fabriqué dans l'Allier", "À Teillet-Argenty, depuis 2013"),
+             ("hand-heart", "Fait à la main", "En petites séries, à l'atelier"),
+             ("package", "Expédié avec soin", "Sous 48 h, colis neutre en carbone")]
+    cells = "".join(f'<li>{duo(i, "duo strip-ico")}<strong>{esc(t)}</strong><span>{esc(d)}</span></li>' for i, t, d in items)
     return f'<section class="strip" aria-label="Nos engagements"><ul class="wrap">{cells}</ul></section>'
 
 
@@ -1940,8 +1940,8 @@ Sitemap: {DOMAIN}/sitemap.xml
     cat = {p["ref"]: {"n": p["nom"], "p": p["prix"], "i": card_img(p), "u": p["url"]} for p in PRODUCTS}
     (SITE / "assets" / "catalogue.js").write_text("window.PL_CATALOGUE=" + json.dumps(cat, ensure_ascii=False) + ";", encoding="utf-8")
     # favicons
-    (IMG / "favicon-lucien.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1F3FD1"/><text x="32" y="43" text-anchor="middle" font-family="Arial Narrow,Arial,sans-serif" font-weight="700" font-size="30" fill="#F3F2EE">PL</text></svg>', encoding="utf-8")
-    (IMG / "favicon-martine.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="32" fill="#B8432F"/><text x="32" y="43" text-anchor="middle" font-family="Arial,sans-serif" font-style="italic" font-size="30" fill="#F7E6E0">MM</text></svg>', encoding="utf-8")
+    (IMG / "favicon-lucien.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1F3FD1"/><text x="32" y="43" text-anchor="middle" font-family="Arial Narrow,Arial,sans-serif" font-weight="700" font-size="30" fill="#FBF7F0">PL</text></svg>', encoding="utf-8")
+    (IMG / "favicon-martine.svg").write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="32" fill="#8C2D4A"/><text x="32" y="43" text-anchor="middle" font-family="Arial,sans-serif" font-style="italic" font-size="30" fill="#F7E6E0">MM</text></svg>', encoding="utf-8")
     # Polices embarquées en base64 : chargées seulement en ouverture directe (file://),
     # où Chrome bloque les polices locales.
     import base64

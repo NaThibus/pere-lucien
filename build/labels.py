@@ -19,11 +19,13 @@ def font(name, size):
 
 PALETTES = {
     # fond, encre principale, accent (tampon), papier de l'étiquette
-    "rose": ((242, 211, 201), (42, 22, 18), (184, 67, 47), (251, 246, 238)),
+    "rose": ((235, 210, 207), (58, 34, 41), (140, 45, 74), (255, 250, 248)),
     "sage": ((217, 225, 211), (23, 32, 26), (77, 104, 79), (250, 248, 240)),
     "stone": ((228, 224, 214), (30, 26, 22), (148, 82, 52), (252, 249, 242)),
     "kraft": ((214, 190, 152), (38, 28, 18), (150, 58, 38), (250, 245, 234)),
     "blue": ((223, 228, 248), (20, 22, 40), (31, 63, 209), (251, 250, 246)),
+    "poudre": ((240, 224, 222), (58, 34, 41), (140, 45, 74), (255, 250, 248)),
+    "vieuxrose": ((227, 197, 195), (58, 34, 41), (140, 45, 74), (255, 250, 248)),
 }
 
 
@@ -104,7 +106,7 @@ def make_label(dest, brand, name, kind, size_line, palette="rose", seed=0):
 
     cx = LW / 2
     if brand == "martine":
-        accent = (161, 61, 95)
+        accent = (140, 45, 74)
         d.text((cx, 90), "La Mère Martine", font=font("cormorant-semibold.ttf", 54), fill=accent + (255,), anchor="mm")
         house = "COSMÉTIQUE NATURELLE · ALLIER"
         name_font = font("cormorant-semibold.ttf", 66)
