@@ -1309,3 +1309,9 @@ html[data-brand="lucien"] .atelier-label .seal-txt, html[data-brand="martine"] .
 html[data-brand="lucien"] .hero-frame, html[data-brand="lucien"] .tile-blue { background: var(--accent); }
 html[data-brand="lucien"] .mm-band .btn-mm { background: var(--accent); border-color: var(--accent); }
 html[data-brand="lucien"] .mm-band .btn-mm:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+
+/* ==========================================================================
+   V3.8 : Le Père Lucien revient au brun, en plus vif (cognac).
+   ========================================================================== */
+:root { --accent: #AD4A1D; --accent-hover: #8E3A15; --accent-text: #AD4A1D; --accent-soft: #F1E2D3; --accent-ink: #FFF8F0;
+  --pl: #AD4A1D; --ink-stamp: #AD4A1D; }
