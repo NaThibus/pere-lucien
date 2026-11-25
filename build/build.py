@@ -1473,7 +1473,7 @@ def render_home_lucien():
 
 <section class="story">
   <div class="wrap story-in">
-    <figure class="story-img reveal"><img src="/assets/img/lucien-lelegard-portrait.webp" alt="Portrait ancien de Lucien Lelégard, le grand-père" loading="lazy" width="495" height="800"></figure>
+    <figure class="story-img reveal"><span class="story-mat"><img src="/assets/img/lucien-lelegard-portrait.webp" alt="Portrait ancien de Lucien Lelégard, le grand-père" loading="lazy" width="495" height="800"></span><figcaption class="hand">Lucien Lelégard</figcaption></figure>
     <div class="story-copy">
       <h2 class="story-h reveal">Treize prototypes pour un savon à raser.</h2>
       <p class="reveal">Cyril Lelégard, ingénieur chimiste, se rasait à l'ancienne comme son grand-père Lucien. Déçu par les savons du commerce, il a formulé le sien en 2012. Le treizième prototype a convaincu les membres du forum rasage-traditionnel.com, puis des barbiers d'une vingtaine de pays.</p>
@@ -1535,20 +1535,30 @@ def render_home_martine():
     coffrets = pick(["coffret-rituel-du-soir", "coffret-rasage-douceur", "coffret-cent-coups-de-brosse"], "martine")
     posts = "".join(article_card(a, "martine") for a in articles.MARTINE[:6])
     body = f"""
-<section class="mmh wrap" aria-labelledby="mmh-title">
-  <figure class="mmh-photo">
-    <img src="/assets/img/ambiance/atelier-lavande-mains.webp" alt="Mains qui préparent un soin à la lavande et aux fleurs fraîches, à l'atelier" width="736" height="1104" fetchpriority="high">
-    <figcaption class="hand">l'atelier, un matin de juin</figcaption>
-  </figure>
-  <div class="mmh-card">
-    <img class="mmh-logo" src="/assets/img/logo-mere-martine.svg" alt="La Mère Martine, cosmétique naturelle" width="150" height="150">
-    <h1 class="mmh-title" id="mmh-title">Des soins faits main,<br><em>comme autrefois.</em></h1>
-    <p class="mmh-sub">Huiles, savons au lait, baumes et brosses en poils de sanglier, préparés à la main dans l'Allier.</p>
+<section class="hero hero-mm2 wrap">
+  <div class="hero-copy">
+    <h1 class="hero-h1"><span class="line"><span>Des soins faits main,</span></span><span class="line"><span><em>comme autrefois.</em></span></span></h1>
+    <p class="hero-sub">Huiles, savons au lait, baumes et brosses en poils de sanglier, préparés à la main dans l'Allier.</p>
+    {stamp("Recette traditionnelle", "préparée en petits lots", "stamp-hero")}
     <div class="hero-ctas">
       <a class="btn btn-accent btn-lg" href="{CM.BASE}/corps/">Soins du corps {icon('arrow-right','i i-sm')}</a>
       <a class="btn btn-ghost btn-lg" href="{CM.BASE}/cheveux/">Soins des cheveux</a>
     </div>
-    {stamp("Recette traditionnelle", "préparée en petits lots", "stamp-mmh")}
+  </div>
+  <div class="hero-media hero-media-mm2">
+    <svg class="mm-flower mm-flower-a" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M18 108 C38 86 52 66 70 40"/><path d="M42 80 C30 76 24 66 26 58 C36 60 42 70 42 80Z"/><path d="M50 68 C60 62 70 64 74 70 C66 76 56 74 50 68Z"/>
+<path d="M58 54 C50 46 50 38 54 32 C60 38 62 46 58 54Z"/><path d="M33 94 C46 92 54 96 56 102 C46 104 38 100 33 94Z"/>
+<circle cx="74" cy="34" r="4.5"/><path d="M74 29.5 C70 20 78 18 79 26 M78.3 31 C86 26 90 33 82 35.5 M79 38 C84 45 77 49 75.5 41 M72.5 38.5 C66 45 61 38 69 35.5 M69.6 31.5 C62 26 67 19 72.6 28"/>
+<path d="M88 52 C92 46 98 46 100 50 C96 54 92 54 88 52Z M88 52 C84 56 80 58 76 58"/></g></svg>
+    <div class="hero-frame"><img src="/assets/img/ambiance/atelier-lavande-mains.webp" alt="Mains qui préparent un soin à la lavande et aux fleurs fraîches, à l'atelier" width="736" height="1104" fetchpriority="high"></div>
+    <img class="hero-badge" src="/assets/img/logo-mere-martine.svg" alt="La Mère Martine, cosmétique naturelle" width="140" height="140">
+    <a class="hero-tag" href="{CM.BASE}/produit/huile-seche-satinante-corps-cheveux/"><span>Huile sèche satinante, 100 ml</span><strong>{euro(29.0)}</strong></a>
+    <svg class="mm-flower mm-flower-b" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M18 108 C38 86 52 66 70 40"/><path d="M42 80 C30 76 24 66 26 58 C36 60 42 70 42 80Z"/><path d="M50 68 C60 62 70 64 74 70 C66 76 56 74 50 68Z"/>
+<path d="M58 54 C50 46 50 38 54 32 C60 38 62 46 58 54Z"/><path d="M33 94 C46 92 54 96 56 102 C46 104 38 100 33 94Z"/>
+<circle cx="74" cy="34" r="4.5"/><path d="M74 29.5 C70 20 78 18 79 26 M78.3 31 C86 26 90 33 82 35.5 M79 38 C84 45 77 49 75.5 41 M72.5 38.5 C66 45 61 38 69 35.5 M69.6 31.5 C62 26 67 19 72.6 28"/>
+<path d="M88 52 C92 46 98 46 100 50 C96 54 92 54 88 52Z M88 52 C84 56 80 58 76 58"/></g></svg>
   </div>
 </section>
 
